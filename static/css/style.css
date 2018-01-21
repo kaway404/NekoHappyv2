@@ -254,7 +254,7 @@ header #logo{
 }
 
 .acc{
-	background-image: url(https://images4.alphacoders.com/556/556449.jpg);
+	background-image: url(https://images4.alphacoders.com/242/242556.png);
 	width: 100%;
 	height: 100%;
 	position: fixed;
@@ -275,6 +275,7 @@ header #logo{
 	position: relative;
 	padding-left: 10px;
 	margin-top: 10px;
+	border-radius: 20px;
 }
 
 .form .login{
@@ -285,7 +286,7 @@ header #logo{
 .btna{
 	background: #0cdb8a;
     border-radius: 5px;
-   	width: 120px;
+   	width: 140px;
     padding: 5px 0px;
 }
 
@@ -300,7 +301,7 @@ header #logo{
 	background: #1ead75;
     box-shadow: 0 4px 8px 0 rgba(43,102,79,0.55);
     border-radius: 5px;
-    width: 120px;
+    width: 140px;
     height: 50px;
     position: relative;
     top: 20px;
@@ -309,8 +310,46 @@ header #logo{
     cursor: pointer;
 }
 
-.form p{
+.form .bat{
 	color: #fff;
 	top: 30px;
 	position: relative;
+	font-size: 1.2em;
+}
+
+#resposta{
+	width: 100%;
+	height: auto;
+	color: #fff;
+	background: #a42727;
+	position: relative;
+	top: 40px;
+}
+
+#resposta p{
+	font-size: 1.4em;
+}
+
+.configure{
+	width: 50%;
+	margin: 0px auto;
+	position: relative;
+	height: 400px;
+	background: #e7e7e7;
+	top: 50px;
+	border-radius: 3px;
+}
+
+.oia{
+	background-image: url(https://images4.alphacoders.com/242/242556.png);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background-size: cover;
+}
+
+.c1s{
+	color: #151515;
+	font-size: 1.4em;
+	padding: 20px;
 }
