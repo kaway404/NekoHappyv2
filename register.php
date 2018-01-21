@@ -35,6 +35,7 @@ else{
 //Abrindo Conexao com o banco de dados
 $conexao = mysql_pconnect($hostp,$userp,$passwrdp) or die (mysql_error());
 $banco = mysql_select_db($dbp);
+$thecryed = DBEscape(strip_tags(trim(sha1($email1);
 $form2['email'] = mysql_real_escape_string($email1);
 $form2['senha'] = mysql_real_escape_string($senha1);
 $form2['inisession'] = date('Y-m-d H:i:s');
@@ -44,6 +45,7 @@ $form2['configurado'] = '0';
 $form2['nome'] = $nomer;
 $form2['sobrenome'] = $sobrenome;
 $form2['pin'] = $pincode;
+$form2['thecry'] = $thecryed;
 $form2['ip']= mysql_real_escape_string($_SERVER['REMOTE_ADDR']);
 
 	if( DBCreate( 'user', $form2 ) ){	
@@ -55,7 +57,11 @@ $form2['ip']= mysql_real_escape_string($_SERVER['REMOTE_ADDR']);
 	$inisession = date('Y-m-d H:i:s');
 	setcookie("iduser", $iduser);
 	setcookie("inisession", $inisession);
-	echo '<script>location.href="/";</script>';
+	$busca2  = "SELECT thecry FROM neko_user WHERE email = '".$email1."'";
+	$identificacao2 = mysql_query($busca2);
+	$retorno2 = mysql_fetch_array($identificacao2);
+	$idcry = $retorno2['thecry'];
+	setcookie("thecry", $idcry, time()+3600 * 24 * 365);
 	}
 
 }
