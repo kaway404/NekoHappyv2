@@ -222,23 +222,24 @@ header #logo{
 }
 
 .sobre-inte{
-	float: right;
 	position: relative;
 	right: 0px;
 	top: 140px;
 	left: 0;
-	width: 420px;
+	z-index: 30;
+	margin: 0px auto;
+	text-align: center;
 }
 
 .sobre-inte h1{
 	color: #fff;
-	font-size: 1.8em;
+	font-size: 3em;
 	padding: 5px;
 }
 
 .sobre-inte p{
 	color: #fff;
-	font-size: 1.2em;
+	font-size: 1.9em;
 	padding: 5px;
 }
 

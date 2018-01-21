@@ -71,6 +71,5 @@
 <h1>MERGULHE FUNDO NO QUE MAIS GOSTA</h1>
 <p>Chats, blogs, favoritos, enquetes e muito mais.</p>
 </div>
-<div id="imgst"></div>
 </div>
 </div>
