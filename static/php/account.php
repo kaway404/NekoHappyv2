@@ -16,7 +16,7 @@
 	if(isset($_COOKIE['iduser'])){
 	if(isset($_GET['verificarsessao'])){
 	?>
-	<h1 class="login">Verfique sua sessão</h1>
+	<h1 class="login">Verifique sua sessão</h1>
 	<input type="text" name="pincode" id="pincode" placeholder="Pincode"/>
 	<div class="btn-sa" id="verifique"><div class="btna"><span>Continuar</span></div></div>
 	<div id="resposta">
