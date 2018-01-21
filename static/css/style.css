@@ -1,0 +1,316 @@
+*{
+	font-family: 'Ubuntu', sans-serif;
+	outline: none;
+    list-style:none;
+    margin: 0px auto;
+}
+
+a{
+	text-decoration: none;
+	color: #0cdb8a;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #1979b1;
+    border-radius: 40px;
+}
+
+
+header{
+	background: #0cdb8a;
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+	height: 50px;
+	z-index: 5000;
+}
+
+header #logo{
+	color: #fff;
+	font-size: 1.6em;
+	position: relative;
+	top: 10px;
+}
+
+ #logot{
+ 	position: relative;
+ 	color: #0cdb8a;
+ 	font-size: 4.9em;
+ 	text-align: center;
+ 	z-index: 40;
+ 	bottom: 20px;
+ 	text-shadow: 1px 1px 1px rgba(0,0,0,.30);
+ }
+
+#alinhar-h{
+	width: 1100px;
+	margin: 0px auto;
+	position: relative;
+	background: transparent;
+}
+
+.apresentation{
+	width: 100%;
+	height: 430px;
+	position: relative;
+	background-size: cover;
+	background-image: url(http://wallpapersfan.com/wp-content/uploads/2017/12/229914-www.wallpapersfan.com-1024x768.jpg);
+	padding-bottom: 20px;
+}
+
+.naruto{
+	position: relative;
+	width: 120px;
+	top: 200px;
+}
+
+.piece{
+	position: relative;
+	width: 120px;
+	top: 200px;
+	float: right;
+}
+
+.boku{
+	position: relative;
+	width: 120px;
+	top: 200px;
+	left: 33%;
+}
+
+.btn{
+	background: #0cdb8a;
+    border-radius: 5px;
+    width: 162px;
+    padding: 10px 0px;
+}
+
+.btn span{
+	color: #fff;
+	font-size: 1.7em;
+	position: relative;
+	top: 0px;
+}
+
+.btn-s{
+	background: #1ead75;
+    box-shadow: 0 4px 8px 0 rgba(43,102,79,0.55);
+    border-radius: 5px;
+    width: 162px;
+    height: 61px;
+    position: relative;
+    top: 120px;
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.holder{
+	background-color: #009DF8;
+    border-color: #0cdb8a;
+    width: 100%;
+    height: 400px;
+    color: #fff;
+    text-align: center;
+}
+
+.holder h1{
+	position: relative;
+	top: 20px;
+}
+
+.holder span{
+	color: #e5e5e5;
+	position: relative;
+	top: 20px;
+	font-size: 1.4em;
+}
+
+.scroll{
+	height: 240px;
+    padding-top: 5px;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    z-index: 10;
+    white-space: nowrap;
+    width: 50%;
+    top: 50px;
+}
+
+
+.imesa{
+	position: relative;
+    display: block;
+    font-size: 20px;
+    height: 10.25em;
+    width: 7em;
+    background: #009DF8;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.imesa p{
+	position: relative;
+	color: #fff;
+	z-index: 10;
+	left: 5px;
+	float: left;
+	bottom: 40px;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.90);
+}
+
+.imesa img{
+	width: 100%;
+	height: 100%;
+}
+
+.holder ul{
+	height: 230px;
+    padding-top: 5px;
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.thumb{
+	border-radius: 15px;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.avatar{
+	width: 50px;
+	position: absolute;
+	right: 95px;
+	height: 50px;
+	box-shadow: 0 4px 8px 0 rgba(43,102,79,0.55);
+	bottom: 160px;
+	border-radius: 15px;
+}
+
+.inte{
+	width: 100%;
+	background: #01D3DD;
+	height: 440px;
+	position: relative;
+}
+
+#imgst{
+	background-image: url(https://aminoapps.com/static/img/bubbles.svg);
+	width: 720px;
+	background-size: cover;
+	height: 420px;
+	float: left;
+	position: absolute;
+	top: 10px;
+}
+
+.sobre-inte{
+	float: right;
+	position: relative;
+	right: 0px;
+	top: 140px;
+	left: 15%;
+	width: 420px;
+}
+
+.sobre-inte h1{
+	color: #fff;
+	font-size: 1.8em;
+	padding: 5px;
+}
+
+.sobre-inte p{
+	color: #fff;
+	font-size: 1.2em;
+	padding: 5px;
+}
+
+.account{
+	width: 500px;
+	height: auto;
+	background: rgba(0,0,0,.80);
+	z-index: 10;
+	position: relative;
+	border-radius: 15spx;
+	top: 200px;
+	padding-bottom: 50px;
+}
+
+.acc{
+	background-image: url(https://images4.alphacoders.com/556/556449.jpg);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background-size: cover;
+}
+
+.form{
+	position: relative;
+	margin: 0px auto;
+	text-align: center;
+}
+
+.form input{
+	width: 92%;
+	border: none;
+	height: 30px;
+	top: 0px;
+	position: relative;
+	padding-left: 10px;
+	margin-top: 10px;
+}
+
+.form .login{
+	color: #fff;
+	padding: 40px;
+}
+
+.btna{
+	background: #0cdb8a;
+    border-radius: 5px;
+   	width: 120px;
+    padding: 5px 0px;
+}
+
+.btna span{
+	color: #fff;
+	font-size: 1.7em;
+	position: relative;
+	top: 0px;
+}
+
+.btn-sa{
+	background: #1ead75;
+    box-shadow: 0 4px 8px 0 rgba(43,102,79,0.55);
+    border-radius: 5px;
+    width: 120px;
+    height: 50px;
+    position: relative;
+    top: 20px;
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.form p{
+	color: #fff;
+	top: 30px;
+	position: relative;
+}
