@@ -26,3 +26,15 @@ $(document).ready(function() {
          return false;
     });
 });
+
+$(document).ready(function() {
+    $("#verifique").click(function() {
+        var pincode = $("#pincode").val(); 
+        $.post("verificando.php", {pincode: pincode},
+        function(data){
+         $("#resposta").html(data);
+         }
+         , "html");
+         return false;
+    });
+});

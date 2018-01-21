@@ -31,6 +31,9 @@ if(isset($_GET['login'])){
 else if(isset($_GET['registro'])){
 	require 'static/php/account.php';
 }
+else if(isset($_GET['verificarsessao'])){
+	require 'static/php/account.php';
+}
 else{
 require 'static/php/home.php';
 }

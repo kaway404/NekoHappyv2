@@ -33,8 +33,8 @@
 </li>
 <li class="imesa">
 	<div class="avatar"><img src="https://cm1.narvii.com/6695/6e8f851c9bf22f61fcd08ce58a56efa6815a7b45_120.jpg" class="thumb"/></div>
-	<img src="https://cm1.narvii.com/6286/1a35e2df53ae90e75dd2a16b32e0b15510979bb2_375.gif"/>
-	<p>Harry Potter</p>
+	<img src="http://media.moddb.com/images/downloads/1/130/129103/half_life_1.jpg"/>
+	<p>Half life</p>
 </li>
 <li class="imesa">
 	<div class="avatar"><img src="https://cm1.narvii.com/6568/63b18e9cf91a1a41d2279dd628211bc27878bf23_120.jpg" class="thumb"/></div>

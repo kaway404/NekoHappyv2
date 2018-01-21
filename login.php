@@ -1,10 +1,10 @@
 <?php
   require 'static/php/system/database.php';
   require 'static/php/system/config.php';
-  mysql_connect($hostp, $userp, $passwrdp)or die();	//Conecta com o MySQL
-  mysql_select_db($dbp);						//Seleciona banco de dados
+  $conexao = mysql_pconnect($hostp,$userp,$passwrdp) or die (mysql_error());
+  $banco = mysql_select_db($dbp);
   
-  $email=$_POST['emaill'];	//Pegando dados passados por AJAX
+  $email=$_POST['emaill'];
   $senha=$_POST['senhal'];
   $ip=mysql_real_escape_string($_SERVER['REMOTE_ADDR']);
   
@@ -33,6 +33,19 @@
 	if (@mysql_num_rows($resultados) == 0){
         print "<p>Email ou senha incorretos!</p>"; exit();
   }
+
+  $user = DBRead('user', "WHERE email = '{$email}' LIMIT 1 ");
+  $user = $user[0];
+  
+  if($user['ip'] <> $ip){
+      $busca  = "SELECT id FROM neko_user WHERE email = '".$email."'";
+      $identificacao = mysql_query($busca);
+      $retorno = mysql_fetch_array($identificacao);
+      $iduser = $retorno['id'];
+      setcookie("iduser", $iduser);
+      echo '<script>location.href="?verificarsessao";</script>';
+  }
+
 
   else{
   $user = DBRead('user', "WHERE email = '{$email}' LIMIT 1 ");
