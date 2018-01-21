@@ -22,16 +22,16 @@
 	<div id="resposta">
 	</div>
 	<?php
-		}}else{
+		}else{
 	?>
-	<h1 class="login">Login</h1>
+		<h1 class="login">Login</h1>
 	<input type="email" name="emaill" id="emaill" placeholder="E-mail"/>
 	<input type="password" name="senhal" id="senhal" placeholder="Senha"/>
 	<div class="btn-sa" id="logar"><div class="btna"><span>Login</span></div></div>
 	<p class="bat">Não tens uma conta, registre <a href="?registro">aqui</a></p>
 	<div id="resposta">
 	</div>
-	<?php } ?>
+	<?php }} ?>
 
 	<?php
 	if(isset($_GET['registro'])){
