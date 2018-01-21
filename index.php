@@ -19,7 +19,7 @@ require 'static/php/system/config.php';
 <?php
 
 
-if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession']))){
+if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_COOKIE['thecry']))){
 	require 'static/php/header.php';
 	require 'static/php/dashboard.php';
 }
