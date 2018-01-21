@@ -19,7 +19,6 @@
 	<h1 class="login">Verfique sua sessão</h1>
 	<input type="text" name="pincode" id="pincode" placeholder="Pincode"/>
 	<div class="btn-sa" id="verifique"><div class="btna"><span>Continuar</span></div></div>
-	<p class="bat">Não tens uma conta, registre <a href="?registro">aqui</a></p>
 	<div id="resposta">
 	</div>
 	<?php
