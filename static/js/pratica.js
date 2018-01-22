@@ -13,7 +13,7 @@
 
       	 	 window.setInterval(function(){
       	 	 	 if (track1.style.display === "none") {
-        	 post.style = "z-index: 0; background:#147a5226;";
+        	 post.style = "z-index: 0; background:#fff;";
         	} else {
              post.style = "z-index: 7000; background:#fff;";
              photo.style = "z-index: 8000;";
@@ -22,7 +22,7 @@
       	 	  if (track2.style.display === "block") {
         	 	 caper.style = "z-index: 6500; background:#fff;";
         	} else {
-            	caper.style = "z-index: 0; background:#147a5226;";
+            	caper.style = "z-index: 0; background:#fff;";
       	 	 }
 
       	 	 if (track3.style.display === "block") {
@@ -32,14 +32,14 @@
    			 }, 100);
 
         $('#click1').click(function(){
-        	post.style = "z-index: 0; background:#147a5226;";
+        	post.style = "z-index: 0; background:#fff;";
         	photo.style = "z-index: 0;";
         	track1.style = "display: none";
         	track2.style = "display: block";
    		 });
 
         $('#click2').click(function(){
-        	caper.style = "z-index: 0; background:#147a5226;";
+        	caper.style = "z-index: 0; background:#fff;";
         	track2.style = "display: none";
         	track3.style = "display: block";
    		 });
