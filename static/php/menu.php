@@ -35,7 +35,7 @@ if($user['configurado'] == 0){
 
 <div class="preto" id="preto"></div>
 
-<div class="track">
+<div class="track" id="track">
 
 <div class="track1" id="track1">
 <span>Isso aqui é onde você publica coisas no seu feed.</span>

@@ -5,6 +5,7 @@
 	var track2 = document.getElementById('track2');
 	var caper = document.getElementById('caper');
 	var track3 = document.getElementById('track3');
+  var track = document.getElementById('track');
 	var busca = document.getElementById('busca');
 	var header = document.getElementById('header');
 	var preto = document.getElementById('preto');
@@ -46,11 +47,12 @@
           $('#click3').click(function(){
         	header.style = "z-index: 5000;";
         	track3.style = "display: none";
+          track.style = "display: none";
         	preto.style = "display: none";
    		 });
 
           $(document).ready(function() {
-  		 $("#click3").click(function() {
+  		   $("#click3").click(function() {
         	var finalizado = "1"; 
         	$.post("/static/php/finish.php", {finalizado: finalizado},
         	function(data){
