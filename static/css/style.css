@@ -753,3 +753,11 @@ header #logo{
 	top: 10px;
 	position: relative;
 }
+
+.postagens a{
+	color: #000 !important;
+}
+
+.postagens a:hover{
+	text-decoration: underline;
+}

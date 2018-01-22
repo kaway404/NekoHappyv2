@@ -47,7 +47,7 @@ else
 		<img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
 		</div>
 
-		<p class="name-post"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?></p>
+		<a href="profile.php?id=<?php echo $people['id']; ?>"><p class="name-post"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?></p></a>
 
 		<p class="cont-d"><?php echo $coment['texto']; ?></p>
 
