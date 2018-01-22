@@ -8,6 +8,10 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
 <div class="avatar-t">
 <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" width="100%" height="100%" style="border-radius: 10px;"/>
 </div>
+<div id="box-s-h">
+<ul class="src">
+</ul>
+</div>
 <?Php } ?>
 </div>
 </header>

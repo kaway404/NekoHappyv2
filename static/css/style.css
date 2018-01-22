@@ -585,3 +585,53 @@ header #logo{
     cursor: pointer;
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
 }
+
+#box-s-h{
+	position: relative;
+	left: 200px;
+	height: auto;
+	width: auto;
+	top: 6px;
+}
+
+.src{
+	height: auto;
+	float: left;
+	width: 270px;
+	background: #0cdb8a;
+	padding-bottom: 0px;
+}
+
+.avatar6{
+	width: 29px;
+	height: 29px;
+	border-radius: 50%;
+	float: left;
+	left: 5px;
+	position: relative;
+}
+
+.buscaright{
+	position: relative;
+	float: left;
+	left: -40px;
+	background: #fff;
+	width: 310px;
+	margin-top: 2px;
+	transition: 0.4s;
+	padding: 5px;
+}
+
+.buscaright:hover{
+	background: #e5e5e5;
+}
+
+.name p{
+	position: relative;
+	top: 5px;
+	left: 20px;
+}
+
+.eoq{
+	color: #000 !important;
+}
