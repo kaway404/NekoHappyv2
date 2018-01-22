@@ -2,7 +2,6 @@
 	<div id="alinhar-h">
 	<img class="naruto" src="https://vignette2.wikia.nocookie.net/naruto/images/8/87/Chibi_Naruto_Perfil_da_Slytherin_Keeper.png/revision/latest?cb=20170512042300&path-prefix=pt-br"/>
 	<img class="piece" src="https://pre00.deviantart.net/e557/th/pre/i/2014/130/e/3/one_piece_render_by_bloomsama-d7huh3f.png"/>
-	<img class="boku" src="https://orig00.deviantart.net/9229/f/2016/129/e/f/alllmight_head_logo__boku_no_hero_academia_by_kaji_zu-da1w9hz.png"/>
 	<h1 id="logot">NekoHappy</h1>
 	<center>
 	<a href="?registro"><div class="btn-s"><div class="btn"><span>Registrar</span></div></div></a>
