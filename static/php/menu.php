@@ -14,7 +14,7 @@ if(isset($_GET['comunidadecreate'])){
 <?php } else{?>
 
 <div class="notice" id="fallen3">
-	<p>Crie sua primeira <a href="?comunidadecreate">comunidade</a></p>
+	<p>Crie sua primeira <a href="?comunidadecreate">comunidade</a>.</p>
 </div>
 <div class="profile-cap" id="caper">
 <div class="background-cap"></div>
@@ -336,6 +336,12 @@ if($user['configurado'] == 0){
 </div>
 
 </div>
+
+<style>
+body{
+    overflow-y: hidden !important;
+}
+</style>
 
 <script type="text/javascript" src="static/js/pratica.js"></script>
 
