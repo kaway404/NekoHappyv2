@@ -17,6 +17,7 @@ url: "actionpost.php",
 data: dataString,
 cache: true,
 success: function(html){
+location.reload();
 $("#show").after(html);
 document.getElementById('content').value='';
 $("#flash").hide();
@@ -24,7 +25,6 @@ $("#content").focus();
 }  
 });
 }
-location.reload();
 return false;
 });
 });

@@ -97,7 +97,7 @@ else
       <div class="ava-t-sd" id="photo">
     <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
     </div>
-    <a href="profile.php?id=<?php echo $people['id']; ?>"><p class="name-post"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?>   </p></a>
+    <a href="profile.php?id=<?php echo $people['id']; ?>"><p class="name-post"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?> comentou.  </p></a>
  <p class="cont-e"> <?php 
                                                     $emotions = array(':)', ':@', '8)', ':D', ':3', ':(', ';)', ':O', ':o', ':P', ':p', '<3');
                                                     $imgs = array(
@@ -118,6 +118,8 @@ else
                                                     echo $msg;
                                                     ?></p>
 
+
+    <input type="text" placeholder="Digite seu comentario aqui!" class="helloe"/>
 
     </div>
 

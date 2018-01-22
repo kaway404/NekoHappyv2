@@ -871,7 +871,7 @@ header #logo{
 	background: #fff;
 	position: relative;
 	border-top: 1px solid #e5e5e5;
-	display: none;
+	display: block;
 }
 
 .cont-e{
@@ -891,4 +891,13 @@ header #logo{
 	left: 20px;
 	float: left;
 	border-radius: 50%;
+}
+
+.helloe{
+	width: 98%;
+	border: none;
+	box-shadow: 1px 4px 8px 2px rgba(0,0,0,.20) !important;
+	height: 40px;
+	padding-left: 10px;
+	font-size: 1.1em;
 }
