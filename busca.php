@@ -122,3 +122,18 @@ msg.style = "display: block";
    		 });
 </script>
 <?php } ?>
+
+<?php
+if($nome == "naruto"){
+?>
+<script>
+var msg = document.getElementById('bakaetes');
+var closemsg = document.getElementById('close');
+$("#fuck").text("Não tem anime aqui ç.ç");
+msg.style = "display: block";
+
+ $('#close').click(function(){
+        	msg.style = "display: none;";
+   		 });
+</script>
+<?php } ?>
