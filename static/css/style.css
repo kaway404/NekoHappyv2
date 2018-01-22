@@ -619,7 +619,8 @@ header #logo{
 	width: 310px;
 	margin-top: 2px;
 	transition: 0.4s;
-	padding: 5px;
+	padding-bottom: 10px;
+	padding-top: 10px;
 }
 
 .buscaright:hover{
