@@ -30,4 +30,12 @@ else
  </div></li></a></p>
  
  <?php endforeach; ?>
+ <?php
+if (!$profile2){
+ echo '';
+}
+else{
+ ?>
+  <a href="search.php?result=<?php echo $nome; ?>" id="baka"><span id="maiss">Ver mais sobre <?Php echo $profile22['nome']; ?></span></a>
+  <?php } ?>
 <?php }?>
