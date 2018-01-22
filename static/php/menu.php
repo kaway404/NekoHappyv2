@@ -75,7 +75,7 @@ else
 <?php endforeach; endforeach; ?>
 <h1 id="cont2">Publicaçãos normais.</h1>
 <?php
-$coments = DBRead( 'post', "WHERE id ORDER BY id DESC" );
+$coments = DBRead( 'post', "WHERE id and destaque = 0 ORDER BY id DESC" );
 if (!$coments)
 echo '<div class="postagens" id="blank"><p class="bakeero">Sem postagem :/</p></div>';
 else  
