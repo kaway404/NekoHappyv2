@@ -38,3 +38,15 @@ $(document).ready(function() {
          return false;
     });
 });
+
+$(document).ready(function() {
+    $("#again").click(function() {
+        var senha = $("#senhaa").val(); 
+        $.post("again.php", {senha: senha},
+        function(data){
+         $("#resposta").html(data);
+         }
+         , "html");
+         return false;
+    });
+});

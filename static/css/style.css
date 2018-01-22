@@ -805,3 +805,18 @@ header #logo{
 .menu a{
 	color: #000 !important;
 }
+
+.avatar-i{
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	position: relative;
+	bottom: 20px;
+}
+
+#eto51{
+	color: #fff !important;
+	position: relative;
+	bottom: 10px;
+	font-size: 1.7em;
+}

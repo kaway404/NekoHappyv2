@@ -2,6 +2,24 @@
 <div class="account">
 <div class="form">
 	<?php
+	if((isset($_COOKIE['thecry']))){
+	$idcry = DBEscape( strip_tags(trim($_COOKIE['thecry']) ) );
+    $usercry = DBRead('user', "WHERE thecry = '{$idcry}' LIMIT 1 ");
+    $usercry = $usercry[0];
+	?>
+
+	<h1 class="login">Faça login novamante</h1>
+	<img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-i"/>
+	<h1 id="eto51"><?php echo $usercry['nome'] ?> <?php echo $usercry['sobrenome'] ?></h1>
+	<input type="password" name="senhar" id="senhaa" placeholder="Senha"/>
+	<div class="btn-sa" id="again"><div class="btna"><span>Login</span></div></div>
+	<p class="bat">Não sou eu, sair da conta clique s<a href="logoutp.php">aqui</a></p>
+	<div id="resposta">
+	</div>
+
+	<?php } else{ ?>
+
+	<?php
 	if(isset($_GET['login'])){
 	?>
 	<h1 class="login">Login</h1>
@@ -47,5 +65,8 @@
 	<div id="resposta">
 	</div>
 	<?php } ?>
+
+<?php } ?>
+
 </div>
 </div>
