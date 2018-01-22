@@ -18,16 +18,51 @@
 </div>
 <div class="main">
 <div class="publicar" id="pub">
-<textarea class="public" placeholder="No que estás a pensar?"></textarea>
+<textarea class="public" placeholder="No que estás a pensar?" id="content"></textarea>
+<div class="btn-sc" id="publish"><div class="btnc"><span>Publicar</span></div></div>
 </div>
 <div class="ava-t-e" id="photo">
 <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
 </div>
+
+
+<?php
+$coments = DBRead( 'post', "WHERE id ORDER BY id DESC LIMIT 1" );
+if (!$coments)
+echo '<div class="postagens" id="blank"><p class="bakeero">Sem postagem :/</p></div>';
+else  
+	foreach ($coments as $coment):	 
+?>
+<?php
+$comentiduser = $coment['iduser'];
+$peoples = DBRead( 'user', "WHERE id = $comentiduser ORDER BY id DESC LIMIT 1" );
+if (!$peoples)
+echo '';	
+else  
+	foreach ($peoples as $people):	 
+?>
+
 <div class="postagens">
+		<div class="ava-t-e" id="photo">
+		<img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
+		</div>
+
+		<p class="name-post"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?></p>
+
+		<p class="cont-d"><?php echo $coment['texto']; ?></p>
+
+		</div>
+
+<?php endforeach; endforeach; ?>
+
+<div class="space"></div>
+<div id="flash"></div>
+<div id="show"></div>
+
+
+
 </div>
-<div class="postagens">
-</div>
-</div>
+
 
 <?php 
 if($user['configurado'] == 0){
@@ -59,3 +94,16 @@ if($user['configurado'] == 0){
 <script type="text/javascript" src="static/js/pratica.js"></script>
 
 <?php } ?>
+</div>
+<center>
+<div class="bakat" id="bakaetes">
+<div class="msg" id="boxmsg">
+	<span>Escreva algo para publicar</span>
+	<div class="btn-sd" id="close"><div class="btnd"><span>Certo</span></div></div>
+</div>
+</div>
+</center>
+
+
+
+<script type="text/javascript" src="static/js/publicacao.js"></script>

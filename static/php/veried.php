@@ -4,7 +4,7 @@ if($user['lastlogin'] <> $_COOKIE['inisession']){
         setcookie("iduser" , "");
         setcookie("inisession" , "");
         setcookie("perfil" , "");
-        header("location: /");
+        header("location: /?error");
     }
     if($usercry['id'] <> $_COOKIE['iduser']){
         setcookie("iduser" , "");

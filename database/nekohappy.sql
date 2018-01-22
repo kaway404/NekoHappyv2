@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 21-Jan-2018 às 22:04
+-- Generation Time: 22-Jan-2018 às 17:20
 -- Versão do servidor: 10.1.28-MariaDB
 -- PHP Version: 5.6.32
 
@@ -25,6 +25,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `neko_post`
+--
+
+CREATE TABLE `neko_post` (
+  `id` int(11) NOT NULL,
+  `texto` text NOT NULL,
+  `iduser` int(11) NOT NULL,
+  `tim` datetime NOT NULL,
+  `tipo` varchar(3) NOT NULL,
+  `destaque` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `neko_post`
+--
+
+INSERT INTO `neko_post` (`id`, `texto`, `iduser`, `tim`, `tipo`, `destaque`) VALUES
+(1, 'Hello guys', 75, '2018-01-22 14:19:48', '1', 0),
+(2, 'Tudo otimo?', 75, '2018-01-22 14:19:53', '1', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `neko_user`
 --
 
@@ -35,6 +58,7 @@ CREATE TABLE `neko_user` (
   `senha` varchar(50) NOT NULL,
   `nome` varchar(255) NOT NULL,
   `sobrenome` varchar(255) NOT NULL,
+  `coins` varchar(255) NOT NULL,
   `inisession` datetime NOT NULL,
   `datec` datetime NOT NULL,
   `lastlogin` datetime NOT NULL,
@@ -47,12 +71,18 @@ CREATE TABLE `neko_user` (
 -- Extraindo dados da tabela `neko_user`
 --
 
-INSERT INTO `neko_user` (`id`, `thecry`, `email`, `senha`, `nome`, `sobrenome`, `inisession`, `datec`, `lastlogin`, `configurado`, `pin`, `ip`) VALUES
-(71, '85d9235d10cf197950d843e56b47021ff02b0cee', 'kaway@hotmail.com', 'a0b48bf6735b085374fa984535372a8025210e45', 'Alexandre', 'Silva', '2018-01-21 18:58:26', '2018-01-21 18:58:26', '2018-01-21 19:01:45', 0, '5151', '::1');
+INSERT INTO `neko_user` (`id`, `thecry`, `email`, `senha`, `nome`, `sobrenome`, `coins`, `inisession`, `datec`, `lastlogin`, `configurado`, `pin`, `ip`) VALUES
+(75, '85d9235d10cf197950d843e56b47021ff02b0cee', 'kaway@hotmail.com', 'a0b48bf6735b085374fa984535372a8025210e45', 'Alexandre', 'Silva', '50', '2018-01-22 14:12:00', '2018-01-22 14:12:00', '2018-01-22 14:12:11', 1, '5151', '187.55.8.149');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `neko_post`
+--
+ALTER TABLE `neko_post`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `neko_user`
@@ -65,10 +95,16 @@ ALTER TABLE `neko_user`
 --
 
 --
+-- AUTO_INCREMENT for table `neko_post`
+--
+ALTER TABLE `neko_post`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `neko_user`
 --
 ALTER TABLE `neko_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -449,8 +449,8 @@ header #logo{
 }
 
 .public{
-	width: 50%;
-	height: 90px;
+	width: 88%;
+	height: 60px;
 	border: none;
 	resize: none;
 	top: 5px;
@@ -465,7 +465,7 @@ header #logo{
 .publicar{
 	width: 100%;
 	background: #ffffff;
-	height: 90px;
+	height: 101px;
 	box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
 	position: relative;
 }
@@ -486,18 +486,6 @@ header #logo{
 	border-radius: 50%;
 }
 
-.postagens{
-	width: 100%;
-	height: 150px;
-	background: #ffffff;
-	box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
-	float: left;
-	position: relative;
-	left: 0px;
-	margin-left: 0px;
-	margin-top: 15px;
-	top: 10px;
-}
 
 .preto{
 	width: 100%;
@@ -513,7 +501,7 @@ header #logo{
 	width: 300px;
 	height: auto;
 	background: #0cdb8a;
-	top: 162px;
+	top: 140px;
 	left: 100px;
 	padding: 20px;
 	position: relative;
@@ -550,7 +538,7 @@ header #logo{
 }
 
 .track{
-	z-index: 6050;
+	z-index: 10000;
 	position: fixed;
 	height: 100%;
 	width: 60%;
@@ -645,4 +633,123 @@ header #logo{
 
 #baka{
 	color: #000;
+}
+
+.name-post{
+	font-size: 1.2em;
+	position: relative;
+	padding: 30px;
+	left: 45px;
+}
+
+.cont-d{
+	font-size: 1.2em;
+	position: relative;
+	left: 2px;
+}
+
+.postagens{
+	width: 98%;
+	height: auto;
+	background: #ffffff;
+	box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
+	float: left;
+	position: relative;
+	left: 0px;
+	margin-left: 0px;
+	margin-top: 15px;
+	top: 40px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 20px;
+}
+
+.btnc{
+	background: #fff;
+    border-radius: 5px;
+   	width: 140px;
+    padding: 5px 0px;
+}
+
+.btnc span{
+	color: #555;
+	font-size: 1.7em;
+	position: relative;
+	top: 0px;
+	left: 8px;
+}
+
+.btn-sc{
+	background: #cacaca;
+    box-shadow: 0 4px 8px 1px #7f7b7b;
+    border-radius: 5px;
+    width: 140px;
+    height: 50px;
+    position: absolute;
+    top: 75px;
+    display: inline-block;
+    float: right;
+    right: 9px;
+    cursor: pointer;
+    z-index: 50;
+}
+
+.msg{
+	width: 270px;
+	height: auto;
+	background: #fff;
+	padding: 20px;
+	position: relative;
+	box-shadow: 2px 1px 2px 3px rgba(0,0,0,.30);
+	border-radius: 5px;
+	top: 50px;
+	font-size: 1.2em;
+}
+
+.bakat{
+	position: fixed;
+	background: rgba(0,0,0,.50);
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 7000;
+	display: none;
+}
+
+.btnd{
+	background: #fff;
+    border-radius: 5px;
+   	width: 70px;
+    padding: 5px 0px;
+}
+
+.btnd span{
+	color: #555;
+	font-size: 1.1em;
+	position: relative;
+	top: 0px;
+	left: 0px;
+}
+
+.btn-sd{
+	background: #cacaca;
+    box-shadow: 0 4px 8px 1px #7f7b7b;
+    border-radius: 5px;
+    width: 70px;
+    height: 42px;
+    position: absolute;
+    top: 50px;
+    display: inline-block;
+    float: right;
+    right: 15px;
+    cursor: pointer;
+    z-index: 50;
+}
+
+.bakeero{
+	font-size: 20px;
+	text-align: center;
+	top: 10px;
+	position: relative;
 }
