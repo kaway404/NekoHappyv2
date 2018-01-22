@@ -6,7 +6,7 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
 ?>
 <input type="text" placeholder="Buscar pessoas e comunidades." class="buscar" id="busca"/>
 <div class="avatar-t">
-<img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" width="100%" height="100%" style="border-radius: 50%;"/>
+<img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" width="100%" height="100%" style="border-radius: 10px;"/>
 </div>
 <?Php } ?>
 </div>

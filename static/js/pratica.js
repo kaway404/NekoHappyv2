@@ -25,11 +25,8 @@
       	 	 }
 
       	 	 if (track3.style.display === "block") {
-        	 	header.style = "z-index: 9000;";
-        	} else {
-            	
-      	 	 }
-      	 	 
+        	 	 header.style = "z-index: 9000;";
+        	} 
 
    			 }, 100);
 
