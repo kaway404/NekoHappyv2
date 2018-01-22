@@ -23,6 +23,10 @@ a{
 }
 
 
+body{
+	background: #faf3f3;
+}
+
 header{
 	background: #0cdb8a;
 	position: fixed;
@@ -359,13 +363,14 @@ header #logo{
 }
 
 .profile-cap{
-	width: 250px;
+	width: 24%;
 	height: 200px;
-	background: #e5e5e5;
+	background: #147a5226;
 	position: relative;
 	top: 70px;
-	left: 10px;
-	margin: 0px auto;
+	float: right;
+	right: 0;
+	box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
 }
 
 .background-cap{
@@ -394,16 +399,6 @@ header #logo{
 	color: #000;
 }
 
-.main{
-	width: 50%;
-	height: 200px;
-	background: #e5e5e5;
-	position: relative;
-	margin: 0px auto;
-	top: 70px;
-	margin-top: 20px;
-}
-
 .buscar{
 	border: none;
 	height: 30px;
@@ -417,18 +412,19 @@ header #logo{
 .notice{
 	width: 100%;
 	height: 40px;
-	background: #9fa6b3;
+	background: #147a5226;
 	position: relative;
 	top: 60px;
 	border-radius: 2px;
 	text-align: center;
+	box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
 }
 
 .notice p{
 	font-size: 1.4em;
 	position: relative;
 	top: 5px;
-	color: #66591f;
+	color: #4e4e4e;
 }
 
 .avatar-t{
@@ -440,4 +436,152 @@ header #logo{
 	border-radius: 50%;
 	top: 5px;
 	cursor: pointer;
+}
+
+.main{
+	width: 75%;
+	height: 200px;
+	position: relative;
+	left: 0;
+	float: left;
+	top: 50px;
+	margin-top: 20px;
+}
+
+.public{
+	width: 50%;
+	height: 90px;
+	border: none;
+	resize: none;
+	top: 5px;
+	background: transparent;
+	position: relative;
+	float: left;
+	left: 90px;
+	z-index: 10;
+	font-size: 1.1em;
+}
+
+.publicar{
+	width: 100%;
+	background: #147a5226;
+	height: 90px;
+	box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
+	position: relative;
+}
+
+.avatar-post{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+.ava-t-e{
+	height: 45px;
+	width: 45px;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	float: left;
+	border-radius: 50%;
+}
+
+.postagens{
+	width: 100%;
+	height: 150px;
+	background: #147a5226;
+	box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
+	float: left;
+	position: relative;
+	left: 0px;
+	margin-left: 0px;
+	margin-top: 15px;
+	top: 10px;
+}
+
+.preto{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background: rgba(0,0,0,.50);
+	z-index: 6000;
+	left: 0;
+	top: 0;
+}
+
+.track1{
+	width: 300px;
+	height: auto;
+	background: #0cdb8a;
+	top: 162px;
+	left: 100px;
+	padding: 20px;
+	position: relative;
+	box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
+	border-radius: 5px;
+}
+
+.track2{
+	width: 300px;
+	height: auto;
+	background: #0cdb8a;
+	top: 278px;
+	padding: 20px;
+	position: relative;
+	box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
+	border-radius: 5px;
+	float: right;
+	display: none;
+	right: 0px;
+}
+
+.track3{
+	width: 270px;
+	height: auto;
+	background: #0cdb8a;
+	top: 0px;
+	padding: 20px;
+	position: absolute;
+	box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
+	border-radius: 5px;
+	display: none;
+	left: 200px;
+	float: left;
+}
+
+.track{
+	z-index: 6050;
+	position: fixed;
+	height: 100%;
+	width: 60%;
+	color: #111;
+}
+
+.btnb{
+	background: #0cdb8a;
+    border-radius: 5px;
+   	width: 140px;
+    padding: 5px 0px;
+}
+
+.btnb span{
+	color: #fff;
+	font-size: 1.7em;
+	position: relative;
+	top: 0px;
+	left: 8px;
+}
+
+.btn-sb{
+	background: #1ead75;
+    box-shadow: 0 4px 8px 0 rgba(43,102,79,0.55);
+    border-radius: 5px;
+    width: 140px;
+    height: 50px;
+    position: relative;
+    top: 15px;
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
 }
