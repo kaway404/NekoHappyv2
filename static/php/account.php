@@ -13,7 +13,7 @@
 	<h1 id="eto51"><?php echo $usercry['nome'] ?> <?php echo $usercry['sobrenome'] ?></h1>
 	<input type="password" name="senhar" id="senhaa" placeholder="Senha"/>
 	<div class="btn-sa" id="again"><div class="btna"><span>Login</span></div></div>
-	<p class="bat">Não sou eu, sair da conta clique s<a href="logoutp.php">aqui</a></p>
+	<p class="bat">Não sou eu, sair da conta clique <a href="logoutp.php">aqui</a></p>
 	<div id="resposta">
 	</div>
 
