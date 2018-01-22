@@ -1,4 +1,5 @@
 <?php
+if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_COOKIE['thecry'])))
 require 'static/php/system/database.php';
 require 'static/php/system/config.php';
 ?>
@@ -38,3 +39,4 @@ mysql_query('SET character_set_results=utf8');
 
 		</div>
 		<?php }?>
+<?php } ?>
