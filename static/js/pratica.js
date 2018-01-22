@@ -19,7 +19,7 @@
       	 	 }
 
       	 	  if (track2.style.display === "block") {
-        	 	caper.style = "z-index: 6000; background:#fff;";
+        	 	 caper.style = "z-index: 6500; background:#fff;";
         	} else {
             	caper.style = "z-index: 0; background:#147a5226;";
       	 	 }

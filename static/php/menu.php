@@ -49,7 +49,7 @@ if($user['configurado'] == 0){
 
 <div class="track3" id="track3">
 <span>Isso aqui é sua barra de pesquisa do NekoHappy.</span>
-<div class="btn-sb" id="click3"><div class="btnb"><span>Continuar</span></div></div>
+<div class="btn-sb" id="click3"><div class="btnb"><span>Finalizar</span></div></div>
 </div>
 
 </div>
