@@ -85,15 +85,58 @@ else
    <a class="like-btn ativolike" id="kawaii<?php echo $comentiduser; ?>">
    <?php endforeach;?>
     </a>
-
+ <a class="like-btn2" id="comentar<?php echo $comentiduser; ?>"></a>
     </div>
   </div>
+
+
+
+    <div class="comentarios" id="comentarios<?php echo $comentiduser; ?>">
+
+
+      <div class="ava-t-sd" id="photo">
+    <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
+    </div>
+    <a href="profile.php?id=<?php echo $people['id']; ?>"><p class="name-post"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?>   </p></a>
+ <p class="cont-e"> <?php 
+                                                    $emotions = array(':)', ':@', '8)', ':D', ':3', ':(', ';)', ':O', ':o', ':P', ':p', '<3');
+                                                    $imgs = array(
+                                                        '<img id="emoticon" src="/static/img/emotions/nice.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/angry.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/cool.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/happy.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/ooh.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/sad.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/right.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/ooooh.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/ooooh.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/pi.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/pi.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/heart.png"/>'
+                                                    );
+                                                    $msg = str_replace($emotions, $imgs, $coment['texto']);
+                                                    echo $msg;
+                                                    ?></p>
+
+
+    </div>
+
+
 
 
     </div>
 
 <script>
 var kawaii<?php echo $comentiduser; ?> = document.getElementById('kawaii<?php echo $comentiduser; ?>');
+var comentarios<?php echo $comentiduser; ?> = document.getElementById('comentarios<?php echo $comentiduser; ?>')
+
+ $('#comentar<?php echo $comentiduser; ?>').click(function(){
+          if (comentarios<?php echo $comentiduser; ?>.style.display === "block") {
+             comentarios<?php echo $comentiduser; ?>.style = "display: none;";
+          } else {
+              comentarios<?php echo $comentiduser; ?>.style = "display: block;";
+           }
+       });
 
 </script>
 

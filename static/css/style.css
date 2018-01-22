@@ -864,3 +864,31 @@ header #logo{
 .ativolike{
 	background-position: 0 -173px !important;
 }
+
+.comentarios{
+	width: 100%;
+	height: auto;
+	background: #fff;
+	position: relative;
+	border-top: 1px solid #e5e5e5;
+	display: none;
+}
+
+.cont-e{
+	font-size: 1.2em;
+	position: relative;
+	left: 25px;
+	bottom: 15px;
+	border-bottom: 1px solid #e5e5e5;
+	padding: 10px;
+}
+
+.ava-t-sd{
+	height: 45px;
+	width: 45px;
+	position: relative;
+	top: 20px;
+	left: 20px;
+	float: left;
+	border-radius: 50%;
+}

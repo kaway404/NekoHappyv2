@@ -2,7 +2,7 @@
   width: 20px;
   height: 20px;
   position: absolute;
-  bottom: 13px;
+  bottom: 20px;
   left: 13px;
   cursor: pointer;
   background-image: url(/static/img/react/reaction.png);
@@ -20,6 +20,31 @@
   top: -10px;
   left: 0;
 }
+
+.like-btn2 {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 20px;
+  left: 52px;
+  cursor: pointer;
+  background-image: url(/static/img/react/reaction.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: -19px -212px;
+}
+
+.like-btn2::before {
+  content: ".";
+  opacity: 0;
+  display: block;
+  width: 44px;
+  height: 10px;
+  position: absolute;
+  top: 0px;
+  left: 0;
+}
+
 .feed .like-btn .reaction-box {
   position: absolute;
   width: 80px;
