@@ -36,6 +36,6 @@ if (!$profile2){
 }
 else{
  ?>
-  <a href="search.php?result=<?php echo $nome; ?>" id="baka"><span id="maiss">Ver mais sobre <?Php echo $nome; ?></span></a>
+  <a href="search.php?result=<?php echo $nome; ?>" id="baka"><span id="maiss">Ver todos os resultados para <?Php echo $nome; ?></span></a>
   <?php } ?>
 <?php }?>
