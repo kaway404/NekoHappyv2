@@ -1,3 +1,7 @@
+<script  src="/static/js/index.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+
+ <link rel="stylesheet" href="/static/css/react.css">
 <?php
 if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_COOKIE['thecry']))){
 require 'static/php/system/database.php';
@@ -54,6 +58,30 @@ mysql_query('SET character_set_results=utf8');
                                                     $msg = str_replace($emotions, $imgs, $content);
                                                     echo $msg;
                                                     ?></p>
+                                                    <div class="post-bottom">
+	<div class="feed">
+	 <a class="like-btn">
+      <div class="reaction-box">
+        <div class="reaction-icon like">
+        <img src="/static/img/react/like.gif" class="react-icon-b-gif">
+         <label>Gosto</label>
+        </div>
+        <div class="reaction-icon love">
+        	<img src=/static/img/react/amei.gif class="react-icon-b-gif">
+         <label>Amei</label>
+        </div>
+        <div class="reaction-icon hate">
+        	<img src="/static/img/react/odeio.gif" class="react-icon-b-gif">
+         <label>Odeio</label>
+        </div>
+        <div class="reaction-icon laug">
+        	<img src="/static/img/react/haha.gif" class="react-icon-b-gif">
+         <label>Haha</label>
+        </div>
+      </div>
+  </a>
+		</div>
+	</div>
 
 		</div>
 		<?php }?>

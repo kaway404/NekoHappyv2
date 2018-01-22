@@ -29,7 +29,7 @@
 <?php
 $coments = DBRead( 'post', "WHERE id and destaque > 0 ORDER BY id DESC" );
 if (!$coments)
-echo '<div class="postagens" id="blank"><p class="bakeero">Sem publicações fixadas.</p></div>';
+echo '<div class="postagens"><p class="bakeero">Sem publicações fixadas.</p></div>';
 else  
 	foreach ($coments as $coment):	 
 ?>
@@ -70,15 +70,44 @@ else
                                                     echo $msg;
                                                     ?></p>
 
+                                                    <div class="post-bottom">
+	<div class="feed">
+	 <a class="like-btn">
+      <div class="reaction-box">
+        <div class="reaction-icon like">
+        <img src="/static/img/react/like.gif" class="react-icon-b-gif">
+         <label>Gostei</label>
+        </div>
+        <div class="reaction-icon love">
+        	<img src=/static/img/react/amei.gif class="react-icon-b-gif">
+         <label>Amei</label>
+        </div>
+        <div class="reaction-icon hate">
+        	<img src="/static/img/react/odeio.gif" class="react-icon-b-gif">
+         <label>Odeio</label>
+        </div>
+        <div class="reaction-icon laug">
+        	<img src="/static/img/react/haha.gif" class="react-icon-b-gif">
+         <label>Haha</label>
+        </div>
+      </div>
+  </a>
+		</div>
+	</div>
+
 		</div>
 
 <?php endforeach; endforeach; ?>
+
+
+
+
+<h1 id="cont2">Publicaçãos normais.</h1>
 
 <div class="space"></div>
 <div id="flash"></div>
 <div id="show"></div>
 
-<h1 id="cont2">Publicaçãos normais.</h1>
 <?php
 $coments = DBRead( 'post', "WHERE id and destaque = 0 ORDER BY id DESC" );
 if (!$coments)
@@ -145,12 +174,12 @@ else
   </a>
 		</div>
 	</div>
+
 		</div>
 
 
 
 <?php endforeach; endforeach; ?>
-
 
 
 
