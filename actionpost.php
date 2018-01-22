@@ -1,5 +1,5 @@
 <script  src="/static/js/index.js"></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
  <link rel="stylesheet" href="/static/css/react.css">
 <?php
@@ -32,14 +32,14 @@ mysql_query('SET character_set_results=utf8');
 			var blank = document.getElementById('blank');
 			blank.style = "display: none";
 		</script>
-		<div class="postagens">
-		<div class="ava-t-e" id="photo">
-		<img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
-		</div>
+	<div class="postagens" id="fallen">
+        <div class="ava-t-e" id="photo">
+        <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
+        </div>
 
-		<a href="profile.php?id=<?php echo $user['id']; ?>"><p class="name-post"><?php echo $user['nome'] ?> <?php echo $user['sobrenome'] ?></p></a>
+        <a href="profile.php?id=<?php echo $user['id']; ?>"><p class="name-post"><?php echo $user['nome'] ?> <?php echo $user['sobrenome'] ?></p></a>
 
-		<p class="cont-d"><?php 
+        <p class="cont-d"> <?php 
                                                     $emotions = array(':)', ':@', '8)', ':D', ':3', ':(', ';)', ':O', ':o', ':P', ':p', '<3');
                                                     $imgs = array(
                                                         '<img id="emoticon" src="/static/img/emotions/nice.png"/>',
@@ -58,31 +58,81 @@ mysql_query('SET character_set_results=utf8');
                                                     $msg = str_replace($emotions, $imgs, $content);
                                                     echo $msg;
                                                     ?></p>
-                                                    <div class="post-bottom">
-	<div class="feed">
-	 <a class="like-btn">
-      <div class="reaction-box">
-        <div class="reaction-icon like">
-        <img src="/static/img/react/like.gif" class="react-icon-b-gif">
-         <label>Gosto</label>
-        </div>
-        <div class="reaction-icon love">
-        	<img src=/static/img/react/amei.gif class="react-icon-b-gif">
-         <label>Amei</label>
-        </div>
-        <div class="reaction-icon hate">
-        	<img src="/static/img/react/odeio.gif" class="react-icon-b-gif">
-         <label>Odeio</label>
-        </div>
-        <div class="reaction-icon laug">
-        	<img src="/static/img/react/haha.gif" class="react-icon-b-gif">
-         <label>Haha</label>
-        </div>
-      </div>
-  </a>
-		</div>
-	</div>
 
-		</div>
+    <?php
+    $busca2  = "SELECT id FROM neko_post WHERE texto = '".$content."' and iduser = $iduser";
+    $identificacao2 = mysql_query($busca2);
+    $retorno2 = mysql_fetch_array($identificacao2);
+    $postid = $retorno2['id'];
+    ?>
+
+<div class="post-bottom">
+    <div class="feed">
+<?php
+$comentid = $postid;
+$iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
+$comentiduser = $postid;
+$likes = DBRead( 'like', "WHERE idpost = $comentiduser and iduser = $iduser ORDER BY id DESC" );
+if (!$likes)
+echo '<a class="like-btn" id="kawaii'.$comentiduser.'">';
+else  
+    foreach ($likes as $like):
+?>
+     <a class="like-btn ativolike" id="kawaii<?php echo $comentiduser; ?>">
+     <?php endforeach;?>
+    </a>
+
+        </div>
+    </div>
+
+
+        </div>
+
+<script>
+var kawaii<?php echo $comentiduser; ?> = document.getElementById('kawaii<?php echo $comentiduser; ?>');
+</script>
+
+<?php
+$dbCheck = DBRead( 'like', "WHERE id and idpost = $comentiduser and iduser = $iduser" );
+
+if( $dbCheck ){
+?>
+<script>
+   $(document).ready(function() {
+    $("#kawaii<?php echo $comentiduser; ?>").click(function() {
+        var post = <?php echo $postid;?>; 
+        $.post("/static/php/react.php", {post: post},
+        function(data){
+         $("#respostaba").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+</script>
+<?php } else{ ?>
+<script>
+   $(document).ready(function() {
+    $("#kawaii<?php echo $comentiduser; ?>").click(function() {
+        var post = <?php echo $postid; ?>; 
+        $.post("/static/php/react.php", {post: post},
+        function(data){
+         $("#respostaba").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+</script>
+<?Php } ?>
+
+
+
+<div id="respostaba">
+
+</div>
+
+
+</div>
 		<?php }?>
 <?php } ?>
