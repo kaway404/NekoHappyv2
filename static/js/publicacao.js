@@ -24,6 +24,7 @@ $("#content").focus();
 }  
 });
 }
+location.reload();
 return false;
 });
 });
