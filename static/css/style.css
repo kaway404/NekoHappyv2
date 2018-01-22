@@ -621,6 +621,7 @@ header #logo{
 	transition: 0.4s;
 	padding-bottom: 10px;
 	padding-top: 10px;
+	bottom: 2px;
 }
 
 .buscaright:hover{
