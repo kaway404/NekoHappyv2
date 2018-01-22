@@ -39,3 +39,56 @@ else{
   <a href="search.php?result=<?php echo $nome; ?>" id="baka"><span id="maiss">Ver todos os resultados para <?Php echo $nome; ?></span></a>
   <?php } ?>
 <?php }?>
+
+
+<?php
+if($nome == "Admin"){
+?>
+ <a class="eoq" href='https://facebook.com/imxandeco' target="_blank"><li class='buscaright'><img src='https://scontent.ffln4-1.fna.fbcdn.net/v/t1.0-9/20882561_273085526510577_87597807401529003_n.jpg?oh=b0af9c3ec33fe2cb0cb0c996d97dddc1&oe=5AF20BF1' class='avatar6'/><div class='name'><p>
+ 	Alexandre Silva
+ </p></div></li></a>
+<?php } ?>
+
+<?php
+if($nome == "admin"){
+?>
+ <a class="eoq" href='https://facebook.com/imxandeco' target="_blank"><li class='buscaright'><img src='https://scontent.ffln4-1.fna.fbcdn.net/v/t1.0-9/20882561_273085526510577_87597807401529003_n.jpg?oh=b0af9c3ec33fe2cb0cb0c996d97dddc1&oe=5AF20BF1' class='avatar6'/><div class='name'><p>
+ 	Alexandre Silva
+ </p></div></li></a>
+<?php } ?>
+
+<?php
+if($nome == "fall"){
+?>
+<script>
+var header = document.getElementById('header');
+ $('#header').parent().css('overflow','hidden');
+   $('#header').animate({'top': '+=2500px', opacity: 0},function(){
+     $(this).hide();
+   });
+    $('#fallen').parent().css('overflow','hidden');
+   $('#fallen').animate({'top': '+=2500px', opacity: 0},function(){
+     $(this).hide();
+   });
+      $('#fallen2').parent().css('overflow','hidden');
+   $('#fallen2').animate({'top': '+=2500px', opacity: 0},function(){
+     $(this).hide();
+   });
+     $('#fallen3').parent().css('overflow','hidden');
+   $('#fallen3').animate({'top': '+=2500px', opacity: 0},function(){
+     $(this).hide();
+   });
+     $('#fallen4').parent().css('overflow','hidden');
+   $('#fallen4').animate({'top': '+=2500px', opacity: 0},function(){
+     $(this).hide();
+   });
+    $('#fallen5').parent().css('overflow','hidden');
+   $('#fallen5').animate({'top': '+=2500px', opacity: 0},function(){
+     $(this).hide();
+   });
+    $('body').parent().css('overflow','hidden');
+   $('body').animate({'top': '+=2500px', opacity: 0},function(){
+     $(this).hide();
+   });
+</script>
+<?php } ?>

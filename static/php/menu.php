@@ -5,8 +5,8 @@
 </style>
 
 
-<div id="alinhar-h">
-<div class="notice">
+<div id="alinhar-h" id="fallen4">
+<div class="notice" id="fallen3">
 	<p>Crie sua primeira comunidade</p>
 </div>
 <div class="profile-cap" id="caper">
@@ -16,8 +16,8 @@
 <a class="eto" href="profile.php?id=<?php echo $user['id']; ?>"><h1 class="bakero"><?php echo $user['nome'] ?></h1></a>
 </center>
 </div>
-<div class="main">
-<div class="publicar" id="pub">
+<div class="main" id="fallen2">
+<div class="publicar" id="pub" id="fallen5">
 <textarea class="public" placeholder="No que estás a pensar?" id="content"></textarea>
 <div class="btn-sc" id="publish"><div class="btnc"><span>Publicar</span></div></div>
 </div>
@@ -42,7 +42,7 @@ else
 	foreach ($peoples as $people):	 
 ?>
 
-<div class="postagens">
+<div class="postagens" id="fallen">
 		<div class="ava-t-e" id="photo">
 		<img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
 		</div>
