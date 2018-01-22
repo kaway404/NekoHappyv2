@@ -1,0 +1,84 @@
+html, body {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.feed {
+  width: 500px; height: 473px;
+  background-image: url(https://i.imgur.com/HckmGbj.png);
+  position: relative;
+
+  .like-btn {
+    width: 44px; height: 25px;
+    background: #D0D0D0;
+    position: absolute;
+    bottom: 13px; left: 13px;
+    cursor: pointer;
+
+    &::before {
+      content: "."; opacity: 0;
+      display: block;
+      width: 44px; height: 10px;
+      position: absolute;
+      top: -10px; left: 0;
+    }
+
+    .reaction-box {
+      position: absolute;
+      width: 312px; height: 55px;
+      background: #F0C674;
+      border-radius: 28px;
+      left: -25px; bottom: 35px;
+      display: none;
+
+      .reaction-icon {
+        width: 40px; height: 40px;
+        display: inline-block;
+        background: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b8905f34464983.56d19a1eaf986.jpg);
+        border-radius: 20px;
+        margin: 8px -1px 0 8px;
+        text-align: center;
+        // Animation
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        opacity: 0;
+        transform: translate(0, 100px) scale(0);
+
+        label {
+          padding: 3px 5px 3px 5px;
+          position: relative;
+          top: -24px;
+          border-radius: 10px;
+          font-size: 11px;
+          color: #FFF;
+          background: #333;
+          visibility: hidden;
+        }
+      }
+    }
+
+    &:hover {
+      background: #718C00;
+
+      .reaction-box {
+        display: block;  
+
+        .reaction-icon {
+
+          &.show {
+            opacity: 1;
+            transform: translate(0, 0) scale(1);
+          }
+
+          &:hover {
+            transform: scale(1.4);
+            transform-origin: bottom;
+
+            label {
+              visibility: visible;
+            }
+          }
+        }
+      }
+    }
+  }
+}

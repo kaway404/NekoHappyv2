@@ -73,6 +73,11 @@ else
 		</div>
 
 <?php endforeach; endforeach; ?>
+
+<div class="space"></div>
+<div id="flash"></div>
+<div id="show"></div>
+
 <h1 id="cont2">Publicaçãos normais.</h1>
 <?php
 $coments = DBRead( 'post', "WHERE id and destaque = 0 ORDER BY id DESC" );
@@ -116,14 +121,36 @@ else
                                                     $msg = str_replace($emotions, $imgs, $coment['texto']);
                                                     echo $msg;
                                                     ?></p>
-
+<div class="post-bottom">
+	<div class="feed">
+	 <a class="like-btn">
+      <div class="reaction-box">
+        <div class="reaction-icon like">
+        <img src="/static/img/react/like.gif" class="react-icon-b-gif">
+         <label>Gosto</label>
+        </div>
+        <div class="reaction-icon love">
+        	<img src=/static/img/react/amei.gif class="react-icon-b-gif">
+         <label>Amei</label>
+        </div>
+        <div class="reaction-icon hate">
+        	<img src="/static/img/react/odeio.gif" class="react-icon-b-gif">
+         <label>Odeio</label>
+        </div>
+        <div class="reaction-icon laug">
+        	<img src="/static/img/react/haha.gif" class="react-icon-b-gif">
+         <label>Haha</label>
+        </div>
+      </div>
+  </a>
 		</div>
+	</div>
+		</div>
+
+
 
 <?php endforeach; endforeach; ?>
 
-<div class="space"></div>
-<div id="flash"></div>
-<div id="show"></div>
 
 
 

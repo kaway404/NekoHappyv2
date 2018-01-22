@@ -651,13 +651,13 @@ header #logo{
 .postagens{
 	width: 98%;
 	height: auto;
-	background: #ffffff;
+	background: #f5f5f5;
 	box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
 	float: left;
 	position: relative;
 	left: 0px;
 	margin-left: 0px;
-	margin-top: 15px;
+	margin-top: 25px;
 	top: 40px;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -838,18 +838,25 @@ header #logo{
 	position: relative;
 	top: 49px;
 	padding: 5px;
-	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
 }
 
 #cont2{
 	font-size: 1.1em;
 	position: relative;
-	top: 49px;
+	top: 70px;
 	padding: 5px;
 	border-bottom: 1px solid #000;
-	border-top: 1px solid #000;
 }
 
 #fallenl{
 	box-shadow: 0 4px 8px 1px #0cdb8a30 !important;
+}
+
+.post-bottom{
+	width: 100%;
+	height: 50px;
+	position: relative;
+	top: 10px;
+	border-top: 1px solid #e5e5e5;
 }
