@@ -825,3 +825,31 @@ header #logo{
 	width: 24px;
 	height: 24px;
 }
+
+.fixada{
+	float: right;
+	position: relative;
+	right: 10px;
+	top: 10px;
+}
+
+#cont{
+	font-size: 1.1em;
+	position: relative;
+	top: 49px;
+	padding: 5px;
+	border-top: 1px solid #000;
+}
+
+#cont2{
+	font-size: 1.1em;
+	position: relative;
+	top: 49px;
+	padding: 5px;
+	border-bottom: 1px solid #000;
+	border-top: 1px solid #000;
+}
+
+#fallenl{
+	box-shadow: 0 4px 8px 1px #0cdb8a30 !important;
+}

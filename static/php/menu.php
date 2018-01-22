@@ -25,7 +25,55 @@
 <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
 </div>
 
+<h1 id="cont">Publicação fixada.</h1>
+<?php
+$coments = DBRead( 'post', "WHERE id and destaque > 0 ORDER BY id DESC" );
+if (!$coments)
+echo '<div class="postagens" id="blank"><p class="bakeero">Sem publicações fixadas.</p></div>';
+else  
+	foreach ($coments as $coment):	 
+?>
+<?php
+$comentiduser = $coment['iduser'];
+$peoples = DBRead( 'user', "WHERE id = $comentiduser ORDER BY id DESC LIMIT 1" );
+if (!$peoples)
+echo '';	
+else  
+	foreach ($peoples as $people):	 
+?>
 
+<div class="postagens" id="fallenl">
+		<div class="ava-t-e" id="photo">
+		<img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
+		</div>
+		<svg class="fixada"  height="22" version="1.1" width="22" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><g transform="translate(0 -1028.4)"><path d="m9.5999 1.4564 1.5501 4.7699 5.015 0.0002-4.057 2.9482 1.55 4.7703-4.0581-2.948-4.0577 2.948 1.5497-4.7703-4.0575-2.9482 5.0154-0.0002z" fill="#f1c40f" stroke="#f39c12" stroke-width=".69755" transform="matrix(1.4336 0 0 1.4336 -1.7602 1028.9)"/></g></svg>
+
+		<a href="profile.php?id=<?php echo $people['id']; ?>"><p class="name-post"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?> 	</p></a>
+
+		<p class="cont-d"> <?php 
+                                                    $emotions = array(':)', ':@', '8)', ':D', ':3', ':(', ';)', ':O', ':o', ':P', ':p', '<3');
+                                                    $imgs = array(
+                                                        '<img id="emoticon" src="/static/img/emotions/nice.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/angry.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/cool.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/happy.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/ooh.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/sad.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/right.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/ooooh.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/ooooh.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/pi.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/pi.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/heart.png"/>'
+                                                    );
+                                                    $msg = str_replace($emotions, $imgs, $coment['texto']);
+                                                    echo $msg;
+                                                    ?></p>
+
+		</div>
+
+<?php endforeach; endforeach; ?>
+<h1 id="cont2">Publicaçãos normais.</h1>
 <?php
 $coments = DBRead( 'post', "WHERE id ORDER BY id DESC" );
 if (!$coments)
