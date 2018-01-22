@@ -27,7 +27,7 @@
 
 
 <?php
-$coments = DBRead( 'post', "WHERE id ORDER BY id DESC LIMIT 1" );
+$coments = DBRead( 'post', "WHERE id ORDER BY id DESC" );
 if (!$coments)
 echo '<div class="postagens" id="blank"><p class="bakeero">Sem postagem :/</p></div>';
 else  
