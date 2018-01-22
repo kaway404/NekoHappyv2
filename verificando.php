@@ -1,6 +1,7 @@
 <?php
   require 'static/php/system/database.php';
   require 'static/php/system/config.php';
+  if(isset($_COOKIE['iduser']) ){
   mysql_connect('localhost', 'root','')or die();	//Conecta com o MySQL
   mysql_select_db('nekohappy');						//Seleciona banco de dados
   
@@ -32,4 +33,5 @@
 	else{
         echo '<p>Pincode incorreto</p>';
   }
+}
 ?>
