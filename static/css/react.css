@@ -6,9 +6,9 @@
   left: 13px;
   cursor: pointer;
   background-image: url(/static/img/react/reaction.png);
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position: 0 -193px;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 0 -193px;
 }
 .feed .like-btn::before {
   content: ".";

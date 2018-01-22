@@ -4,7 +4,7 @@ $(function(){
       setTimeout(function(){
         $(element).addClass("show");
       }, index * 200);
-    });
+    	});
   }, function() {
     $(".reaction-icon").removeClass("show")
   });

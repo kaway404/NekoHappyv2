@@ -74,19 +74,19 @@ else
 	<div class="feed">
 	 <a class="like-btn">
       <div class="reaction-box">
-        <div class="reaction-icon like">
+        <div id="gosteireact" class="reaction-icon">
         <img src="/static/img/react/like.gif" class="react-icon-b-gif">
          <label>Gostei</label>
         </div>
-        <div class="reaction-icon love">
-        	<img src=/static/img/react/amei.gif class="react-icon-b-gif">
+        <div class="reaction-icon>
+        	<img src=/static/img/react/amei.gif" class="react-icon-b-gif">
          <label>Amei</label>
         </div>
-        <div class="reaction-icon hate">
+        <div class="reaction-icon">
         	<img src="/static/img/react/odeio.gif" class="react-icon-b-gif">
          <label>Odeio</label>
         </div>
-        <div class="reaction-icon laug">
+        <div class="reaction-icon">
         	<img src="/static/img/react/haha.gif" class="react-icon-b-gif">
          <label>Haha</label>
         </div>
@@ -97,10 +97,8 @@ else
 
 		</div>
 
+
 <?php endforeach; endforeach; ?>
-
-
-
 
 <h1 id="cont2">Publicaçãos normais.</h1>
 
@@ -152,9 +150,21 @@ else
                                                     ?></p>
 <div class="post-bottom">
 	<div class="feed">
-	 <a class="like-btn">
+<?php
+$comentid = $coment['id'];
+$iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
+$comentiduser = $coment['id'];
+$likes = DBRead( 'like', "WHERE idpost = $comentiduser and iduser = $iduser ORDER BY id DESC" );
+if (!$likes)
+echo '<a class="like-btn" id="kawaii<?php echo $comentid; ?>">';
+else  
+	foreach ($likes as $like):
+?>
+	 <a class="like-btn ativolike" id="kawaii<?php echo $comentid; ?>">
+	 <?php endforeach;?>
+
       <div class="reaction-box">
-        <div class="reaction-icon like">
+        <div class="reaction-icon like" id="gosteireact">
         <img src="/static/img/react/like.gif" class="react-icon-b-gif">
          <label>Gosto</label>
         </div>
@@ -178,9 +188,34 @@ else
 		</div>
 
 
+<?php
+$dbCheck = DBRead( 'like', "WHERE id and idpost = $comentiduser and iduser = $iduser" );
 
-<?php endforeach; endforeach; ?>
+if( $dbCheck ){
+?>
+<script>
+	 $('#gosteireact').click(function(){
+        	$.post('/static/php/react.php?post=<?php echo $coment['id']; ?>', function (html) {
+			});
+			$('.like-btn').removeClass("ativolike");
+			return false;
+   		 });
+</script>
+<?php } else{ ?>
+<script>
+	 $('#gosteireact').click(function(){
+        	$.post('/static/php/react.php?post=<?php echo $coment['id']; ?>', function (html) {
+			});
+			$('.like-btn').addClass("ativolike");
+			return false;
+   		 });
+</script>
+<?Php } ?>
 
+</script>
+
+
+<?php endforeach; endforeach;?>
 
 
 </div>
