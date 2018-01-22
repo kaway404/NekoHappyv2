@@ -365,7 +365,7 @@ header #logo{
 .profile-cap{
 	width: 24%;
 	height: 200px;
-	background: #147a5226;
+	background: #ffffff;
 	position: relative;
 	top: 70px;
 	float: right;
@@ -412,7 +412,7 @@ header #logo{
 .notice{
 	width: 100%;
 	height: 40px;
-	background: #147a5226;
+	background: #ffffff;
 	position: relative;
 	top: 60px;
 	border-radius: 2px;
@@ -464,7 +464,7 @@ header #logo{
 
 .publicar{
 	width: 100%;
-	background: #147a5226;
+	background: #ffffff;
 	height: 90px;
 	box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
 	position: relative;
@@ -489,7 +489,7 @@ header #logo{
 .postagens{
 	width: 100%;
 	height: 150px;
-	background: #147a5226;
+	background: #ffffff;
 	box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
 	float: left;
 	position: relative;
