@@ -820,3 +820,8 @@ header #logo{
 	bottom: 10px;
 	font-size: 1.7em;
 }
+
+#emoticon{
+	width: 24px;
+	height: 24px;
+}

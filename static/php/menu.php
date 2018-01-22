@@ -49,7 +49,25 @@ else
 
 		<a href="profile.php?id=<?php echo $people['id']; ?>"><p class="name-post"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?></p></a>
 
-		<p class="cont-d"><?php echo $coment['texto']; ?></p>
+		<p class="cont-d"> <?php 
+                                                    $emotions = array(':)', ':@', '8)', ':D', ':3', ':(', ';)', ':O', ':o', ':P', ':p', '<3');
+                                                    $imgs = array(
+                                                        '<img id="emoticon" src="/static/img/emotions/nice.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/angry.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/cool.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/happy.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/ooh.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/sad.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/right.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/ooooh.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/ooooh.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/pi.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/pi.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/heart.png"/>'
+                                                    );
+                                                    $msg = str_replace($emotions, $imgs, $coment['texto']);
+                                                    echo $msg;
+                                                    ?></p>
 
 		</div>
 

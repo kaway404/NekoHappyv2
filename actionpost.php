@@ -1,5 +1,5 @@
 <?php
-if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_COOKIE['thecry'])))
+if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_COOKIE['thecry']))){
 require 'static/php/system/database.php';
 require 'static/php/system/config.php';
 ?>
@@ -35,7 +35,25 @@ mysql_query('SET character_set_results=utf8');
 
 		<a href="profile.php?id=<?php echo $user['id']; ?>"><p class="name-post"><?php echo $user['nome'] ?> <?php echo $user['sobrenome'] ?></p></a>
 
-		<p class="cont-d"><?php echo $content; ?></p>
+		<p class="cont-d"><?php 
+                                                    $emotions = array(':)', ':@', '8)', ':D', ':3', ':(', ';)', ':O', ':o', ':P', ':p', '<3');
+                                                    $imgs = array(
+                                                        '<img id="emoticon" src="/static/img/emotions/nice.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/angry.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/cool.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/happy.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/ooh.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/sad.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/right.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/ooooh.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/ooooh.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/pi.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/pi.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/heart.png"/>'
+                                                    );
+                                                    $msg = str_replace($emotions, $imgs, $content);
+                                                    echo $msg;
+                                                    ?></p>
 
 		</div>
 		<?php }?>
