@@ -6,8 +6,15 @@
 
 
 <div id="alinhar-h" id="fallen4">
+<?php 
+if(isset($_GET['comunidadecreate'])){
+?>
+
+
+<?php } else{?>
+
 <div class="notice" id="fallen3">
-	<p>Crie sua primeira comunidade</p>
+	<p>Crie sua primeira <a href="?comunidadecreate">comunidade</a></p>
 </div>
 <div class="profile-cap" id="caper">
 <div class="background-cap"></div>
@@ -346,3 +353,5 @@ if($user['configurado'] == 0){
 
 
 <script type="text/javascript" src="static/js/publicacao.js"></script>
+
+<?Php } ?> 
