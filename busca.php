@@ -63,32 +63,62 @@ if($nome == "fall"){
 <script>
 var header = document.getElementById('header');
  $('#header').parent().css('overflow','hidden');
-   $('#header').animate({'top': '+=2500px', opacity: 0},function(){
+   $('#header').animate({'top': '+=4500px',},function(){
      $(this).hide();
    });
     $('#fallen').parent().css('overflow','hidden');
-   $('#fallen').animate({'top': '+=2500px', opacity: 0},function(){
-     $(this).hide();
+   $('#fallen').animate({'top': '+=4500px',},function(){
    });
       $('#fallen2').parent().css('overflow','hidden');
-   $('#fallen2').animate({'top': '+=2500px', opacity: 0},function(){
+   $('#fallen2').animate({'top': '+=4500px', },function(){
      $(this).hide();
    });
      $('#fallen3').parent().css('overflow','hidden');
-   $('#fallen3').animate({'top': '+=2500px', opacity: 0},function(){
+   $('#fallen3').animate({'top': '+=4500px',},function(){
      $(this).hide();
    });
      $('#fallen4').parent().css('overflow','hidden');
-   $('#fallen4').animate({'top': '+=2500px', opacity: 0},function(){
+   $('#fallen4').animate({'top': '+=4500px', },function(){
      $(this).hide();
    });
     $('#fallen5').parent().css('overflow','hidden');
-   $('#fallen5').animate({'top': '+=2500px', opacity: 0},function(){
+   $('#fallen5').animate({'top': '+=4500px',},function(){
      $(this).hide();
    });
     $('body').parent().css('overflow','hidden');
-   $('body').animate({'top': '+=2500px', opacity: 0},function(){
+   $('body').animate({'top': '+=4500px',},function(){
      $(this).hide();
    });
+</script>
+<?php } ?>
+
+
+<?php
+if($nome == "666"){
+?>
+<script>
+var msg = document.getElementById('bakaetes');
+var closemsg = document.getElementById('close');
+$("#fuck").text("Você não pode pesquisar por isso...");
+msg.style = "display: block";
+
+ $('#close').click(function(){
+        	msg.style = "display: none;";
+   		 });
+</script>
+<?php } ?>
+
+<?php
+if($nome == "hentai"){
+?>
+<script>
+var msg = document.getElementById('bakaetes');
+var closemsg = document.getElementById('close');
+$("#fuck").text("hmmmm. Safado.");
+msg.style = "display: block";
+
+ $('#close').click(function(){
+        	msg.style = "display: none;";
+   		 });
 </script>
 <?php } ?>

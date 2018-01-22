@@ -98,7 +98,7 @@ if($user['configurado'] == 0){
 <center>
 <div class="bakat" id="bakaetes">
 <div class="msg" id="boxmsg">
-	<span>Escreva algo para publicar</span>
+	<span id="fuck"></span>
 	<div class="btn-sd" id="close"><div class="btnd"><span>Certo</span></div></div>
 </div>
 </div>

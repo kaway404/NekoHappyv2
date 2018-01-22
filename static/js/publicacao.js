@@ -6,6 +6,7 @@ var textcontent = $("#content").val();
 var dataString = 'content='+ textcontent;
 if(textcontent=='')
 {
+$("#fuck").text("Você não pode deixar o campo vazio.");
 msg.style = "display: block";
 }
 else
