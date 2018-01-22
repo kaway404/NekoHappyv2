@@ -428,13 +428,13 @@ header #logo{
 }
 
 .avatar-t{
-	float: right;
+	float: left;
 	position: relative;
 	background: #000;
 	width: 32px;
 	height: 32px;
 	border-radius: 10px;
-	top: 9px;
+	top: -6px;
 	cursor: pointer;
 }
 
@@ -760,4 +760,48 @@ header #logo{
 
 .postagens a:hover{
 	text-decoration: underline;
+}
+
+.down-e{
+	float: right;
+	position: relative;
+	top: 15px;
+	cursor: pointer;
+}
+
+.down-e svg{
+	position: relative;
+	top: 2px;
+}
+
+.menu{
+	float: right;
+	position: relative;
+	width: 150px;
+	height: auto;
+	padding-bottom: 10px;
+	background: #0cdb8a;
+	top: 50px;
+	box-shadow: 0 4px 8px 1px #7f7b7b;
+	left: 75px;
+	text-align: center;
+	display: none;
+}
+
+.menu li{
+	font-size: 1.1em;
+	position: relative;
+	top: 5px;
+	cursor: pointer;
+	transition: 0.3s;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+.menu li:hover{
+	background: #e5e5e5;
+}
+
+.menu a{
+	color: #000 !important;
 }
