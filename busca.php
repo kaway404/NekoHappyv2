@@ -94,7 +94,7 @@ var header = document.getElementById('header');
 
 
 <?php
-if($nome == "666"){
+if($nome == "satan"){
 ?>
 <script>
 var msg = document.getElementById('bakaetes');
