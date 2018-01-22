@@ -156,37 +156,24 @@ $iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
 $comentiduser = $coment['id'];
 $likes = DBRead( 'like', "WHERE idpost = $comentiduser and iduser = $iduser ORDER BY id DESC" );
 if (!$likes)
-echo '<a class="like-btn" id="kawaii<?php echo $comentid; ?>">';
+echo '<a class="like-btn" id="kawaii'.$comentiduser.'">';
 else  
 	foreach ($likes as $like):
 ?>
-	 <a class="like-btn ativolike" id="kawaii<?php echo $comentid; ?>">
+	 <a class="like-btn ativolike" id="kawaii<?php echo $comentiduser; ?>">
 	 <?php endforeach;?>
+    </a>
 
-      <div class="reaction-box">
-        <div class="reaction-icon like" id="gosteireact">
-        <img src="/static/img/react/like.gif" class="react-icon-b-gif">
-         <label>Gosto</label>
-        </div>
-        <div class="reaction-icon love">
-        	<img src=/static/img/react/amei.gif class="react-icon-b-gif">
-         <label>Amei</label>
-        </div>
-        <div class="reaction-icon hate">
-        	<img src="/static/img/react/odeio.gif" class="react-icon-b-gif">
-         <label>Odeio</label>
-        </div>
-        <div class="reaction-icon laug">
-        	<img src="/static/img/react/haha.gif" class="react-icon-b-gif">
-         <label>Haha</label>
-        </div>
-      </div>
-  </a>
 		</div>
 	</div>
 
+
 		</div>
 
+<script>
+var kawaii<?php echo $comentiduser; ?> = document.getElementById('kawaii<?php echo $comentiduser; ?>');
+
+</script>
 
 <?php
 $dbCheck = DBRead( 'like', "WHERE id and idpost = $comentiduser and iduser = $iduser" );
@@ -194,28 +181,40 @@ $dbCheck = DBRead( 'like', "WHERE id and idpost = $comentiduser and iduser = $id
 if( $dbCheck ){
 ?>
 <script>
-	 $('#gosteireact').click(function(){
-        	$.post('/static/php/react.php?post=<?php echo $coment['id']; ?>', function (html) {
-			});
-			$('.like-btn').removeClass("ativolike");
-			return false;
-   		 });
+   $(document).ready(function() {
+    $("#kawaii<?php echo $comentiduser; ?>").click(function() {
+        var post = <?php echo $coment['id'] ?>; 
+        $.post("/static/php/react.php", {post: post},
+        function(data){
+         $("#respostaba").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
 </script>
 <?php } else{ ?>
 <script>
-	 $('#gosteireact').click(function(){
-        	$.post('/static/php/react.php?post=<?php echo $coment['id']; ?>', function (html) {
-			});
-			$('.like-btn').addClass("ativolike");
-			return false;
-   		 });
+   $(document).ready(function() {
+    $("#kawaii<?php echo $comentiduser; ?>").click(function() {
+        var post = <?php echo $coment['id'] ?>; 
+        $.post("/static/php/react.php", {post: post},
+        function(data){
+         $("#respostaba").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
 </script>
 <?Php } ?>
 
-</script>
-
 
 <?php endforeach; endforeach;?>
+
+<div id="respostaba">
+
+</div>
 
 
 </div>
