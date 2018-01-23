@@ -85,7 +85,7 @@ $iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
 $comentiduser = $coment['id'];
 $likes = DBRead( 'like', "WHERE idpost = $comentiduser and iduser = $iduser ORDER BY id DESC" );
 if (!$likes)
-echo '<a class="like-btn" id="kawaii'.$comentiduser.'">';
+echo '<a class="like-btn" id="kawaii'.$comentid.'">';
 else  
   foreach ($likes as $like):
 ?>
@@ -107,7 +107,7 @@ else
 $postid = $coment['id'];
 $coments = DBRead( 'comment', "WHERE id and idpost = $postid ORDER BY id DESC" );
 if (!$coments)
-echo '<p id="feelsba".$postid.">Não há nenhum comentario</p>';
+echo '<p id="feelsba'.$postid.'">Não há nenhum comentario</p>';
 else  
   foreach ($coments as $coment):   
 ?>
@@ -173,7 +173,7 @@ $("#flash<?php echo $postid ?>").hide();
 $("#content<?php echo $postid ?>").focus();
 }  
 });
-}
+} 
 return false;
 });
 });
@@ -331,7 +331,7 @@ var comentarios<?php echo $comentiduser; ?> = document.getElementById('comentari
 $postid = $coment['id'];
 $coments = DBRead( 'comment', "WHERE id and idpost = $postid ORDER BY id DESC" );
 if (!$coments)
-echo '<p id="feelsba".$postid.">Não há nenhum comentario</p>';
+echo '<p id="feelsba'.$postid.'">Não há nenhum comentario</p>';
 else  
   foreach ($coments as $coment):   
 ?>
