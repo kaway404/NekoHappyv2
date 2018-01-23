@@ -9,7 +9,7 @@ if($user['configurado'] == 0){
 
 $userUP['configurado'] = "1";
 if( DBUpdate( 'user', $userUP, "id = '{$iduser}'" ) ){
-        echo '';
+        echo '<script>location.href="/";</script>';
         }
     }
     }

@@ -60,6 +60,7 @@
          $("#resposta").html(data);
          }
          , "html");
+          location.reload();
          return false;
     });
 });
