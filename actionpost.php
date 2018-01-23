@@ -37,7 +37,7 @@ mysql_query('SET character_set_results=utf8');
         <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
         </div>
 
-        <a href="profile.php?id=<?php echo $user['id']; ?>"><p class="name-post"><?php echo $user['nome'] ?> <?php echo $user['sobrenome'] ?></p></a>
+        <a href="profile.php?id=<?php echo $user['id']; ?>"><p class="name-poster"><?php echo $user['nome'] ?> <?php echo $user['sobrenome'] ?></p></a>
 
         <p class="cont-d"> <?php 
                                                     $emotions = array(':)', ':@', '8)', ':D', ':3', ':(', ';)', ':O', ':o', ':P', ':p', '<3');
@@ -81,6 +81,7 @@ else
      <a class="like-btn ativolike" id="kawaii<?php echo $comentiduser; ?>">
      <?php endforeach;?>
     </a>
+    <a class="like-btn2" id="comentar<?php echo $comentiduser; ?>"></a>
 
         </div>
     </div>
@@ -126,6 +127,80 @@ if( $dbCheck ){
 </script>
 <?Php } ?>
 
+ <div class="comentarios" id="comentarios<?php echo $comentiduser; ?>">
+
+      <div class="taber">
+
+<script>
+var kawaii<?php echo $comentiduser; ?> = document.getElementById('kawaii<?php echo $comentiduser; ?>');
+var comentarios<?php echo $comentiduser; ?> = document.getElementById('comentarios<?php echo $comentiduser; ?>')
+
+ $('#comentar<?php echo $comentiduser; ?>').click(function(){
+          if (comentarios<?php echo $comentiduser; ?>.style.display === "block") {
+             comentarios<?php echo $comentiduser; ?>.style = "display: none;";
+          } else {
+              comentarios<?php echo $comentiduser; ?>.style = "display: block;";
+           }
+       });
+
+</script>
+
+<?php
+$postid = $coment['id'];
+?>
+
+    <div class="space<?php echo $comentiduser ?>"></div>
+<div id="flash<?php echo $comentiduser ?>"></div>
+<div id="show<?php echo $comentiduser ?>"></div>
+
+  </div>
+
+    <div class="eooqsa">
+      <div class="ava-t-sde" id="photo">
+     <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
+   </div>
+    <input type="text" placeholder="Digite seu comentario aqui!" id="comment<?php echo $comentiduser ?>" class="helloe"/>
+    <button class="btnt" id="nani<?php echo $comentiduser ?>">Comentar</button>
+    </div>
+  </div>
+
+<script>
+var msg = document.getElementById('bakaetes');
+var closemsg = document.getElementById('close');
+$(function() {
+$("#nani<?php echo $comentiduser ?>").click(function() {
+var textcontent = $("#comment<?php echo $postid ?>").val();
+var dataString = 'content='+ textcontent;
+if(textcontent=='')
+{
+$("#fuck").text("Você não pode deixar o comentario vazio.");
+msg.style = "display: block";
+}
+else
+{
+$.ajax({
+type: "POST",
+url: "static/php/comment.php?idpost=<?php echo $coment['id']; ?>",
+data: dataString,
+cache: true,
+success: function(html){
+$("#show<?php echo $comentiduser ?>").after(html);
+document.getElementById('comment<?php echo $comentiduser ?>').value='';
+$("#flash<?php echo $comentiduser ?>").hide();
+$("#content<?php echo $comentiduser ?>").focus();
+}  
+});
+}
+return false;
+});
+});
+
+ $('#close').click(function(){
+          msg.style = "display: none;";
+       });
+
+</script>
+
 
 
 <div id="respostaba">
@@ -134,5 +209,13 @@ if( $dbCheck ){
 
 
 </div>
-		<?php }?>
+		<?php } else{?>
+
+            <script>
+            $("#fuck").text("Ocorreu um erro.");
+            msg.style = "display: block";
+            </script>
+
+        <?php } ?>
+
 <?php } ?>

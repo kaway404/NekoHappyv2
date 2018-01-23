@@ -55,7 +55,7 @@ else
 		</div>
 		<svg class="fixada"  height="22" version="1.1" width="22" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><g transform="translate(0 -1028.4)"><path d="m9.5999 1.4564 1.5501 4.7699 5.015 0.0002-4.057 2.9482 1.55 4.7703-4.0581-2.948-4.0577 2.948 1.5497-4.7703-4.0575-2.9482 5.0154-0.0002z" fill="#f1c40f" stroke="#f39c12" stroke-width=".69755" transform="matrix(1.4336 0 0 1.4336 -1.7602 1028.9)"/></g></svg>
 
-		<a href="profile.php?id=<?php echo $people['id']; ?>"><p class="name-post"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?> 	</p></a>
+		<a href="profile.php?id=<?php echo $people['id']; ?>"><p class="name-poster"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?> 	</p></a>
 
 		<p class="cont-d"> <?php 
                                                     $emotions = array(':)', ':@', '8)', ':D', ':3', ':(', ';)', ':O', ':o', ':P', ':p', '<3');
@@ -100,40 +100,91 @@ else
 
     <div class="comentarios" id="comentarios<?php echo $comentiduser; ?>">
 
+      <div class="taber">
 
+
+<?php
+$postid = $coment['id'];
+$coments = DBRead( 'comment', "WHERE id and idpost = $postid ORDER BY id DESC" );
+if (!$coments)
+echo '<p id="feelsba".$postid.">Não há nenhum comentario</p>';
+else  
+  foreach ($coments as $coment):   
+?>
+<?php
+$comentiduser = $coment['iduser'];
+$peoples = DBRead( 'user', "WHERE id = $comentiduser ORDER BY id DESC LIMIT 1" );
+if (!$peoples)
+echo '';  
+else  
+  foreach ($peoples as $people):   
+?>
+
+      <div class="coment">
       <div class="ava-t-sd" id="photo">
-    <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
+     <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
     </div>
-    <a href="profile.php?id=<?php echo $people['id']; ?>"><p class="name-post"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?> comentou.  </p></a>
- <p class="cont-e"> <?php 
-                                                    $emotions = array(':)', ':@', '8)', ':D', ':3', ':(', ';)', ':O', ':o', ':P', ':p', '<3');
-                                                    $imgs = array(
-                                                        '<img id="emoticon" src="/static/img/emotions/nice.png"/>',
-                                                        '<img id="emoticon" src="/static/img/emotions/angry.png"/>',
-                                                        '<img id="emoticon" src="/static/img/emotions/cool.png"/>',
-                                                        '<img id="emoticon" src="/static/img/emotions/happy.png"/>',
-                                                        '<img id="emoticon" src="/static/img/emotions/ooh.png"/>',
-                                                        '<img id="emoticon" src="/static/img/emotions/sad.png"/>',
-                                                        '<img id="emoticon" src="/static/img/emotions/right.png"/>',
-                                                        '<img id="emoticon" src="/static/img/emotions/ooooh.png"/>',
-                                                        '<img id="emoticon" src="/static/img/emotions/ooooh.png"/>',
-                                                        '<img id="emoticon" src="/static/img/emotions/pi.png"/>',
-                                                        '<img id="emoticon" src="/static/img/emotions/pi.png"/>',
-                                                        '<img id="emoticon" src="/static/img/emotions/heart.png"/>'
-                                                    );
-                                                    $msg = str_replace($emotions, $imgs, $coment['texto']);
-                                                    echo $msg;
-                                                    ?></p>
-
-
-    <input type="text" placeholder="Digite seu comentario aqui!" class="helloe"/>
-
+    <p class="name-post"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?>  <span class="commentpostiduq"><?php echo $coment['texto']; ?></span> </p>
     </div>
 
+  <?php endforeach; endforeach;?>
 
+<?php
+$postid = $coment['id'];
+?>
+  <div class="space<?php echo $postid ?>"></div>
+  <div id="flash<?php echo $postid ?>"></div>
+  <div id="show<?php echo $postid ?>"></div>
 
+  </div>
 
+    <div class="eooqsa">
+      <div class="ava-t-sde" id="photo">
+     <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
+   </div>
+    <input type="text" placeholder="Digite seu comentario aqui!" id="comment<?php echo $postid ?>" class="helloe"/>
+    <button class="btnt" id="nani<?php echo $postid ?>">Comentar</button>
     </div>
+  </div>
+
+<script>
+var msg = document.getElementById('bakaetes');
+var closemsg = document.getElementById('close');
+$(function() {
+$("#nani<?php echo $postid ?>").click(function() {
+var textcontent = $("#comment<?php echo $postid ?>").val();
+var dataString = 'content='+ textcontent;
+if(textcontent=='')
+{
+$("#fuck").text("Você não pode deixar o comentario vazio.");
+msg.style = "display: block";
+}
+else
+{
+$.ajax({
+type: "POST",
+url: "static/php/comment.php?idpost=<?php echo $coment['id']; ?>",
+data: dataString,
+cache: true,
+success: function(html){
+$("#show<?php echo $postid ?>").after(html);
+document.getElementById('comment<?php echo $postid ?>').value='';
+$("#flash<?php echo $postid ?>").hide();
+$("#content<?php echo $postid ?>").focus();
+}  
+});
+}
+return false;
+});
+});
+
+ $('#close').click(function(){
+          msg.style = "display: none;";
+       });
+
+</script>
+    </div>
+
 
 <script>
 var kawaii<?php echo $comentiduser; ?> = document.getElementById('kawaii<?php echo $comentiduser; ?>');
@@ -217,7 +268,7 @@ else
 		<img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
 		</div>
 
-		<a href="profile.php?id=<?php echo $people['id']; ?>"><p class="name-post"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?></p></a>
+		<a href="profile.php?id=<?php echo $people['id']; ?>"><p class="name-poster"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?></p></a>
 
 		<p class="cont-d"> <?php 
                                                     $emotions = array(':)', ':@', '8)', ':D', ':3', ':(', ';)', ':O', ':o', ':P', ':p', '<3');
@@ -253,16 +304,116 @@ else
 	 <a class="like-btn ativolike" id="kawaii<?php echo $comentiduser; ?>">
 	 <?php endforeach;?>
     </a>
+     <a class="like-btn2" id="comentar<?php echo $comentiduser; ?>"></a>
 
 		</div>
 	</div>
+
+   <div class="comentarios" id="comentarios<?php echo $comentiduser; ?>">
+
+      <div class="taber">
+
+<script>
+var kawaii<?php echo $comentiduser; ?> = document.getElementById('kawaii<?php echo $comentiduser; ?>');
+var comentarios<?php echo $comentiduser; ?> = document.getElementById('comentarios<?php echo $comentiduser; ?>')
+
+ $('#comentar<?php echo $comentiduser; ?>').click(function(){
+          if (comentarios<?php echo $comentiduser; ?>.style.display === "block") {
+             comentarios<?php echo $comentiduser; ?>.style = "display: none;";
+          } else {
+              comentarios<?php echo $comentiduser; ?>.style = "display: block;";
+           }
+       });
+
+</script>
+
+<?php
+$postid = $coment['id'];
+$coments = DBRead( 'comment', "WHERE id and idpost = $postid ORDER BY id DESC" );
+if (!$coments)
+echo '<p id="feelsba".$postid.">Não há nenhum comentario</p>';
+else  
+  foreach ($coments as $coment):   
+?>
+<?php
+$comentiduser = $coment['iduser'];
+$peoples = DBRead( 'user', "WHERE id = $comentiduser ORDER BY id DESC LIMIT 1" );
+if (!$peoples)
+echo '';  
+else  
+  foreach ($peoples as $people):   
+?>
+
+      <div class="coment">
+      <div class="ava-t-sd" id="photo">
+     <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
+    </div>
+    <p class="name-post"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?>  <span class="commentpostiduq"><?php echo $coment['texto']; ?></span> </p>
+    </div>
+
+  <?php endforeach; endforeach;?>
+
+<?php
+$postid = $coment['id'];
+?>
+
+    <div class="space<?php echo $postid ?>"></div>
+<div id="flash<?php echo $postid ?>"></div>
+<div id="show<?php echo $postid ?>"></div>
+
+  </div>
+
+    <div class="eooqsa">
+      <div class="ava-t-sde" id="photo">
+     <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
+   </div>
+    <input type="text" placeholder="Digite seu comentario aqui!" id="comment<?php echo $postid ?>" class="helloe"/>
+    <button class="btnt" id="nani<?php echo $postid ?>">Comentar</button>
+    </div>
+  </div>
+
+<script>
+var msg = document.getElementById('bakaetes');
+var closemsg = document.getElementById('close');
+$(function() {
+$("#nani<?php echo $postid ?>").click(function() {
+var textcontent = $("#comment<?php echo $postid ?>").val();
+var dataString = 'content='+ textcontent;
+if(textcontent=='')
+{
+$("#fuck").text("Você não pode deixar o comentario vazio.");
+msg.style = "display: block";
+}
+else
+{
+$.ajax({
+type: "POST",
+url: "static/php/comment.php?idpost=<?php echo $coment['id']; ?>",
+data: dataString,
+cache: true,
+success: function(html){
+$("#show<?php echo $postid ?>").after(html);
+document.getElementById('comment<?php echo $postid ?>').value='';
+$("#flash<?php echo $postid ?>").hide();
+$("#content<?php echo $postid ?>").focus();
+}  
+});
+}
+return false;
+});
+});
+
+ $('#close').click(function(){
+          msg.style = "display: none;";
+       });
+
+</script>
 
 
 		</div>
 
 <script>
 var kawaii<?php echo $comentiduser; ?> = document.getElementById('kawaii<?php echo $comentiduser; ?>');
-
 </script>
 
 <?php

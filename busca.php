@@ -1,4 +1,4 @@
-<?php
+  <?php
 require 'static/php/system/database.php';
 require 'static/php/system/config.php';
 ?>

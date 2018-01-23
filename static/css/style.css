@@ -635,15 +635,9 @@ header #logo{
 	color: #000;
 }
 
-.name-post{
-	font-size: 1.2em;
-	position: relative;
-	padding: 30px;
-	left: 45px;
-}
 
 .cont-d{
-	font-size: 1.2em;
+	font-size: 1.1em;
 	position: relative;
 	left: 2px;
 	word-wrap: break-word;
@@ -740,7 +734,7 @@ header #logo{
     width: 70px;
     height: 42px;
     position: absolute;
-    top: 50px;
+    top: 60px;
     display: inline-block;
     float: right;
     right: 15px;
@@ -852,6 +846,7 @@ header #logo{
 
 #fallenl{
 	box-shadow: 0 4px 8px 1px #0cdb8a30 !important;
+	padding-bottom: 0px;
 }
 
 .post-bottom{
@@ -886,20 +881,105 @@ header #logo{
 }
 
 .ava-t-sd{
-	height: 45px;
-	width: 45px;
+	height: 33px;
+	width: 33px;
 	position: relative;
-	top: 20px;
-	left: 20px;
+	top: 2px;
+	left: 10px;
 	float: left;
 	border-radius: 50%;
+	cursor: pointer;
+	z-index: 20;
 }
 
 .helloe{
-	width: 98%;
+	width: 81%;
 	border: none;
-	box-shadow: 1px 4px 8px 2px rgba(0,0,0,.20) !important;
 	height: 40px;
-	padding-left: 10px;
+	padding-left: 50px;
 	font-size: 1.1em;
+	float: left;
+	left: -28px;
+	position: relative;
+	border-radius: 40px;
+	border: 1px solid rgba(0,0,0,.20);
+}
+
+.coment{
+	background: #efefef;
+	height: auto;
+	border-radius: 40px;
+	padding: 2px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.20);
+	margin-top: 10px;
+}
+
+
+.name-post{
+	font-size: 1em;
+	position: relative;
+	padding: 10px;
+	left: 25px;
+	color: #1b8645;
+}
+
+.taber{
+	background: #fff;
+	padding: 5px;
+	padding-bottom: 25px;
+	padding-top: 20px;
+}
+
+.name-poster{
+	font-size: 1.1em;
+	position: relative;
+	padding: 30px;
+	left: 45px;
+}
+
+.ava-t-sde{
+	height: 33px;
+	width: 33px;
+	position: relative;
+	top: 5px;
+	left: 15px;
+	float: left;
+	border-radius: 50%;
+	z-index: 50;
+}
+
+.commentpostiduq{
+	top: 0;
+	left: 5px;
+	position: relative;
+	color: #000 !important;
+	font-family: inherit !important;
+}
+
+.btnt{
+	float: right;
+	border: none;
+	background: #fff;
+	border: 1px solid rgba(0,0,0,.20);
+	border: 1px solid rgba(0,0,0,.20);
+	position: relative;
+	top: -44px;
+	width: 100px;
+	right: 20px;
+	padding: 4px;
+	height: 44px;
+	border-radius: 0px;
+	font-size: 15px;
+	cursor: pointer;
+	z-index: 50;
+}
+
+#fuck{
+	top: -2px !important;
+	position: relative;
+}
+
+.eooqsa{
+	position: relative;
+	top: 20px;
 }
