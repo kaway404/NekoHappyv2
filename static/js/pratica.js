@@ -13,8 +13,6 @@
 
       	 	 window.setInterval(function(){
 
-             preto.style = "overflow-x: hidden;overflow-y: hidden;";
-
       	 	 	 if (track1.style.display === "none") {
         	 post.style = "z-index: 0; background:#fff;";
         	} else {
