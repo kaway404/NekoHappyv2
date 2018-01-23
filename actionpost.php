@@ -88,7 +88,6 @@ else
 
 
         </div>
-
 <script>
 var kawaii<?php echo $comentiduser; ?> = document.getElementById('kawaii<?php echo $comentiduser; ?>');
 </script>

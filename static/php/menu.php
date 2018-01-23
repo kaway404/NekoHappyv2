@@ -96,6 +96,39 @@ else
     </div>
   </div>
 
+<?php
+$dbCheck = DBRead( 'like', "WHERE id and idpost = $comentiduser and iduser = $iduser" );
+
+if( $dbCheck ){
+?>
+<script>
+   $(document).ready(function() {
+    $("#kawaii<?php echo $comentiduser; ?>").click(function() {
+        var post = <?php echo $coment['id'] ?>; 
+        $.post("/static/php/react.php", {post: post},
+        function(data){
+         $("#respostaba").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+</script>
+<?php } else{ ?>
+<script>
+   $(document).ready(function() {
+    $("#kawaii<?php echo $comentiduser; ?>").click(function() {
+        var post = <?php echo $coment['id'] ?>; 
+        $.post("/static/php/react.php", {post: post},
+        function(data){
+         $("#respostaba").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+</script>
+<?Php } ?>
 
 
     <div class="comentarios" id="comentarios<?php echo $comentiduser; ?>">
@@ -200,39 +233,6 @@ var comentarios<?php echo $comentiduser; ?> = document.getElementById('comentari
 
 </script>
 
-<?php
-$dbCheck = DBRead( 'like', "WHERE id and idpost = $comentiduser and iduser = $iduser" );
-
-if( $dbCheck ){
-?>
-<script>
-   $(document).ready(function() {
-    $("#kawaii<?php echo $comentiduser; ?>").click(function() {
-        var post = <?php echo $coment['id'] ?>; 
-        $.post("/static/php/react.php", {post: post},
-        function(data){
-         $("#respostaba").html(data);
-         }
-         , "html");
-         return false;
-    });
-});
-</script>
-<?php } else{ ?>
-<script>
-   $(document).ready(function() {
-    $("#kawaii<?php echo $comentiduser; ?>").click(function() {
-        var post = <?php echo $coment['id'] ?>; 
-        $.post("/static/php/react.php", {post: post},
-        function(data){
-         $("#respostaba").html(data);
-         }
-         , "html");
-         return false;
-    });
-});
-</script>
-<?Php } ?>
 
 
 <?php endforeach; endforeach;?>
@@ -305,6 +305,41 @@ else
 	 <?php endforeach;?>
     </a>
      <a class="like-btn2" id="comentar<?php echo $comentiduser; ?>"></a>
+
+
+<?php
+$dbCheck = DBRead( 'like', "WHERE id and idpost = $comentiduser and iduser = $iduser" );
+
+if( $dbCheck ){
+?>
+<script>
+   $(document).ready(function() {
+    $("#kawaii<?php echo $comentiduser; ?>").click(function() {
+        var post = <?php echo $coment['id'] ?>; 
+        $.post("/static/php/react.php", {post: post},
+        function(data){
+         $("#respostaba").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+</script>
+<?php } else{ ?>
+<script>
+   $(document).ready(function() {
+    $("#kawaii<?php echo $comentiduser; ?>").click(function() {
+        var post = <?php echo $coment['id'] ?>; 
+        $.post("/static/php/react.php", {post: post},
+        function(data){
+         $("#respostaba").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+</script>
+<?Php } ?>
 
 		</div>
 	</div>
@@ -416,39 +451,6 @@ return false;
 var kawaii<?php echo $comentiduser; ?> = document.getElementById('kawaii<?php echo $comentiduser; ?>');
 </script>
 
-<?php
-$dbCheck = DBRead( 'like', "WHERE id and idpost = $comentiduser and iduser = $iduser" );
-
-if( $dbCheck ){
-?>
-<script>
-   $(document).ready(function() {
-    $("#kawaii<?php echo $comentiduser; ?>").click(function() {
-        var post = <?php echo $coment['id'] ?>; 
-        $.post("/static/php/react.php", {post: post},
-        function(data){
-         $("#respostaba").html(data);
-         }
-         , "html");
-         return false;
-    });
-});
-</script>
-<?php } else{ ?>
-<script>
-   $(document).ready(function() {
-    $("#kawaii<?php echo $comentiduser; ?>").click(function() {
-        var post = <?php echo $coment['id'] ?>; 
-        $.post("/static/php/react.php", {post: post},
-        function(data){
-         $("#respostaba").html(data);
-         }
-         , "html");
-         return false;
-    });
-});
-</script>
-<?Php } ?>
 
 
 <?php endforeach; endforeach;?>
