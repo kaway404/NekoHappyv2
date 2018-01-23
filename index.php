@@ -17,9 +17,6 @@ require 'static/php/system/config.php';
 	<script  src="static/js/index.js"></script>
 </head>
 <body>
-
-</body>
-</html>
 <?php
 
 
@@ -45,3 +42,5 @@ require 'static/php/home.php';
 
 
 ?>
+</body>
+</html>

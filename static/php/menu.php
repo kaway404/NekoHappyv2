@@ -40,7 +40,7 @@ if(isset($_GET['comunidadecreate'])){
 <div class="bakerooo">
 <?php
 $iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
-$peoples = DBRead( 'user', "WHERE id <> $iduser ORDER BY id DESC LIMIT 10" );
+$peoples = DBRead( 'user', "WHERE id <> $iduser ORDER BY id ASC LIMIT 10" );
 if (!$peoples)
 echo '';
 else  
