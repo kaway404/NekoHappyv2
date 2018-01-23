@@ -49,7 +49,14 @@ else
 <a href="profile.php?id=<?php echo $people['id']; ?>">
 <li class="imesa">
   <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png"/>
-  <p><?php echo $people['nome'];?></p>
+  <p> <?php
+  $str2 = nl2br( $people['nome'] );
+  $len2 = strlen( $str2 );
+  $max2 = 14;
+   if( $len2 <= $max2 )
+   echo $str2;
+  else    
+   echo substr( $str2, 0, $max2 ) . '...'?></p>
 </li>
 </a>
 <?php endforeach; ?>
