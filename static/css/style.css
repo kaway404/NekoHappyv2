@@ -906,11 +906,11 @@ header #logo{
 }
 
 .coment{
-	background: #efefef;
+	background: #fff;
 	height: auto;
 	border-radius: 40px;
 	padding: 2px;
-	box-shadow: 1px 1px 1px rgba(0,0,0,.20);
+	width: auto;
 	margin-top: 10px;
 }
 
@@ -950,10 +950,11 @@ header #logo{
 
 .commentpostiduq{
 	top: 0;
-	left: 5px;
+	left: 0px;
 	position: relative;
 	color: #000 !important;
 	font-family: inherit !important;
+	word-wrap: break-word;
 }
 
 .btnt{
