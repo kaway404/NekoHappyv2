@@ -750,7 +750,7 @@ header #logo{
 }
 
 .postagens a{
-	color: #000 !important;
+	color: #000;
 }
 
 .postagens a:hover{
@@ -1038,4 +1038,121 @@ header #logo{
 .bakerooo{
 	left: -40px;
 	position: relative;
+}
+
+.nani-h{
+	width: 100%;
+	height: 270px;
+	background: #fff;
+	position: relative;
+	top: 50px;
+	box-shadow: 0 4px 8px 1px rgba(0,0,0,.10);
+}
+
+.wow{
+	width: 100%;
+	height: 270px;
+	background-image: urL("http://eskipaper.com/images/anime-backgrounds-1.jpg");
+	background-size: cover;
+}
+
+.profilephoto{
+	height: 130px !important;
+	width: 130px !important;
+	position: relative;
+	bottom: 180px;
+	box-shadow: 0 4px 8px 1px rgba(0,0,0,.10);
+}
+
+.profilephoto img{
+	height: 100% !important;
+	width: 100% !important;
+}
+
+.name-batito{
+	position: relative;
+	top: -180px;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.60);
+}
+
+.semlogin{
+	text-align: center;
+}
+
+.semlogin h1{
+	padding: 10px;
+	font-size: 28px;
+	top: 10px;
+	position: relative;
+}
+
+.lgren{
+	color: #0cdb8a !important;
+}
+
+.comunidade{
+	width: 100%;
+	height: 200px;
+	top: 50px;
+	position: relative;
+}
+
+.criando{
+	padding-bottom: 10px;
+	font-size: 18px;
+	color: #162643;
+}
+
+.gostat{
+	padding-left: 0px;
+	color: #90949c;
+	font-size: 15px;
+}
+
+.body{
+	padding: 50px;
+}
+
+.botoes-select{
+	height: 250px;
+	width: 250px;
+	background: #f6f7f9;
+	border: 5px solid #e9ebee;
+	float: left;
+	top: 30px;
+	box-shadow: 0 4px 8px 1px rgba(0,0,0,.10);
+	position: relative;
+	text-align: center;
+	transition: 1s;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+.botoes-select:hover{
+	background: #e9ebee;
+	border: 5px solid #f6f7f9;
+}
+
+.botoes-select p{
+	margin-top: 30px;
+	font-size: 17px;
+}
+
+.entre{
+	background-position: 0 -333px;
+	background-image: url("/static/img/comunidade.png");
+	margin-top: 50px;
+	position: relative;
+	height: 110px;
+	width: 110px;
+}
+
+.artista{
+	background-position: 0 0;
+	background-image: url("/static/img/comunidade.png");
+	margin-top: 50px;
+	position: relative;
+	height: 110px;
+	width: 110px;
 }

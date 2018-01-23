@@ -10,6 +10,23 @@
 if(isset($_GET['comunidadecreate'])){
 ?>
 
+<div class="comunidade">
+<div class="body">
+<h2 class="criando">Criando comunidade.</h2>
+<p class="gostat">Crie uma comunidade do que mais gosta.<br> Pode ser uma comunidade de jogos, série, anime, banda etc... </p>
+
+<div class="botoes-select">
+  <div class="entre"></div>
+<p>Entretenimento</p>
+</div>
+
+<div class="botoes-select">
+  <div class="artista"></div>
+<p>Artista/Banda</p>
+</div>
+
+</div>
+</div>
 
 <?php } else{?>
 

@@ -16,6 +16,7 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
 <li>Perfil</li>
 <li>Opções</li>
 <li>Comunidades</li>
+<a href="?comunidadecreate"><li>Criar comunidade</li></a>
 <a href="logout.php"><li>Sair</li></a>
 </div>
 
