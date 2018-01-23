@@ -39,7 +39,8 @@ if(isset($_GET['comunidadecreate'])){
 <ul>
 <div class="bakerooo">
 <?php
-$peoples = DBRead( 'user', "WHERE id <> $iduser ORDER BY id DESC" );
+$iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
+$peoples = DBRead( 'user', "WHERE id <> $iduser ORDER BY id DESC LIMIT 10" );
 if (!$peoples)
 echo '';
 else  
@@ -48,24 +49,7 @@ else
 <a href="profile.php?id=<?php echo $people['id']; ?>">
 <li class="imesa">
   <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png"/>
-  <p>
-<?php
-  $str1 = nl2br( $people['nome'] );
-  $len1 = strlen( $str1 );
-  $max3 = 7;
-   if( $len1 <= $max3 )
-   echo $str2;
-  else    
-   echo substr( $str1, 0, $max3 ) . '...'?>
-
-    <?php
-  $str2 = nl2br( $people['sobrenome'] );
-  $len2 = strlen( $str2 );
-  $max2 = 4;
-   if( $len2 <= $max2 )
-   echo $str2;
-  else    
-   echo substr( $str2, 0, $max2 ) . '...'?></p>
+  <p><?php echo $people['nome'];?></p>
 </li>
 </a>
 <?php endforeach; ?>
