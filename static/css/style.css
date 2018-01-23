@@ -18,7 +18,7 @@ a{
     background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-    background: #1979b1;
+    background: #0cdb8a;
     border-radius: 40px;
 }
 
@@ -1001,4 +1001,41 @@ header #logo{
 	color: #151515;
 	font-size: 1em;
 	padding: 10px;
+}
+
+.scrollamigo{
+	height: 240px;
+    padding-top: 5px;
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    z-index: 10;
+    white-space: nowrap;
+    width: 100%;
+    top: 10px;
+}
+
+.sugerido h1{
+	font-size: 20px;
+	padding: 3px;
+}
+
+.imesa p{
+	font-size: 19px;
+	top: -30px;
+}
+
+.sugerido a{
+	text-decoration: none;
+}
+
+.sugerido a:hover{
+	text-decoration: none;
+}
+
+.bakerooo{
+	left: -40px;
+	position: relative;
 }
