@@ -2,6 +2,8 @@
 require '/system/database.php';
 require '/system/config.php';
 
+if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_COOKIE['thecry']))){
+
 $conexao = mysql_pconnect($hostp,$userp,$passwrdp) or die (mysql_error());
 $banco = mysql_select_db($dbp);
 $thecryed = DBEscape(strip_tags(trim(sha1($_POST['emailr']))));
@@ -34,6 +36,8 @@ var kawaii<?php echo $post; ?> = document.getElementById('kawaii<?php echo $post
 
 kawaii<?php echo $post; ?>.style = "background-position: 0 -173px !important;";
 </script>
+<?php } ?>
+
 <?php } ?>
 
 <?php } ?>
