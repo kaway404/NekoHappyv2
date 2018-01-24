@@ -16,7 +16,7 @@ require 'static/php/system/config.php';
 	<script src="static/js/js-all.js" type="text/javascript"></script>
 	<script  src="static/js/index.js"></script>
 </head>
-<body>
+<body id="momer">
 <?php
 
 

@@ -7,7 +7,7 @@ if($user['configurado'] == 0){
  $user = DBRead('user', "WHERE id = '{$iduser}' LIMIT 1 ");
  $user = $user[0];
 
-$userUP['configurado'] = "1";
+$userUP['configurado'] = $_POST['finalizado'];
 if( DBUpdate( 'user', $userUP, "id = '{$iduser}'" ) ){
         echo '<script>location.href="/";</script>';
         }

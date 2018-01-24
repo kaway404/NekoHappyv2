@@ -9,12 +9,14 @@
 	var busca = document.getElementById('busca');
 	var header = document.getElementById('header');
 	var preto = document.getElementById('preto');
+  var msgtuto = document.getElementById('nanituto');
+  var body = document.getElementById('momer');
 
 
       	 	 window.setInterval(function(){
 
       	 	 	 if (track1.style.display === "none") {
-        	 post.style = "z-index: 0; background:#fff;";
+        	    post.style = "z-index: 0; background:#fff;";
         	} else {
              post.style = "z-index: 7000; background:#fff;";
              photo.style = "z-index: 8000;";
@@ -41,26 +43,63 @@
 
         $('#click2').click(function(){
         	caper.style = "z-index: 0; background:#fff;";
-        	track2.style = "display: none";
-        	track3.style = "display: block";
+        	track2.style = "display: none;";
+        	track3.style = "display: block;";
    		 });
 
-          $('#click3').click(function(){
+        $('#click3').click(function(){
         	header.style = "z-index: 5000;";
-        	track3.style = "display: none";
-          track.style = "display: none";
-        	preto.style = "display: none";
+        	track3.style = "display: none;";
+          track.style = "display: none;";
+        	preto.style = "display: none;";
+          body.style = "overflow: auto !important;";
    		 });
+
+        $('#simtuto').click(function(){
+          msgtuto.style = "display: none;";
+       });
+
+        $('#naotuto').click(function(){
+          msgtuto.style = "display: none;";
+          track.style = "display: none;";
+          post.style = "z-index: 0; background:#fff;";
+          preto.style = "display: none;";
+          body.style = "overflow: auto !important;";
+       });
+
 
           $(document).ready(function() {
   		   $("#click3").click(function() {
-        	var finalizado = "1"; 
+        	var finalizado = "2"; 
         	$.post("/static/php/finish.php", {finalizado: finalizado},
         	function(data){
          $("#resposta").html(data);
          }
          , "html");
-          location.reload();
+         return false;
+    });
+});
+
+         $(document).ready(function() {
+         $("#naotuto").click(function() {
+          var finalizado = "2"; 
+          $.post("/static/php/finish.php", {finalizado: finalizado},
+          function(data){
+         $("#resposta").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+
+            $(document).ready(function() {
+         $("#simtuto").click(function() {
+          var finalizado = "1"; 
+          $.post("/static/php/finish.php", {finalizado: finalizado},
+          function(data){
+         $("#resposta").html(data);
+         }
+         , "html");
          return false;
     });
 });

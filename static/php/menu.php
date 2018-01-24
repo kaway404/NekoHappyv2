@@ -520,17 +520,48 @@ var kawaii<?php echo $comentiduser; ?> = document.getElementById('kawaii<?php ec
 
 
 <?php 
-if($user['configurado'] == 0){
+if($user['configurado'] <= 1){
 ?>
+
 
 <div class="preto" id="preto"></div>
 
 <div class="track" id="track">
 
+<?php 
+if($user['configurado'] == 0){
+?>
+<center>
+<div class="bakat" id="nanituto">
+<div class="msg" id="boxmsg">
+  <span id="fuck">Deseja fazer o tuturial?</span>
+  <div class="btn-sd sim" id="simtuto"><div class="btnd"><span>Sim</span></div></div>
+  <div class="btn-sd nao" id="naotuto"><div class="btnd"><span>Não</span></div></div>
+</div>
+</div>
+</center>
+
+<style>
+#nanituto{
+  display: block;
+}
+
+.nao{
+  position: absolute;
+  right: 90px;
+}
+
+</style>
+
+<?php } ?>
+
+
 <div class="track1" id="track1">
 <span>Isso aqui é onde você publica coisas no seu feed.</span>
 <div class="btn-sb" id="click1"><div class="btnb"><span>Continuar</span></div></div>
 </div>
+
+
 
 <div class="track2" id="track2">
 <span>Isso aqui é o seu card, suas informações no NekoHappy.</span>
@@ -539,7 +570,7 @@ if($user['configurado'] == 0){
 
 <div class="track3" id="track3">
 <span>Isso aqui é sua barra de pesquisa do NekoHappy.</span>
-<div class="btn-sb" id="click3"><div class="btnb"><span>Finalizar</span></div></div>
+<div class="btn-sb" id="click3"><div class="btnb"><span>Continuar</span></div></div>
 </div>
 
 </div>
@@ -548,7 +579,7 @@ if($user['configurado'] == 0){
 
 <style>
 body{
-    overflow-y: hidden !important;
+    overflow-y: hidden;
 }
 </style>
 
