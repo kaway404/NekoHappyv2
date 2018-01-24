@@ -434,7 +434,7 @@ header #logo{
 	width: 32px;
 	height: 32px;
 	border-radius: 10px;
-	top: -6px;
+	top: 6px;
 	cursor: pointer;
 }
 
@@ -535,6 +535,20 @@ header #logo{
 	display: none;
 	left: 200px;
 	float: left;
+}
+
+.track4{
+	width: 270px;
+	height: auto;
+	background: #0cdb8a;
+	top: 0px;
+	padding: 20px;
+	position: absolute;
+	box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
+	border-radius: 5px;
+	display: none;
+	right: 170px;
+	float: right;
 }
 
 .track{
@@ -767,6 +781,9 @@ header #logo{
 .down-e svg{
 	position: relative;
 	top: 2px;
+	float: right;
+	right: 25px;
+	z-index: 50000000;
 }
 
 .menu{
@@ -1155,4 +1172,30 @@ header #logo{
 	position: relative;
 	height: 110px;
 	width: 110px;
+}
+
+.branco{
+	background: transparentg;
+	position: relative;
+	width: 60px;
+	height: 50px;
+	display: inline-block;
+	top: -15px;
+}
+
+.track5{
+	width: 270px;
+	height: auto;
+	background: #0cdb8a;
+	top: 35px;
+	padding: 20px;
+	position: relative;
+	box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
+	border-radius: 5px;
+	display: block;
+	margin: 0px auto;
+}
+
+.eta{
+	top: 2px !important;
 }

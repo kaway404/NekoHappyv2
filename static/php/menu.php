@@ -562,7 +562,6 @@ if($user['configurado'] == 0){
 
 <?php } ?>
 
-
 <div class="track1" id="track1">
 <span>Isso aqui é onde você publica coisas no seu feed.</span>
 <div class="btn-sb" id="click1"><div class="btnb"><span>Continuar</span></div></div>
@@ -578,6 +577,11 @@ if($user['configurado'] == 0){
 <div class="track3" id="track3">
 <span>Isso aqui é sua barra de pesquisa do NekoHappy.</span>
 <div class="btn-sb" id="click3"><div class="btnb"><span>Continuar</span></div></div>
+</div>
+
+<div class="track4" id="track4">
+<span>Isso aqui é o menu do usuario.</span>
+<div class="btn-sb" id="click4"><div class="btnb"><span>Finalizar</span></div></div>
 </div>
 
 </div>
