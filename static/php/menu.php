@@ -139,9 +139,16 @@ else
                                                     $msg = str_replace($emotions, $imgs, $coment['texto']);
                                                     echo $msg;
                                                     ?></p>
-
+  <?php
+  $conexao = mysql_pconnect($hostp,$userp,$passwrdp) or die (mysql_error());
+  $banco = mysql_select_db($dbp);
+  $comentiduser = $coment['id'];
+  $totalcurtida = mysql_query("SELECT * FROM neko_like WHERE idpost = $comentiduser ");
+  $totalcurtida = mysql_num_rows($totalcurtida);
+                                                     ?>
                                         <div class="post-bottom">
   <div class="feed">
+     <p class="totallike" id="totallike<?php echo $comentiduser ?>"><?Php echo $totalcurtida ?> Curtida</p>
 <?php
 $comentid = $coment['id'];
 $iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
@@ -352,12 +359,16 @@ else
                                                     $msg = str_replace($emotions, $imgs, $coment['texto']);
                                                     echo $msg;
                                                     ?></p>
-                                                    <?php
-                                                    $comentiduser = $coment['id'];
+                                                   <?php
+  $conexao = mysql_pconnect($hostp,$userp,$passwrdp) or die (mysql_error());
+  $banco = mysql_select_db($dbp);
+  $comentiduser = $coment['id'];
+  $totalcurtida = mysql_query("SELECT * FROM neko_like WHERE idpost = $comentiduser ");
+  $totalcurtida = mysql_num_rows($totalcurtida);
                                                      ?>
 <div class="post-bottom">
 	<div class="feed">
-    <p class="totallike" id="totallike<?php echo $comentiduser ?>">1 Curtida</p>
+    <p class="totallike" id="totallike<?php echo $comentiduser ?>"><?php echo $totalcurtida ?> Curtida</p>
 <?php
 $comentid = $coment['id'];
 $iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
