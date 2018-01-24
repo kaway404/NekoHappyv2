@@ -562,6 +562,8 @@ if($user['configurado'] == 0){
 
 <?php } ?>
 
+<div id="batatao" style="display: none;"></div>
+
 <div class="track1" id="track1">
 <span>Isso aqui é onde você publica coisas no seu feed.</span>
 <div class="btn-sb" id="click1"><div class="btnb"><span>Continuar</span></div></div>

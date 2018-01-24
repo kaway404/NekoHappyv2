@@ -9,7 +9,7 @@ if($user['configurado'] == 0){
 
 $userUP['configurado'] = $_POST['finalizado'];
 if( DBUpdate( 'user', $userUP, "id = '{$iduser}'" ) ){
-        echo '<script>location.href="/";</script>';
+        echo '';
         }
     }
     }

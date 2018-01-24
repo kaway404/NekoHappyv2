@@ -497,6 +497,16 @@ header #logo{
 	top: 0;
 }
 
+.preto2{
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	background: rgba(0,0,0,.50);
+	z-index: 6000;
+	left: 0;
+	top: 0;
+}
+
 .track1{
 	width: 300px;
 	height: auto;

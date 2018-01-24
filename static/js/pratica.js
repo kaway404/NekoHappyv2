@@ -9,6 +9,7 @@
 	var busca = document.getElementById('busca');
 	var header = document.getElementById('header');
 	var preto = document.getElementById('preto');
+  var preto2 = document.getElementById('preto2');
   var msgtuto = document.getElementById('nanituto');
   var body = document.getElementById('momer');
   var menu1 = document.getElementById('down');
@@ -63,20 +64,21 @@
           menu2.style = "z-index: 5000000; display: block;";
           track3.style = "display: none;";
           track4.style = "display: block;";
-          preto.style = "display: block;";
+          preto2.style = "display: block;";
            $('#menu').on('mouseleave', function(){
           menu.style = "display:block !important; z-index: 5000000;";
            });
        });
 
         $('#click4').click(function(){
-        	header.style = "z-index: 0;";
-        	track3.style = "display: none;";
+        	header.style = "z-index: 5000;";
+        	track4.style = "display: none;";
           track.style = "display: none;";
-        	preto.style = "display: none;";
+        	preto.style = "display: none; z-index: 0;";
           body.style = "overflow: auto !important;";
-           menu1.style = "z-index: 0;";
-          menu2.style = "z-index: 0; display: none;";
+          menu1.style = "z-index: 0;";
+          menu2.style = "z-index: 0; display: none;"; 
+           preto2.style = "display: none;";
    		 });
 
          $('#click5').click(function(){
@@ -130,7 +132,6 @@
          $("#resposta").html(data);
          }
          , "html");
-          location.href="profile.php";
     });
 });
 
