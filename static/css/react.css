@@ -2,7 +2,7 @@
   width: 20px;
   height: 20px;
   position: absolute;
-  bottom: 26px;
+  bottom: 30px;
   left: 13px;
   cursor: pointer;
   background-image: url(/static/img/react/reaction.png);
@@ -25,7 +25,7 @@
   width: 20px;
   height: 20px;
   position: absolute;
-  bottom: 26px;
+  bottom: 30px;
   left: 52px;
   cursor: pointer;
   background-image: url(/static/img/react/reaction.png);
