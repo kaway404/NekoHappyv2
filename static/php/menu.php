@@ -94,7 +94,7 @@ else
 <h1>Estamos atualizando o NekoHappy.</h1>
 </div>
 
-
+<?php if(isset($_COOKIE['baka']) ){ ?>
 <h1 id="cont">Publicação fixada.</h1>
 <?php
 $coments = DBRead( 'post', "WHERE id and destaque > 0 ORDER BY id DESC" );
@@ -164,6 +164,9 @@ else
     </a>
  <a class="like-btn2" id="comentar<?php echo $comentiduser; ?>"></a>
     </div>
+    <script>
+var kawaii<?php echo $comentiduser; ?> = document.getElementById('kawaii<?php echo $comentiduser; ?>');
+</script>
   </div>
 
 <?php
@@ -290,7 +293,6 @@ return false;
 
 
 <script>
-var kawaii<?php echo $comentiduser; ?> = document.getElementById('kawaii<?php echo $comentiduser; ?>');
 var comentarios<?php echo $comentiduser; ?> = document.getElementById('comentarios<?php echo $comentiduser; ?>')
 
  $('#comentar<?php echo $comentiduser; ?>').click(function(){
@@ -307,9 +309,13 @@ var comentarios<?php echo $comentiduser; ?> = document.getElementById('comentari
 
 <?php endforeach; endforeach;?>
 
+<?php } ?>
+
 <div id="respostaba">
 
 </div>
+
+
 
 <h1 id="cont2">Publicaçãos normais.</h1>
 
@@ -408,7 +414,7 @@ if( $dbCheck ){
    $(document).ready(function() {
     $("#kawaii<?php echo $comentiduser; ?>").click(function() {
         var post = <?php echo $coment['id'] ?>; 
-        $.post("/static/php/react.php", {post: post},
+        $.post("/static/php/ react.php", {post: post},
         function(data){
          $("#respostaba").html(data);
          }
