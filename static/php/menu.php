@@ -352,8 +352,12 @@ else
                                                     $msg = str_replace($emotions, $imgs, $coment['texto']);
                                                     echo $msg;
                                                     ?></p>
+                                                    <?php
+                                                    $comentiduser = $coment['id'];
+                                                     ?>
 <div class="post-bottom">
 	<div class="feed">
+    <p class="totallike" id="totallike<?php echo $comentiduser ?>">1 Curtida</p>
 <?php
 $comentid = $coment['id'];
 $iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
