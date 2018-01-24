@@ -76,7 +76,7 @@
          $("#resposta").html(data);
          }
          , "html");
-         return false;
+          location.href="profile.php";
     });
 });
 

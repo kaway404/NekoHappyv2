@@ -16,6 +16,9 @@ require 'static/php/veried.php';
 <!DOCTYPE html>
 <html>
 <head>
+	<?php if(!isset($_GET['id']) || empty($_GET['id'])){ ?>
+<title>NekoHappy |  <?php echo $user['nome']; ?></title>
+	<?php } ?>
 	<title>NekoHappy |  <?php echo $people['nome']; ?></title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
@@ -33,7 +36,24 @@ require 'static/php/header.php';
 if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_COOKIE['thecry']))){
 ?>
 <div id="alinhar-h">
+
+<?php if(!isset($_GET['id']) || empty($_GET['id'])){ ?>
 <div class="nani-h">
+<div class="wow">
+</div>
+<center>
+<div class="profilephoto" id="photo">
+<img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
+</div>
+<h1 class="name-batito" ><?php echo $user['nome']; ?>  <?php echo $user['sobrenome']; ?></h1>
+</center>
+</div>
+<?php } else if (!$people){?>
+<div class="postagens semlogin">
+	<h1>Essa página não foi encontrada <a href="/" class="lgren">Clique aqui para voltar</a></h1>
+</div>
+<?php } else{?>
+
 
 <div class="wow">
 </div>
@@ -43,8 +63,9 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
 </div>
 <h1 class="name-batito" ><?php echo $people['nome']; ?>  <?php echo $people['sobrenome']; ?></h1>
 </center>
-
 </div>
+<?php } ?>
+
 </div>
 
 <?php } else{ ?>
