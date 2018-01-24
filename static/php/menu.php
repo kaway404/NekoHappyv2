@@ -51,7 +51,7 @@ if(isset($_GET['comunidadecreate'])){
 
 <?php
 $peoples = DBRead( 'user', "WHERE id <> $iduser ORDER BY id ASC LIMIT 10" );
-if (!$people){
+if (!$peoples){
   echo '';
   }
   else{
