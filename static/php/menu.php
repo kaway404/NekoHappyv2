@@ -49,7 +49,13 @@ if(isset($_GET['comunidadecreate'])){
 <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
 </div>
 
-
+<?php
+$peoples = DBRead( 'user', "WHERE id <> $iduser ORDER BY id ASC LIMIT 10" );
+if (!$people){
+  echo '';
+  }
+  else{
+?>
 <div class="postagens sugerido">
   <h1>Amigos sugeridos</h1>
 <div class="scrollamigo">
@@ -81,6 +87,7 @@ else
 </ul>
 </div>
 </div>
+<?php } ?>
 
 <div class="postagens ajuda">
 <div class="help"></div>
