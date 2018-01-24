@@ -1,3 +1,8 @@
+<?php
+$iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
+    $user = DBRead('user', "WHERE id = '{$iduser}' LIMIT 1 ");
+    $user = $user[0];
+?>
 <header id="header">
 <div id="alinhar-h">
 <a href="/"><h1 id="logo">NekoHappy</h1></a>
@@ -16,7 +21,7 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
 </div>
 
 <div class="menu" id="menu">
-<li>Perfil</li>
+<a href="profile.php?id=<?php echo $user['id']; ?>"><li>Perfil</li></a>
 <li>Opções</li>
 <li>Comunidades</li>
 <a href="?comunidadecreate"><li>Criar comunidade</li></a>
