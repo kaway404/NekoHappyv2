@@ -17,6 +17,7 @@ $post = $_POST['post'];
 $totalcurtida = mysql_query("SELECT * FROM neko_like WHERE idpost = $post ");
 $totalcurtida = mysql_num_rows($totalcurtida);
 $totalcurtida2 = $totalcurtida + 1;
+$totalcurtida3 = $totalcurtida - 1;
 
 $dbCheck = DBRead( 'like', "WHERE id and idpost = $post and iduser = $iduser" );
 
@@ -26,7 +27,7 @@ if( $dbCheck ){
 <script>
 var kawaii<?php echo $post; ?> = document.getElementById('kawaii<?php echo $post; ?>');
 
-$("#totallike<?php echo $post; ?>").text("<?php echo $totalcurtida2; ?> Curtiu isso");
+$("#totallike<?php echo $post; ?>").text("<?php echo $totalcurtida3; ?> Curtiu isso");
 
 kawaii<?php echo $post; ?>.style = "background-position: 0 -193px !important;";
 </script>
