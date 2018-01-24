@@ -94,7 +94,9 @@ else
 <h1>Estamos atualizando o NekoHappy.</h1>
 </div>
 
-
+<?php
+if(isset($_COOKIE['batata']) ){
+?>
 <h1 id="cont">Publicação fixada.</h1>
 <?php
 $coments = DBRead( 'post', "WHERE id and destaque > 0 ORDER BY id DESC" );
@@ -305,7 +307,7 @@ var comentarios<?php echo $comentiduser; ?> = document.getElementById('comentari
 
 
 
-<?php endforeach; endforeach;?>
+<?php endforeach; endforeach; }?>
 
 <div id="respostaba">
 
