@@ -46,6 +46,7 @@ $form2['nome'] = $nomer;
 $form2['sobrenome'] = $sobrenome;
 $form2['pin'] = $pincode;
 $form2['thecry'] = $thecryed;
+$form2['coins'] = "0";
 $form2['ip']= mysql_real_escape_string($_SERVER['REMOTE_ADDR']);
 
 	if( DBCreate( 'user', $form2 ) ){	
