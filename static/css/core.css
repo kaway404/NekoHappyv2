@@ -2,12 +2,11 @@
     background-color: transparent;
 }
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
     background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-    background: #0cdb8a;
-    border-radius: 40px;
+    background: #2C3E50;
 }
 
 *{
