@@ -1,4 +1,7 @@
 $(function(){
+
+  $(".frame").height($(window).height() - 110);
+
   $(".like-btn").hover(function() {
     $(".reaction-icon").each(function(index, element) {
       setTimeout(function(){

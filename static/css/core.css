@@ -1,0 +1,220 @@
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #0cdb8a;
+    border-radius: 40px;
+}
+
+*{
+	font-family: 'Ubuntu', sans-serif;
+	-webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.container  {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+.container .container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+@media (min-width: 1170px) {
+  .container {
+    max-width: 1170px;
+    padding: 0;
+  }
+}
+
+.row {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+.row:before,
+.row:after {
+  content: "";
+  display: table;
+}
+.row:after {
+  clear: both;
+}
+
+.col {
+  display: inline-block;
+  vertical-align: top;
+  min-height: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 100%;
+  margin-right: -4px;
+  *zoom: 1;
+  *display: inline;
+}
+
+@media (min-width: 480px) {
+  .col-2 {
+    width: 50%;
+  }
+}
+
+@media (min-width: 728px) {
+  .col-3 {
+    width: 33.3333%;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-content {
+    width: 60%;
+  }
+
+  .col-sidebar {
+    width: 40%;
+  }
+}
+
+a{
+	text-decoration: none;
+}
+
+.btn{
+  color: black;
+  margin: 10px;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+}
+.btn:hover,
+.btn:focus{
+  background: rgba(0,0,0,.1);
+  transition: .3s;
+}
+
+.btn.btn-primary {
+  color: #2C3E50;
+}
+.btn.btn-primary:hover, .btn.btn-primary:focus {
+  background: #2C3E50;
+  color: #FFFFFF;
+}
+
+.btn.btn-outline-primary {
+  background: #2C3E50;
+  color: #FFF;
+}
+.btn.btn-outline-primary:hover,
+.btn.btn-outline-primary:focus {
+  background: #FFF;
+  color: #2C3E50;
+}
+
+.btn-secondary {
+  background-color: rgba(255,255,255, .7);
+  color: #2C3E50;
+}
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background: #FFF;
+  color: #2C3E50;
+}
+
+.btn-img {
+  margin: 0 5px;
+  cursor: pointer;
+  text-decoration: none;
+  background: transparent;
+}
+.btn-img img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.card {
+  display: block;
+  width: auto;
+  height: auto;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
+  background-color: rgba(0,0,0,.3);
+}
+
+.card-content {
+  padding: 20px;
+  margin: 10px auto;
+}
+.card-content-example {
+  padding: 20px;
+  margin: 10px auto;
+  height: 350px;
+}
+.card-content-sample {
+  padding: 20px 0;
+  margin: 5px;
+  height: 170px;
+}
+
+.display-1 {
+  font-size: 7em;
+}
+.display-2 {
+  font-size: 5em;
+}
+.display-3 {
+  font-size: 3em;
+}
+
+.lead {
+  font-size: 1.50rem;
+  font-weight: lighter;
+}
+
+.text-white {
+  color: white;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+.lowecase {
+  text-transform: lowercase;
+}
+
+.bg-primary {
+	background-color: #2C3E50;
+}
+.bg-light {
+	background-color: #F7F7F7;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.frame {
+	display: block;
+	width: 100%;
+  padding-top: 2.5em;
+}
