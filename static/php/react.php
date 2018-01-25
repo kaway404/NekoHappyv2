@@ -39,7 +39,7 @@ if( DBCreate( 'like', $form2 ) ){
 <script>
 var kawaii<?php echo $post; ?> = document.getElementById('kawaii<?php echo $post; ?>');
 
-$("#totallike<?php echo $post; ?>").text("<?php echo $totalcurtida2; ?> Curtiu isso");
+$("#totallike<?php echo $post; ?>").text("Tu e outras <?php echo $totalcurtida; ?> curtiram isso");
 kawaii<?php echo $post; ?>.style = "background-position: 0 -173px !important;";
 </script>
 <?php } ?>

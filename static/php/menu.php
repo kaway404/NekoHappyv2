@@ -367,10 +367,20 @@ else
   $comentiduser = $coment['id'];
   $totalcurtida = mysql_query("SELECT * FROM neko_like WHERE idpost = $comentiduser ");
   $totalcurtida = mysql_num_rows($totalcurtida);
+  $totalcurtidamenos = $totalcurtida - 1;
                                                      ?>
 <div class="post-bottom">
 	<div class="feed">
-    <p class="totallike" id="totallike<?php echo $comentiduser ?>"><?php echo $totalcurtida ?> Curtida</p>
+    <p class="totallike" id="totallike<?php echo $comentiduser ?>">
+      <?php
+    $dbCheck = DBRead( 'like', "WHERE id and idpost = $comentiduser and iduser = $iduser" );
+    if( $dbCheck ){
+  ?>
+    Tu e outras <?php echo $totalcurtidamenos; ?>
+    <?php } else{?>
+    <?php echo $totalcurtida; ?> curtiram isso
+    <?php } ?>
+  </p>
 <?php
 $comentid = $coment['id'];
 $iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
