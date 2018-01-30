@@ -5,7 +5,12 @@
  * Multimidea(Ofuscado) - https://static.tumblr.com/b87b7e816e087347fc9202d2904783d9/f4y2en1/xREo1d8el/tumblr_static_tumblr_static_2lfwqc6stri8ssws8wc4w88s4_640.png
  * Geometric Forms - https://secure.static.tumblr.com/w8ezvc2/hPkn0wdzp/themes_illustration_minimalist.png
  * MiniGhosts - http://www.themesltd.com/headers2/cute_little_ghosts.png
+ * Neko's - https://orig00.deviantart.net/41dc/f/2016/104/4/0/neko_atsume_background_with_all_34_non_rare_cats_by_dragonmurr-d9yx6r4.png
  */
+
+ body {
+   overflow-x: hidden;
+ }
 
 .apresentation {
   background: url(https://static.tumblr.com/b87b7e816e087347fc9202d2904783d9/f4y2en1/xREo1d8el/tumblr_static_tumblr_static_2lfwqc6stri8ssws8wc4w88s4_640.png) fixed center center;
@@ -15,6 +20,47 @@
 
 .apresentation h1 {
   color: #2C3E50;
-  padding: 2.5em 20px 0;
+  padding: 2em 20px .3em;
   text-shadow: 0 0 50px rgba(0, 0, 0, .5);
+}
+
+.text-hide-on-scroll{
+  position:fixed;
+  bottom:15px;
+  right:20px;
+}
+
+.side-primary {
+  color: #fff;
+  background: var(--theme-color);
+}
+
+.side-primary .container {
+  padding: 10em 20px 0 30px;
+}
+
+.side-secondary .container {
+  padding: 5em 50px;
+}
+
+@media (max-width: 768px) {
+  .apresentation{
+    padding-top: 7em;
+  }
+  .apresentation h1 {
+    font-size: 3em;
+    padding-top: 0;
+  }
+  .apresentation .btn {
+    font-size: 1em;
+  }
+  .text-hide-on-scroll {
+    right: 20%;
+  }
+}
+
+@media (max-width: 350px) {
+  .apresentation .btn {
+    font-size: .8em;
+  }
 }
