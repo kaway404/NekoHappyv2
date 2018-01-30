@@ -43,6 +43,15 @@
   padding: 5em 50px;
 }
 
+@media (max-width: 1000px) {
+  header .col-min-sidebar {
+    width: 30%;
+  }
+  header .col-min-content, .col-md-content {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .apresentation{
     padding-top: 7em;
@@ -63,6 +72,26 @@
   }
   .side-secondary .container .form {
     margin: 50px 10px;
+  }
+
+  .nav {
+    height: 70px;
+  }
+  .nav .col-min-sidebar .brand {
+    padding-top: 5px;
+  }
+  .nav .col-md-sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .nav .col-md-sidebar .img-profile {
+    height: 60%;
+    right: 5em;
+    top: 10px;
+  }
+  .nav .col-md-sidebar .special-link {
+    margin: .6em;
   }
 }
 
