@@ -538,5 +538,6 @@ a{
 .auto-frame {
   display: block;
   width: 100%;
+  height: auto;
   padding: 2.5em 0;
 }

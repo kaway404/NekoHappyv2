@@ -17,7 +17,7 @@
 		</div>
 	</section>
 
-	<article class="frame bg-primary">
+	<article class="auto-frame bg-primary">
 		<div class="container text-center text-white">
 			<div class="container">
 				<h2 class="display-3 uppercase">Interesses</h2>
@@ -51,7 +51,7 @@
 		</div>
 	</article>
 
-	<article class="frame bg-light">
+	<article class="auto-frame bg-light">
 		<div class="container">
 			<div class="row">
 				<div class="col col-2">

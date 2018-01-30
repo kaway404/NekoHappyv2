@@ -43,6 +43,13 @@
   padding: 5em 50px;
 }
 
+@media (min-height: 750px) {
+  .apresentation h1 {
+    padding-top: 1em;
+    font-size: 10em;
+  }
+}
+
 @media (max-width: 1000px) {
   header .col-min-sidebar {
     width: 30%;
