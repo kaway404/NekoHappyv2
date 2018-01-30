@@ -1,7 +1,12 @@
 $(function(){
 
   if($(window).width() > 768) {
-    $(".frame").height($(window).height() - 130);
+    var space = $(".frame").height() - $(".frame .container").height();
+    if (space > 120) {
+        $(".frame").height($(window).height() - 200);
+    } else {
+        $(".frame").height($(window).height() - 130);
+    }
     $(".apresentation img").hide();
   } else {
     $(".frame").height("auto");
@@ -10,15 +15,19 @@ $(function(){
   }
   $(window).resize(function(){
     if($(window).width() > 768) {
-      $(".frame").height($(window).height() - 130);
-      $(".apresentation img").hide();
+      var space = $(".frame").height() - $(".frame .container").height();
+      if (space > 120) {
+          $(".frame").height($(window).height() - 200);
+      } else {
+          $(".frame").height($(window).height() - 130);
+      }
     } else {
       $(".frame").height("auto");
       $(".apresentation").height($(window).height() - 200);
       $(".apresentation img").show();
     }
   });
-  
+
   $(".max-height").height($(window).height());
   $(".alert").hide();
 
