@@ -1,6 +1,6 @@
 <?php
+
 setcookie("iduser" , "");
 setcookie("inisession" , "");
 setcookie("thecry" , "");
-header("location: /");
-?>
+echo "<script> history.go(-1); </script>";

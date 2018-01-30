@@ -1,5 +1,5 @@
 <?php
+
 setcookie("iduser" , "");
 setcookie("inisession" , "");
-header("location: /");
-?>
+echo "<script> history.go(-1); </script>";

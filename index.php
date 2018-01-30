@@ -25,17 +25,15 @@
 <body id="momer">
 	<?php
 
-		if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_COOKIE['thecry']))){
-			require 'static/php/header.php';
-			require 'static/php/dashboard.php';
+		if (isset($_GET['signin']) or isset($_GET['signup']) or isset($_GET['checksession'])) {
+			require_once 'static/php/account.php';
+		} elseif (isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_COOKIE['thecry']))){
+
+			require_once 'static/php/header.php';
+			require_once 'static/php/dashboard.php';
 		}
 		else{
-
-			if ( isset($_GET['login']) or isset($_GET['registro']) or isset($_GET['verificarsessao'])) {
-				require_once 'static/php/account.php';
-			} else {
-				require_once 'static/php/home.php';
-			}
+			require_once 'static/php/home.php';
 		}
 
 	?>

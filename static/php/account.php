@@ -60,10 +60,20 @@
     </div>"
   ];
 
-  if((isset($_COOKIE['thecry']))){
-    $idcry = DBEscape( strip_tags(trim($_COOKIE['thecry']) ) );
-    $usercry = DBRead('user', "WHERE thecry = '{$idcry}' LIMIT 1 ");
-    $usercry = $usercry[0];
+  $idcry = DBEscape( strip_tags(trim($_COOKIE['thecry']) ) );
+  $usercry = DBRead('user', "WHERE thecry = '{$idcry}' LIMIT 1 ");
+  $usercry = $usercry[0];
+
+  if (isset($_COOKIE['iduser'])) {
+    if (isset($_GET['checksession'])) {
+      $message = [
+        "h2"    => "Verifique sua sessão",
+        "span"  => "Após verificar sua sessão, você poderá entrar no <b>NekoHappy</b> sem problemas!",
+        "user"  => $usercry
+      ];
+      $form['selected'] = $form['pincode'];
+    }
+  } elseif ((isset($_COOKIE['thecry']))) {
 
     $message = [
       "h2"    => "faça login novamente",
@@ -72,33 +82,19 @@
     ];
     $form['selected'] = $form['relogin'];
   } else {
-    if (isset($_GET['login'])) {
+    if (isset($_GET['signin'])) {
       $message = [
         "h2"    => "Faça Login",
         "span"  => "Entre agora e desfrute ao maximo o <b>NekoHappy</b>"
       ];
       $form['selected'] = $form['normal'];
     }
-    if (isset($_COOKIE['iduser'])) {
-      if (isset($_GET['verificarsessao'])) {
-        $message = [
-          "h2"    => "Verifique sua sessão",
-          "span"  => "Após verificar sua sessão, você poderá entrar no <b>NekoHappy</b> sem problemas!"
-        ];
-        $form['selected'] = $form['pincode'];
-      }
-    } else {
-      $message = [
-        "h2"    => "Faça Login",
-        "span"  => "Entre agora e desfrute ao maximo o <b>NekoHappy</b>"
-      ];
-      $form['selected'] = $form['normal'];
-    }
-    if (isset($_GET['registro'])) {
+
+    if (isset($_GET['signup'])) {
       $message = [
         "h2"    => "Registre-se",
         "span"  => "Faça seu cadastro agora mesmo, para encontrar seus amigos no <b>NekoHappy</b>",
-        "small" => "Já tenho uma conta, loga-se <a class='text-white-hover' href='?login'>aqui</a>"
+        "small" => "Já tenho uma conta, loga-se <a class='text-white-hover' href='signin'>aqui</a>"
       ];
       $form['selected'] = $form['register'];
     }
@@ -110,9 +106,12 @@
     <div class="col col-sidebar max-height side-primary">
       <div class="container">
         <?php if (!empty($message['user'])) { ?>
-          <!-- <img src="img/<?= $message['user']['image'] ?>" alt="image profile user"> -->            <img class="img-compressed" src="https://static1.squarespace.com/static/58290792725e259c855c07e2/58320e3059cc687f522a96a3/588a00c3d482e90e1b1b1c39/1485439194441/boy.png" alt="profile user example">
+          <!-- <img src="img/<?= $message['user']['image'] ?>" alt="image profile user"> -->
+          <img class="img-compressed" src="https://static1.squarespace.com/static/58290792725e259c855c07e2/58320e3059cc687f522a96a3/588a00c3d482e90e1b1b1c39/1485439194441/boy.png" alt="profile user example">
           <h2 class="display-3"><?= ucFirst($message['user']['nome']) .", ". $message['h2']  ?></h2>
-        <?php } ?>
+        <?php } else { ?>
+        <h2 class="display-3"><?= $message['h2'] ?></h2>
+      <?php } ?>
         <span class="lead"><?= $message['span'] ?></span><br>
         <small class="text-muted"><?= $message['small'] ?></small>
       </div>

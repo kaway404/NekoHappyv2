@@ -1,0 +1,23 @@
+RewriteEngine On
+
+# Not memory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Evitando listagem de diretórios..
+Options -Indexes
+
+# Protegendo arquivo .htaccess
+<files ~ "^.*\.([Hh][Tt][Aa])">
+    order allow,deny
+    deny from all
+    satisfy all
+</files>
+
+# Reescrita de ERROR
+ErrorDocument 403 index.php
+ErrorDocument 404 index.php
+
+RewriteRule ^$ index.php
+RewriteRule ^/([a-zA-Z0-9_-]+)$ index.php
+RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?$1

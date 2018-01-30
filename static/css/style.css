@@ -57,6 +57,13 @@
   .text-hide-on-scroll {
     right: 20%;
   }
+
+  .side-secondary .container {
+    padding: 5em 0;
+  }
+  .side-secondary .container .form {
+    margin: 50px 10px;
+  }
 }
 
 @media (max-width: 350px) {

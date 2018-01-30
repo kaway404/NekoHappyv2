@@ -419,6 +419,10 @@ a{
 .img-compressed {
   width: 60%;
 }
+.img-inverted {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
 
 .position-absolute {
   position: absolute;

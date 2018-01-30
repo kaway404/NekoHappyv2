@@ -10,8 +10,8 @@
 			</div>
 			<div class="row">
 			  <div class="container">
-					<a href="?login" title="Login" class="btn btn-outline-primary lead">Login</a>
-					<a href="?registro" title="Cadastrar-se" class="btn btn-secondary lead">Cadastre-se</a>
+					<a href="signin" title="Login" class="btn btn-outline-primary lead">Login</a>
+					<a href="signup" title="Cadastrar-se" class="btn btn-secondary lead">Cadastre-se</a>
 			  </div>
 			</div>
 		</div>
@@ -42,7 +42,7 @@
 					<div class="col col-3">
 						<div class="card">
 							<div class="card-content-example">
-								<img class="img-fluid" src="http://www.iconarchive.com/download/i81447/custom-icon-design/mono-business-2/coffee.ico" alt="">
+								<img class="img-fluid img-inverted" src="http://www.iconarchive.com/download/i81447/custom-icon-design/mono-business-2/coffee.ico" alt="">
 							</div>
 						</div>
 				  </div>
