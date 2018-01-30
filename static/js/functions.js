@@ -1,51 +1,53 @@
 $(document).ready(function() {
-    $("#registrar").click(function() {
-        var emailr = $("#emailr").val(); 
-        var senhar = $("#senhar").val();
-		var nomer = $("#nomer").val(); 
-        var sobrenomer = $("#sobrer").val();
-        var pincode = $("#pincode").val();
+    $(".register").click(function() {
+        var emailr = $("#emailr").val();
+        var senhar = $("#passr").val();
+		    var nomer = $("#namer").val();
+        var sobrenomer = $("#lastnamer").val();
+        var pincode = $("#pincoder").val();
         $.post("register.php", {emailr: emailr,senhar: senhar,nomer: nomer,sobrenomer: sobrenomer,pincode: pincode},
         function(data){
-         $("#resposta").html(data);
-         }
-         , "html"); 
+          $(".resposta").html(data);
+          $(".alert").show("slow");
+          setTimeout(function(){ $(".alert").hide("slow"); }, 8000);
+        }
+         , "html");
          return false;
     });
-});
 
-$(document).ready(function() {
-    $("#logar").click(function() {
-        var emaill = $("#emaill").val(); 
-        var senhal = $("#senhal").val();
+    $(".login").click(function() {
+        var emaill = $("#emaill").val();
+        var senhal = $("#passl").val();
         $.post("login.php", {emaill: emaill,senhal: senhal},
         function(data){
-         $("#resposta").html(data);
-         }
+          $(".resposta").html(data);
+          $(".alert").show("slow");
+          setTimeout(function(){ $(".alert").hide("slow"); }, 8000);
+        }
          , "html");
          return false;
     });
-});
 
-$(document).ready(function() {
-    $("#verifique").click(function() {
-        var pincode = $("#pincode").val(); 
+    $(".pincode").click(function() {
+        var pincode = $("#pin").val();
         $.post("verificando.php", {pincode: pincode},
         function(data){
-         $("#resposta").html(data);
-         }
+          $(".resposta").html(data);
+          $(".alert").show("slow");
+          setTimeout(function(){ $(".alert").hide("slow"); }, 8000);
+        }
          , "html");
          return false;
     });
-});
 
-$(document).ready(function() {
-    $("#again").click(function() {
-        var senha = $("#senhaa").val(); 
+    $(".again").click(function() {
+        var senha = $("#passa").val();
         $.post("again.php", {senha: senha},
         function(data){
-         $("#resposta").html(data);
-         }
+          $(".resposta").html(data);
+          $(".alert").show("slow");
+          setTimeout(function(){ $(".alert").hide("slow"); }, 8000);
+        }
          , "html");
          return false;
     });

@@ -1,6 +1,39 @@
 $(function(){
 
-  $(".frame").height($(window).height() - 110);
+  if($(window).width() > 768) {
+    $(".frame").height($(window).height() - 130);
+    $(".apresentation img").hide();
+  } else {
+    $(".frame").height("auto");
+    $(".apresentation").height($(window).height() - 200);
+    $(".apresentation img").show();
+  }
+  $(window).resize(function(){
+    if($(window).width() > 768) {
+      $(".frame").height($(window).height() - 130);
+      $(".apresentation img").hide();
+    } else {
+      $(".frame").height("auto");
+      $(".apresentation").height($(window).height() - 200);
+      $(".apresentation img").show();
+    }
+  });
+  
+  $(".max-height").height($(window).height());
+  $(".alert").hide();
+
+  $(".cancel").click(function(){
+    $("input").val("");
+  });
+
+  $(window).scroll(function(){
+    var s = $(this).scrollTop();
+    if (s < 10) {
+      $(".text-hide-on-scroll").show("slow");
+    } else {
+      $(".text-hide-on-scroll").hide("fast");
+    }
+  });
 
   $(".like-btn").hover(function() {
     $(".reaction-icon").each(function(index, element) {
