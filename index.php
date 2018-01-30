@@ -12,11 +12,11 @@
 	<meta name="description" content="Rede Social para todas as pessoas">
 	<meta name="author" content="Kaway">
 	<title>NekoHappy</title>
-	<link rel="shortcut icon" href="static/img/favicon.png">
+	<link rel="shortcut icon" href="static/img/favicon1.png">
 	<link rel="stylesheet" href="static/css/style.css"/>
 	<link rel="stylesheet" href="static/css/react.css">
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="static/js/functions.js"></script>
 	<script type="text/javascript" src="static/js/jquery.js"></script>
 	<script type="text/javascript" src="static/js/js-all.js"></script>
@@ -25,21 +25,18 @@
 <body id="momer">
 	<?php
 
-
-	if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_COOKIE['thecry']))){
-		require 'static/php/header.php';
-		require 'static/php/dashboard.php';
-	}
-	else{
-
-		if ( isset($_GET['login']) or isset($_GET['registro']) or isset($_GET['verificarsessao'])) {
+		if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_COOKIE['thecry']))){
 			require 'static/php/header.php';
-			require_once 'static/php/account.php';
-		} else {
-			require_once 'static/php/home.php';
+			require 'static/php/dashboard.php';
 		}
-	}
+		else{
 
+			if ( isset($_GET['login']) or isset($_GET['registro']) or isset($_GET['verificarsessao'])) {
+				require_once 'static/php/account.php';
+			} else {
+				require_once 'static/php/home.php';
+			}
+		}
 
 	?>
 </body>
