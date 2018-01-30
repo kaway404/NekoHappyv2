@@ -63,11 +63,10 @@
   $idcry = DBEscape( strip_tags(trim($_COOKIE['thecry']) ) );
   $usercry = DBRead('user', "WHERE thecry = '{$idcry}' LIMIT 1 ");
   $usercry = $usercry[0];
-  $ip=mysql_real_escape_string($_SERVER['REMOTE_ADDR']);
+  $ip = @mysql_real_escape_string($_SERVER['REMOTE_ADDR']);
 
 if (isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_COOKIE['thecry']))){
-  require_once 'static/php/header.php';
-  require_once 'static/php/dashboard.php';
+   header("location: /");
 }
 else{
   if (isset($_COOKIE['iduser'])) {
@@ -138,7 +137,7 @@ else{
         <small class="text-muted"><?= $message['small'] ?></small>
       </div>
     </div>
-    <div class="col col-content medium-height-margin side-secondary">
+    <div class="col col-content medium-height-margin side-secondary max-height bg-white">
       <div class="container">
         <?= $form['selected'] ?>
       </div>

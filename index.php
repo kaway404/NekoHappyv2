@@ -22,7 +22,7 @@
 	<script type="text/javascript" src="static/js/js-all.js"></script>
 	<script type="text/javascript" src="static/js/index.js"></script>
 </head>
-<body id="momer">
+<body id="momer" class="bg-primary">
 	<?php
 
 		if (isset($_GET['signin']) or isset($_GET['signup']) or isset($_GET['checksession'])) {
