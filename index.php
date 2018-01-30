@@ -22,13 +22,12 @@
 	<script type="text/javascript" src="static/js/js-all.js"></script>
 	<script type="text/javascript" src="static/js/index.js"></script>
 </head>
-<body id="momer" class="bg-primary">
+<body id="momer">
 	<?php
 
 		if (isset($_GET['signin']) or isset($_GET['signup']) or isset($_GET['checksession'])) {
 			require_once 'static/php/account.php';
-		} elseif (isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_COOKIE['thecry']))){
-
+		} else if (isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_COOKIE['thecry']))){
 			require_once 'static/php/header.php';
 			require_once 'static/php/dashboard.php';
 		}

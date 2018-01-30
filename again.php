@@ -39,6 +39,6 @@ if((isset($_COOKIE['thecry']))){
   if( DBUpdate( 'user', $userUP, "id = '{$iduser}'" ) ){
     echo '';
   }
-  echo '<script> history.go(-1); </script>';
+  header("location: /");
 	exit;
 }
