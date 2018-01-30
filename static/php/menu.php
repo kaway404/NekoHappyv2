@@ -6,7 +6,7 @@
 
 
 <div id="alinhar-h" id="fallen4">
-<?php 
+<?php
 if(isset($_GET['comunidadecreate'])){
 ?>
 
@@ -66,8 +66,8 @@ $iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
 $peoples = DBRead( 'user', "WHERE id <> $iduser ORDER BY id ASC LIMIT 10" );
 if (!$peoples)
 echo '';
-else  
-  foreach ($peoples as $people):   
+else
+  foreach ($peoples as $people):
 ?>
 <a href="profile.php?id=<?php echo $people['id']; ?>">
 <li class="imesa">
@@ -78,7 +78,7 @@ else
   $max2 = 14;
    if( $len2 <= $max2 )
    echo $str2;
-  else    
+  else
    echo substr( $str2, 0, $max2 ) . '...'?></p>
 </li>
 </a>
@@ -91,7 +91,7 @@ else
 
 <div class="postagens ajuda">
 <div class="help"></div>
-<h1>Estamos atualizando o NekoHappy.</h1>
+<h1>Estou atualizando o NekoHappy.</h1>
 </div>
 
 <?php
@@ -102,16 +102,16 @@ if(isset($_COOKIE['batata']) ){
 $coments = DBRead( 'post', "WHERE id and destaque > 0 ORDER BY id DESC" );
 if (!$coments)
 echo '<div class="postagens"><p class="bakeero">Sem publicações fixadas.</p></div>';
-else  
-	foreach ($coments as $coment):	 
+else
+	foreach ($coments as $coment):
 ?>
 <?php
 $comentiduser = $coment['iduser'];
 $peoples = DBRead( 'user', "WHERE id = $comentiduser ORDER BY id DESC LIMIT 1" );
 if (!$peoples)
-echo '';	
-else  
-	foreach ($peoples as $people):	 
+echo '';
+else
+	foreach ($peoples as $people):
 ?>
 
 <div class="postagens" id="fallenl">
@@ -122,7 +122,7 @@ else
 
 		<a href="profile.php?id=<?php echo $people['id']; ?>"><p class="name-poster"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?> 	</p></a>
 
-		<p class="cont-d"> <?php 
+		<p class="cont-d"> <?php
                                                     $emotions = array(':)', ':@', '8)', ':D', ':3', ':(', ';)', ':O', ':o', ':P', ':p', '<3');
                                                     $imgs = array(
                                                         '<img id="emoticon" src="/static/img/emotions/nice.png"/>',
@@ -158,7 +158,7 @@ $comentiduser = $coment['id'];
 $likes = DBRead( 'like', "WHERE idpost = $comentiduser and iduser = $iduser ORDER BY id DESC" );
 if (!$likes)
 echo '<a class="like-btn" id="kawaii'.$comentid.'">';
-else  
+else
   foreach ($likes as $like):
 ?>
    <a class="like-btn ativolike" id="kawaii<?php echo $comentiduser; ?>">
@@ -176,7 +176,7 @@ if( $dbCheck ){
 <script>
    $(document).ready(function() {
     $("#kawaii<?php echo $comentiduser; ?>").click(function() {
-        var post = <?php echo $coment['id'] ?>; 
+        var post = <?php echo $coment['id'] ?>;
         $.post("/static/php/react.php", {post: post},
         function(data){
          $("#respostaba").html(data);
@@ -190,7 +190,7 @@ if( $dbCheck ){
 <script>
    $(document).ready(function() {
     $("#kawaii<?php echo $comentiduser; ?>").click(function() {
-        var post = <?php echo $coment['id'] ?>; 
+        var post = <?php echo $coment['id'] ?>;
         $.post("/static/php/react.php", {post: post},
         function(data){
          $("#respostaba").html(data);
@@ -213,16 +213,16 @@ $postid = $coment['id'];
 $coments = DBRead( 'comment', "WHERE id and idpost = $postid ORDER BY id DESC" );
 if (!$coments)
 echo '<p id="feelsba'.$postid.'">Não há nenhum comentario</p>';
-else  
-  foreach ($coments as $coment):   
+else
+  foreach ($coments as $coment):
 ?>
 <?php
 $comentiduser = $coment['iduser'];
 $peoples = DBRead( 'user', "WHERE id = $comentiduser ORDER BY id DESC LIMIT 1" );
 if (!$peoples)
-echo '';  
-else  
-  foreach ($peoples as $people):   
+echo '';
+else
+  foreach ($peoples as $people):
 ?>
 
       <div class="coment">
@@ -276,9 +276,9 @@ $("#show<?php echo $postid ?>").after(html);
 document.getElementById('comment<?php echo $postid ?>').value='';
 $("#flash<?php echo $postid ?>").hide();
 $("#content<?php echo $postid ?>").focus();
-}  
+}
 });
-} 
+}
 return false;
 });
 });
@@ -323,16 +323,16 @@ var comentarios<?php echo $comentiduser; ?> = document.getElementById('comentari
 $coments = DBRead( 'post', "WHERE id and destaque = 0 ORDER BY id DESC" );
 if (!$coments)
 echo '<div class="postagens" id="blank"><p class="bakeero">Sem postagem :/</p></div>';
-else  
-	foreach ($coments as $coment):	 
+else
+	foreach ($coments as $coment):
 ?>
 <?php
 $comentiduser = $coment['iduser'];
 $peoples = DBRead( 'user', "WHERE id = $comentiduser ORDER BY id DESC LIMIT 1" );
 if (!$peoples)
-echo '';	
-else  
-	foreach ($peoples as $people):	 
+echo '';
+else
+	foreach ($peoples as $people):
 ?>
 
 <div class="postagens" id="fallen">
@@ -342,7 +342,7 @@ else
 
 		<a href="profile.php?id=<?php echo $people['id']; ?>"><p class="name-poster"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?></p></a>
 
-		<p class="cont-d"> <?php 
+		<p class="cont-d"> <?php
                                                     $emotions = array(':)', ':@', '8)', ':D', ':3', ':(', ';)', ':O', ':o', ':P', ':p', '<3');
                                                     $imgs = array(
                                                         '<img id="emoticon" src="/static/img/emotions/nice.png"/>',
@@ -378,7 +378,7 @@ $comentiduser = $coment['id'];
 $likes = DBRead( 'like', "WHERE idpost = $comentiduser and iduser = $iduser ORDER BY id DESC" );
 if (!$likes)
 echo '<a class="like-btn" id="kawaii'.$comentiduser.'">';
-else  
+else
 	foreach ($likes as $like):
 ?>
 	 <a class="like-btn ativolike" id="kawaii<?php echo $comentiduser; ?>">
@@ -395,7 +395,7 @@ if( $dbCheck ){
 <script>
    $(document).ready(function() {
     $("#kawaii<?php echo $comentiduser; ?>").click(function() {
-        var post = <?php echo $coment['id'] ?>; 
+        var post = <?php echo $coment['id'] ?>;
         $.post("/static/php/react.php", {post: post},
         function(data){
          $("#respostaba").html(data);
@@ -409,7 +409,7 @@ if( $dbCheck ){
 <script>
    $(document).ready(function() {
     $("#kawaii<?php echo $comentiduser; ?>").click(function() {
-        var post = <?php echo $coment['id'] ?>; 
+        var post = <?php echo $coment['id'] ?>;
         $.post("/static/php/react.php", {post: post},
         function(data){
          $("#respostaba").html(data);
@@ -447,16 +447,16 @@ $postid = $coment['id'];
 $coments = DBRead( 'comment', "WHERE id and idpost = $postid ORDER BY id DESC" );
 if (!$coments)
 echo '<p id="feelsba'.$postid.'">Não há nenhum comentario</p>';
-else  
-  foreach ($coments as $coment):   
+else
+  foreach ($coments as $coment):
 ?>
 <?php
 $comentiduser = $coment['iduser'];
 $peoples = DBRead( 'user', "WHERE id = $comentiduser ORDER BY id DESC LIMIT 1" );
 if (!$peoples)
-echo '';  
-else  
-  foreach ($peoples as $people):   
+echo '';
+else
+  foreach ($peoples as $people):
 ?>
 
       <div class="coment">
@@ -511,7 +511,7 @@ $("#show<?php echo $postid ?>").after(html);
 document.getElementById('comment<?php echo $postid ?>').value='';
 $("#flash<?php echo $postid ?>").hide();
 $("#content<?php echo $postid ?>").focus();
-}  
+}
 });
 }
 return false;
@@ -543,7 +543,7 @@ var kawaii<?php echo $comentiduser; ?> = document.getElementById('kawaii<?php ec
 </div>
 
 
-<?php 
+<?php
 if($user['configurado'] <= 1){
 ?>
 
@@ -552,7 +552,7 @@ if($user['configurado'] <= 1){
 
 <div class="track" id="track">
 
-<?php 
+<?php
 if($user['configurado'] == 0){
 ?>
 <center>
@@ -627,7 +627,7 @@ body{
 </center>
 
 
-
+<script src="static/js/menu.js" type="text/javascript"></script>
 <script type="text/javascript" src="static/js/publicacao.js"></script>
 
-<?Php } ?> 
+<?php } ?>

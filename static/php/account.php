@@ -116,7 +116,7 @@
         <small class="text-muted"><?= $message['small'] ?></small>
       </div>
     </div>
-    <div class="col col-content medium-height-margin side-secondary">
+    <div class="col col-content medium-height-margin side-secondary bg-white max-height">
       <div class="container">
         <?= $form['selected'] ?>
       </div>

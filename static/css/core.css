@@ -89,6 +89,20 @@
   .col-sidebar {
     width: 40%;
   }
+  .col-min-content {
+    width: 80%;
+  }
+
+  .col-min-sidebar {
+    width: 20%;
+  }
+  .col-md-content {
+    width: 70%;
+  }
+
+  .col-md-sidebar {
+    width: 30%;
+  }
 }
 
 a{
@@ -149,6 +163,71 @@ a{
 .btn-img img {
   width: 40px;
   border-radius: 50%;
+}
+
+.nav {
+  background: rgba(255,255,255,.8);
+  border-bottom: 1px solid rgba(255,255,255,.8);
+  /* box-shadow: 0 5px 10px rgba(0, 0, 0, .1); */
+}
+.nav .nav {
+  box-shadow: none;
+}
+
+.nav.nav-fixed {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.nav .nav-link {
+  display: block;
+  float: right;
+  color: #444;
+  margin: .7em 5px;
+  padding: .5em 0;
+  text-decoration: none;
+}
+.nav .nav-link:hover,
+.nav .nav-link:focus,
+.nav .nav-link.active
+ {
+  color: var(--theme-color);
+  transition: all linear .3s;
+}
+.nav .special-link {
+  color: white;
+  font-size: 1.5em;
+  margin: .3em 3em;
+  padding: 5px 10px;
+  border-radius: 3px;
+  background: rgba(0,0,0,.4);
+}
+.nav .special-link:hover,
+.nav .special-link:focus {
+  color: #FFF;
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
+  transition: ease .3s;
+}
+
+.nav .brand {
+  cursor: pointer;
+  display: block;
+  font-size: 2em;
+  font-weight: bolder;
+  color: var(--theme-color);
+  text-align: center;
+}
+.nav .brand img {
+  margin-top: 10px;
+}
+.nav input[type="text"] {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  border: none;
+  background: rgba(0,0,0,.1);
+  font-size: 1em;
 }
 
 .card {
@@ -412,6 +491,9 @@ a{
 .bg-light {
 	background-color: #F7F7F7;
 }
+.bg-white {
+  background: #FFFFFF;
+}
 
 .img-fluid {
   max-width: 100%;
@@ -422,6 +504,23 @@ a{
 .img-inverted {
   -webkit-filter: invert(1);
   filter: invert(1);
+}
+.img-icon {
+  width: 40px;
+}
+.img-profile {
+  cursor: pointer;
+  position: absolute;
+  width: auto;
+  height: 80%;
+  right: 8em;
+  top: 5px;
+  border-radius: 3px;
+}
+.img-profile:hover,
+.img-profile:focus {
+  background: rgba(0, 0, 0, .1);
+  transition: ease .5s;
 }
 
 .position-absolute {
