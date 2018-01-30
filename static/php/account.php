@@ -63,17 +63,38 @@
   $idcry = DBEscape( strip_tags(trim($_COOKIE['thecry']) ) );
   $usercry = DBRead('user', "WHERE thecry = '{$idcry}' LIMIT 1 ");
   $usercry = $usercry[0];
+  $ip=mysql_real_escape_string($_SERVER['REMOTE_ADDR']);
 
+if (isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_COOKIE['thecry']))){
+  require_once 'static/php/header.php';
+  require_once 'static/php/dashboard.php';
+}
+else{
   if (isset($_COOKIE['iduser'])) {
+  $iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
+  $user = DBRead('user', "WHERE id = '{$iduser}' LIMIT 1 ");
+  $user = $user[0];
+  if($user['ip'] <> $ip ){
     if (isset($_GET['checksession'])) {
       $message = [
-        "h2"    => "Verifique sua sessão",
-        "span"  => "Após verificar sua sessão, você poderá entrar no <b>NekoHappy</b> sem problemas!",
-        "user"  => $usercry
+      "h2"    => "Verifique sua sessão",
+      "span"  => "Após verificar sua sessão, você poderá entrar no <b>NekoHappy</b> sem problemas!",
+      "user"  => $usercry
       ];
       $form['selected'] = $form['pincode'];
     }
-  } elseif ((isset($_COOKIE['thecry']))) {
+  }
+
+  if($user['ip'] == $ip ){
+    if (isset($_GET['checksession'])) {
+      setcookie("iduser" , "");
+      setcookie("inisession" , "");
+      setcookie("perfil" , "");
+      header("location: /signin");
+    }
+  }
+
+  } else if ((isset($_COOKIE['thecry']))) {
 
     $message = [
       "h2"    => "faça login novamente",
@@ -99,6 +120,7 @@
       $form['selected'] = $form['register'];
     }
   }
+}
 
   ?>
 
@@ -116,7 +138,7 @@
         <small class="text-muted"><?= $message['small'] ?></small>
       </div>
     </div>
-    <div class="col col-content medium-height-margin side-secondary bg-white max-height">
+    <div class="col col-content medium-height-margin side-secondary">
       <div class="container">
         <?= $form['selected'] ?>
       </div>
