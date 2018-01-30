@@ -39,6 +39,6 @@ if((isset($_COOKIE['thecry']))){
   if( DBUpdate( 'user', $userUP, "id = '{$iduser}'" ) ){
     echo '';
   }
-  header("location: /");
+  echo '<script>location.reload();</script>';
 	exit;
 }

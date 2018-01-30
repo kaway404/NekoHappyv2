@@ -66,7 +66,7 @@ else{
 		setcookie("thecry", $idcry);
 		setcookie("iduser", $iduser);
 		setcookie("inisession", $inisession);
-		header("location: /");
+		echo '<script>location.reload();</script>';
 	}
 }
 
