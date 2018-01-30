@@ -1,72 +1,127 @@
-<div class="acc"></div>
-<div class="account">
-<div class="form">
-	<?php
-	if((isset($_COOKIE['thecry']))){
-	$idcry = DBEscape( strip_tags(trim($_COOKIE['thecry']) ) );
+<article>
+
+  <?php
+
+  $form = [
+    "normal"    => "<div class='form'><div class='alert alert-error resposta'></div>
+      <div class='form-group'>
+        <label for='emaill'>Email</label>
+        <input type='email' id='emaill' placeholder='Email'>
+      </div>
+      <div class='form-group'>
+        <label for='passl'>Senha</label>
+        <input type='password' id='passl' placeholder='Senha'>
+      </div>
+      <button class='btn btn-outline-primary login'>Pronto</button>
+      <button class='btn btn-secondary cancel' type='reset'>Cancelar</button>
+    </div>",
+    "relogin"   => "<div class='form'><div class='alert alert-error resposta'></div>
+      <div class='form-group'>
+        <label for='passa'>Senha</label>
+        <input type='password' id='passa' placeholder='Senha'>
+      </div>
+      <button class='btn btn-outline-primary again'>Pronto</button>
+      <button class='btn btn-secondary' type='reset'>Cancelar</button>
+    </div>",
+    "pincode"   => "<div class='form'><div class='alert alert-error resposta'></div>
+      <div class='form-group'>
+        <label for='pin'>Código</label>
+        <input type='text' id='pin' placeholder='Pin Code'>
+      </div>
+      <button class='btn btn-outline-primary pincode'>Pronto</button>
+      <button class='btn btn-secondary' type='reset'>Cancelar</button>
+    </div>",
+    "register"  => "<div class='form'><div class='alert alert-error resposta'></div>
+      <div class='form-group'>
+        <label for='emailr'>Email</label>
+        <input type='email' id='emailr' placeholder='Email'>
+      </div>
+      <div class='form-group'>
+        <label for='passr'>Senha</label>
+        <input type='password' id='passr' placeholder='Senha'>
+      </div>
+      <div class='form-group'>
+        <label>Nome/Sobrenome</label>
+        <div class='row'>
+          <div class='col col-2'>
+            <input type='text' id='namer' placeholder='Nome'>
+          </div>
+          <div class='col col-2'>
+            <input type='text' id='lastnamer' placeholder='Sobrenome'>
+          </div>
+        </div>
+      </div>
+      <div class='form-group'>
+        <label for='pincoder'>Código</label>
+        <input type='text' id='pincoder' placeholder='Pin Code'>
+      </div>
+      <button class='btn btn-outline-primary register'>Pronto</button>
+      <button class='btn btn-secondary' type='reset'>Cancelar</button>
+    </div>"
+  ];
+
+  if((isset($_COOKIE['thecry']))){
+    $idcry = DBEscape( strip_tags(trim($_COOKIE['thecry']) ) );
     $usercry = DBRead('user', "WHERE thecry = '{$idcry}' LIMIT 1 ");
     $usercry = $usercry[0];
-	?>
 
-	<h1 class="login">Faça login novamante</h1>
-	<img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-i"/>
-	<h1 id="eto51"><?php echo $usercry['nome'] ?> <?php echo $usercry['sobrenome'] ?></h1>
-	<input type="password" name="senhar" id="senhaa" placeholder="Senha"/>
-	<div class="btn-sa" id="again"><div class="btna"><span>Login</span></div></div>
-	<p class="bat">Não sou eu, sair da conta clique <a href="logoutp.php">aqui</a></p>
-	<div id="resposta">
-	</div>
+    $message = [
+      "h2"    => "faça login novamente",
+      "span"  => "Que bom! Você está voltando ao <b>NekoHappy</b>",
+      "user"  => $usercry
+    ];
+    $form['selected'] = $form['relogin'];
+  } else {
+    if (isset($_GET['login'])) {
+      $message = [
+        "h2"    => "Faça Login",
+        "span"  => "Entre agora e desfrute ao maximo o <b>NekoHappy</b>"
+      ];
+      $form['selected'] = $form['normal'];
+    }
+    if (isset($_COOKIE['iduser'])) {
+      if (isset($_GET['verificarsessao'])) {
+        $message = [
+          "h2"    => "Verifique sua sessão",
+          "span"  => "Após verificar sua sessão, você poderá entrar no <b>NekoHappy</b> sem problemas!"
+        ];
+        $form['selected'] = $form['pincode'];
+      }
+    } else {
+      $message = [
+        "h2"    => "Faça Login",
+        "span"  => "Entre agora e desfrute ao maximo o <b>NekoHappy</b>"
+      ];
+      $form['selected'] = $form['normal'];
+    }
+    if (isset($_GET['registro'])) {
+      $message = [
+        "h2"    => "Registre-se",
+        "span"  => "Faça seu cadastro agora mesmo, para encontrar seus amigos no <b>NekoHappy</b>",
+        "small" => "Já tenho uma conta, loga-se <a class='text-white-hover' href='?login'>aqui</a>"
+      ];
+      $form['selected'] = $form['register'];
+    }
+  }
 
-	<?php } else{ ?>
+  ?>
 
-	<?php
-	if(isset($_GET['login'])){
-	?>
-	<h1 class="login">Login</h1>
-	<input type="email" name="emaill" id="emaill" placeholder="E-mail"/>
-	<input type="password" name="senhal" id="senhal" placeholder="Senha"/>
-	<div class="btn-sa" id="logar"><div class="btna"><span>Login</span></div></div>
-	<p class="bat">Não tens uma conta, registre <a href="?registro">aqui</a></p>
-	<div id="resposta">
-	</div>
-	<?php } ?>
-	<?php
-	if(isset($_COOKIE['iduser'])){
-	if(isset($_GET['verificarsessao'])){
-	?>
-	<h1 class="login">Verifique sua sessão</h1>
-	<input type="text" name="pincode" id="pincode" placeholder="Pincode"/>
-	<div class="btn-sa" id="verifique"><div class="btna"><span>Continuar</span></div></div>
-	<div id="resposta">
-	</div>
-	<?php
-		}else{
-	?>
-		<h1 class="login">Login</h1>
-	<input type="email" name="emaill" id="emaill" placeholder="E-mail"/>
-	<input type="password" name="senhal" id="senhal" placeholder="Senha"/>
-	<div class="btn-sa" id="logar"><div class="btna"><span>Login</span></div></div>
-	<p class="bat">Não tens uma conta, registre <a href="?registro">aqui</a></p>
-	<div id="resposta">
-	</div>
-	<?php }} ?>
+  <div class="row">
+    <div class="col col-sidebar max-height side-primary">
+      <div class="container">
+        <?php if (!empty($message['user'])) { ?>
+          <!-- <img src="img/<?= $message['user']['image'] ?>" alt="image profile user"> -->            <img class="img-compressed" src="https://static1.squarespace.com/static/58290792725e259c855c07e2/58320e3059cc687f522a96a3/588a00c3d482e90e1b1b1c39/1485439194441/boy.png" alt="profile user example">
+          <h2 class="display-3"><?= ucFirst($message['user']['nome']) .", ". $message['h2']  ?></h2>
+        <?php } ?>
+        <span class="lead"><?= $message['span'] ?></span><br>
+        <small class="text-muted"><?= $message['small'] ?></small>
+      </div>
+    </div>
+    <div class="col col-content medium-height-margin side-secondary">
+      <div class="container">
+        <?= $form['selected'] ?>
+      </div>
+    </div>
+  </div>
 
-	<?php
-	if(isset($_GET['registro'])){
-	?>
-	<h1 class="login">Registrar</h1>
-	<input type="email" name="emailr" id="emailr" placeholder="E-mail"/>
-	<input type="password" name="senhar" id="senhar" placeholder="Senha"/>
-	<input type="text" name="nome" id="nomer" placeholder="Nome"/>
-	<input type="text" name="nome" id="sobrer" placeholder="Sobrenome"/>
-	<input type="text" name="pincode" id="pincode" placeholder="Pin Code"/>
-	<div class="btn-sa" id="registrar"><div class="btna"><span>Registrar</span></div></div>
-	<p class="bat">Já tenho uma conta, loga-se <a href="?login">aqui</a></p>
-	<div id="resposta">
-	</div>
-	<?php } ?>
-
-<?php } ?>
-
-</div>
-</div>
+</article>
