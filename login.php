@@ -66,6 +66,6 @@
     if( DBUpdate( 'user', $userUP, "id = '{$iduser}'" ) ){
       echo '';
     }
-   echo '<script>location.reload();</script>';
+    echo '<script>history.go(-1);</script>';
 		exit;
   }

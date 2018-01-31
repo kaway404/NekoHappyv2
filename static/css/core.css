@@ -479,6 +479,9 @@ a{
 .text-right {
   text-align: right;
 }
+.text-left {
+  text-align: left;
+}
 
 .uppercase {
   text-transform: uppercase;
@@ -499,6 +502,17 @@ a{
 
 .img-fluid {
   max-width: 100%;
+}
+.img-rounded {
+  border-radius: 50%;
+}
+.img-square {
+  border-radius: 5px;
+}
+.img-ajust {
+  margin: 0 20px;
+  padding: 5px;
+  background: rgba(0, 0, 0, .3);
 }
 .img-compressed {
   width: 60%;

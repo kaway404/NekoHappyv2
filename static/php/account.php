@@ -1,6 +1,4 @@
-<article>
-
-  <?php
+<?php
 
   $form = [
     "normal"    => "<div class='form'><div class='alert alert-error resposta'></div>
@@ -12,7 +10,7 @@
         <label for='passl'>Senha</label>
         <input type='password' id='passl' placeholder='Senha'>
       </div>
-      <button class='btn btn-outline-primary login'>Pronto</button>
+      <button class='btn btn-outline-primary login'>Entrar</button>
       <button class='btn btn-secondary cancel' type='reset'>Cancelar</button>
     </div>",
     "relogin"   => "<div class='form'><div class='alert alert-error resposta'></div>
@@ -20,16 +18,16 @@
         <label for='passa'>Senha</label>
         <input type='password' id='passa' placeholder='Senha'>
       </div>
-      <button class='btn btn-outline-primary again'>Pronto</button>
-      <button class='btn btn-secondary' type='reset'>Cancelar</button>
+      <button class='btn btn-outline-primary again'>Entrar</button>
+      <button class='btn btn-secondary cancel'>Cancelar</button>
     </div>",
     "pincode"   => "<div class='form'><div class='alert alert-error resposta'></div>
       <div class='form-group'>
         <label for='pin'>Código</label>
         <input type='text' id='pin' placeholder='Pin Code'>
       </div>
-      <button class='btn btn-outline-primary pincode'>Pronto</button>
-      <button class='btn btn-secondary' type='reset'>Cancelar</button>
+      <button class='btn btn-outline-primary pincode'>Continuar</button>
+      <button class='btn btn-secondary cancel'>Cancelar</button>
     </div>",
     "register"  => "<div class='form'><div class='alert alert-error resposta'></div>
       <div class='form-group'>
@@ -55,8 +53,8 @@
         <label for='pincoder'>Código</label>
         <input type='text' id='pincoder' placeholder='Pin Code'>
       </div>
-      <button class='btn btn-outline-primary register'>Pronto</button>
-      <button class='btn btn-secondary' type='reset'>Cancelar</button>
+      <button class='btn btn-outline-primary register'>Cadastrar-se</button>
+      <button class='btn btn-secondary cancel'>Cancelar</button>
     </div>"
   ];
 
@@ -66,7 +64,7 @@
   $ip = @mysql_real_escape_string($_SERVER['REMOTE_ADDR']);
 
 if (isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_COOKIE['thecry']))){
-   header("location: /");
+   echo "<script> history.go(-1); </script>";
 }
 else{
   if (isset($_COOKIE['iduser'])) {
@@ -121,27 +119,37 @@ else{
   }
 }
 
-  ?>
-
-  <div class="row">
-    <div class="col col-sidebar max-height side-primary">
+?>
+  <style media="screen">
+    body {
+      overflow-y: hidden;
+    }
+  </style>
+  <article class="bg-white max-height">
+    <div class="bg-primary text-white text-center">
       <div class="container">
-        <?php if (!empty($message['user'])) { ?>
-          <!-- <img src="img/<?= $message['user']['image'] ?>" alt="image profile user"> -->
-          <img class="img-compressed" src="https://static1.squarespace.com/static/58290792725e259c855c07e2/58320e3059cc687f522a96a3/588a00c3d482e90e1b1b1c39/1485439194441/boy.png" alt="profile user example">
-          <h2 class="display-3"><?= ucFirst($message['user']['nome']) .", ". $message['h2']  ?></h2>
-        <?php } else { ?>
-        <h2 class="display-3"><?= $message['h2'] ?></h2>
-      <?php } ?>
-        <span class="lead"><?= $message['span'] ?></span><br>
-        <small class="text-muted"><?= $message['small'] ?></small>
+        <div class="container">
+          <?php if (!empty($message['user'])) { ?>
+            <div class="row">
+              <div class="col col-min-sidebar text-right">
+                <img class="img-compressed img-rounded img-ajust" src="https://static1.squarespace.com/static/58290792725e259c855c07e2/58320e3059cc687f522a96a3/588a00c3d482e90e1b1b1c39/1485439194441/boy.png" alt="profile user example">
+              </div>
+              <div class="col col-min-content text-left">
+                <h2 class="display-3"><?= ucFirst($message['user']['nome']) .", ". $message['h2']  ?></h2>
+                <span class="lead"><?= $message['span'] ?></span><br>
+              </div>
+            </div>
+          <?php } else { ?>
+          <h2 class="display-3"><?= $message['h2'] ?></h2>
+          <span class="lead"><?= $message['span'] ?></span><br>
+          <small class="text-muted"><?= $message['small'] ?></small>
+        <?php } ?>
+        </div>
       </div>
     </div>
-    <div class="col col-content medium-height-margin side-secondary max-height bg-white">
+    <div class="container">
       <div class="container">
         <?= $form['selected'] ?>
       </div>
     </div>
-  </div>
-
-</article>
+  </article>

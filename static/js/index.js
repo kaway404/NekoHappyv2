@@ -32,7 +32,7 @@ $(function(){
   $(".alert").hide();
 
   $(".cancel").click(function(){
-    $("input").val("");
+    history.go(-1);
   });
 
   $(window).scroll(function(){
