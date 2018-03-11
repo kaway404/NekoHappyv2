@@ -42,8 +42,10 @@ if(isset($_GET['comunidadecreate'])){
 </div>
 <div class="main" id="fallen2">
 <div class="publicar" id="pub" id="fallen5">
+<form>
 <textarea class="public" placeholder="No que estás a pensar?" id="content"></textarea>
 <div class="btn-sc" id="publish"><div class="btnc"><span>Publicar</span></div></div>
+</form>
 </div>
 <div class="ava-t-e" id="photo">
 <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
@@ -247,8 +249,10 @@ $postid = $coment['id'];
       <div class="ava-t-sde" id="photo">
      <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
    </div>
+   <form>
     <input type="text" placeholder="Digite seu comentario aqui!" id="comment<?php echo $postid ?>" class="helloe"/>
     <button class="btnt" id="nani<?php echo $postid ?>">Comentar</button>
+  </form>
     </div>
   </div>
 
@@ -492,8 +496,10 @@ $postid = $coment['id'];
       <div class="ava-t-sde" id="photo">
      <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
    </div>
+   <form>
     <input type="text" placeholder="Digite seu comentario aqui!" id="comment<?php echo $postid ?>" class="helloe"/>
     <button class="btnt" id="nani<?php echo $postid ?>">Comentar</button>
+  </form>
     </div>
   </div>
 
