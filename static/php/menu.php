@@ -523,8 +523,8 @@ url: "static/php/comment.php?idpost=<?php echo $coment['id']; ?>",
 data: dataString,
 cache: true,
 success: function(html){
+  document.getElementById('comment<?php echo $postid ?>').value='';
 $("#show<?php echo $postid ?>").after(html);
-document.getElementById('comment<?php echo $postid ?>').value='';
 $("#flash<?php echo $postid ?>").hide();
 $("#content<?php echo $postid ?>").focus();
 }  
