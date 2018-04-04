@@ -734,7 +734,7 @@ header #logo{
 	width: 100%;
 	left: 0;
 	top: 0;
-	z-index: 7000;
+	z-index: 10000000;
 	display: none;
 }
 
