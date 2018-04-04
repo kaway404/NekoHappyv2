@@ -105,6 +105,11 @@ if($user['configurado'] == 2){
 
 
 <div class="wow">
+<div class="about-t">
+<button>Adicionar como amigo</button>
+<button>Bloquear</button>
+</div>
+
 </div>
 <center>
 <div class="profilephoto" id="photo">
@@ -113,6 +118,11 @@ if($user['configurado'] == 2){
 <h1 class="name-batito" ><?php echo $people['nome']; ?>  <?php echo $people['sobrenome']; ?></h1>
 </center>
 </div>
+
+<div class="about">
+
+</div>
+
 <?php } ?>
 
 </div>

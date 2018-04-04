@@ -9,6 +9,7 @@
   background-repeat: no-repeat;
   background-size: auto;
   background-position: 0 -193px;
+  transition: 0.4s;
 }
 .feed .like-btn::before {
   content: ".";

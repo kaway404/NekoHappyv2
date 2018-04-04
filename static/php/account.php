@@ -11,8 +11,10 @@
 	<h1 class="login">Faça login novamante</h1>
 	<img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-i"/>
 	<h1 id="eto51"><?php echo $usercry['nome'] ?> <?php echo $usercry['sobrenome'] ?></h1>
+	<form>
 	<input type="password" name="senhar" id="senhaa" placeholder="Senha"/>
 	<div class="btn-sa" id="again"><div class="btna"><span>Login</span></div></div>
+	</form>
 	<p class="bat">Não sou eu, sair da conta clique <a href="logoutp.php">aqui</a></p>
 	<div id="resposta">
 	</div>
@@ -23,9 +25,11 @@
 	if(isset($_GET['login'])){
 	?>
 	<h1 class="login">Login</h1>
+	<form>
 	<input type="email" name="emaill" id="emaill" placeholder="E-mail"/>
 	<input type="password" name="senhal" id="senhal" placeholder="Senha"/>
 	<div class="btn-sa" id="logar"><div class="btna"><span>Login</span></div></div>
+</form>
 	<p class="bat">Não tens uma conta, registre <a href="?registro">aqui</a></p>
 	<div id="resposta">
 	</div>
@@ -35,17 +39,21 @@
 	if(isset($_GET['verificarsessao'])){
 	?>
 	<h1 class="login">Verifique sua sessão</h1>
+	<form>
 	<input type="text" name="pincode" id="pincode" placeholder="Pincode"/>
 	<div class="btn-sa" id="verifique"><div class="btna"><span>Continuar</span></div></div>
+</form>
 	<div id="resposta">
 	</div>
 	<?php
 		}else{
 	?>
 		<h1 class="login">Login</h1>
+	<form>
 	<input type="email" name="emaill" id="emaill" placeholder="E-mail"/>
 	<input type="password" name="senhal" id="senhal" placeholder="Senha"/>
 	<div class="btn-sa" id="logar"><div class="btna"><span>Login</span></div></div>
+	</form>
 	<p class="bat">Não tens uma conta, registre <a href="?registro">aqui</a></p>
 	<div id="resposta">
 	</div>
