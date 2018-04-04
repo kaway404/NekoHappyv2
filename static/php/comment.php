@@ -1,7 +1,7 @@
  <?php
 if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_COOKIE['thecry']))){
-require '/system/database.php';
-require '/system/config.php';
+require 'database.php';
+require 'config.php';
 ?>
 <?php
 $conexao = mysql_pconnect($hostp,$userp,$passwrdp) or die (mysql_error());

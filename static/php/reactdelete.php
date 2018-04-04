@@ -1,6 +1,6 @@
 <?php
-require '/system/database.php';
-require '/system/config.php';
+require 'database.php';
+require 'config.php';
 
 $conexao = mysql_pconnect($hostp,$userp,$passwrdp) or die (mysql_error());
 $banco = mysql_select_db($dbp);

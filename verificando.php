@@ -2,8 +2,8 @@
   require 'static/php/system/database.php';
   require 'static/php/system/config.php';
   if(isset($_COOKIE['iduser']) ){
-  mysql_connect('localhost', 'root','')or die();	//Conecta com o MySQL
-  mysql_select_db('nekohappy');						//Seleciona banco de dados
+  mysql_connect('mysql.hostinger.com.br', 'u803357156_neko','xande321321')or die();	//Conecta com o MySQL
+  mysql_select_db('u803357156_neko');						//Seleciona banco de dados
   
   $pincode= $_POST['pincode'];
   $ip=mysql_real_escape_string($_SERVER['REMOTE_ADDR']);

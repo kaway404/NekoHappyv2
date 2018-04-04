@@ -1,6 +1,6 @@
 <?php
-require 'static/php/system/database.php';
-require 'static/php/system/config.php';
+require 'database.php';
+require 'config.php';
 $email1 = $_POST['emailr'];
 $senha1 = DBEscape(strip_tags(trim(sha1($_POST['senhar']))));
 $nomer = $_POST['nomer'];
