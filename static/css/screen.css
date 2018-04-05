@@ -83,9 +83,55 @@ body{
 		top: 50px;
 	}
 
-	
+
 	.buscar{
 		width: 180px;
 	}
 
+	}
+
+	@media only screen and (max-width: 1100px) {
+
+	#header #logo{
+			display: none;
+		}
+
+	#down{
+		display: block;
+	}
+
+	#menu{
+		top: 50px;
+	}
+
+
+	.buscar{
+		width: 400px;
+		float: left;
+		left: 300px;
+	}
+
+	#news{
+		float: right;
+		position: absolute;
+		right: 0px;
+	}
+
+	#alinhar-h{
+		width: 100% !important;
+	}
+	}
+
+	@media only screen and (max-width: 1300px) {
+		#header #logo{
+			display: none;
+		}
+
+		#menu{
+		top: 50px;
+	}
+
+	#down{
+		top: 40px;
+	}
 	}
