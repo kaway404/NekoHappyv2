@@ -1,0 +1,67 @@
+body{
+	overflow-x: hidden;
+}
+
+@media only screen and (max-width: 480px) {
+	.postagens{
+		width: 100% !important;
+	}
+
+	header #logo{
+		display: none;
+	}
+
+	.publicar{
+		width: 100% !important;
+	}
+
+	.buscar{
+		display: none;
+	}
+
+	#down{
+		display: none;
+	}
+
+	.main{
+		width: 100% !important;
+	}
+
+	#alinhar-h{
+		width: 100% !important;
+	}
+
+	.profile-cap{
+		display: none !important;
+	}
+
+	.help{
+		display: none !important;
+	}
+
+	.ajuda{
+		display: none !important;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	header #logo{
+		display: none;
+	}
+
+	#down{
+		top: 40px;
+	}
+
+	#menu{
+		top: 50px;
+	}
+
+	.postagens{
+		width: 94%;
+	}
+
+	.buscar{
+		width: 180px;
+	}
+}

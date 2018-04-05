@@ -14,6 +14,7 @@ require 'static/php/system/config.php';
 	<script type="text/javascript" src="static/js/functions.js"></script>
 	<script src="static/js/js-all.js" type="text/javascript"></script>
 	<script  src="static/js/index.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/css/screen.css"/>
 </head>
 <body id="momer">
 <?php
