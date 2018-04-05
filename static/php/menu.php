@@ -1,6 +1,6 @@
 <style>
 .background-cap{
-	background-image: url(http://eskipaper.com/images/anime-backgrounds-1.jpg);
+	background-image: url(/img/back.jpg);
 }
 </style>
 
@@ -31,12 +31,12 @@ if(isset($_GET['comunidadecreate'])){
 <?php } else{?>
 
 <div class="notice" id="fallen3">
-	<p>Crie sua primeira <a href="?comunidadecreate">comunidade</a>.</p>
+	<p>Crie sua primeira <a href="comunitycreate">comunidade</a>.</p>
 </div>
 <div class="profile-cap" id="caper">
 <div class="background-cap"></div>
 <center>
-<img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-cap"/>
+<img src="/img/default.png" class="avatar-cap"/>
 <a class="eto" href="profile.php?id=<?php echo $user['id']; ?>"><h1 class="bakero"><?php echo $user['nome'] ?></h1></a>
 </center>
 </div>
@@ -48,7 +48,7 @@ if(isset($_GET['comunidadecreate'])){
 </form>
 </div>
 <div class="ava-t-e" id="photo">
-<img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
+<img src="/img/default.png" class="avatar-post"/>
 </div>
 
 <?php
@@ -73,7 +73,7 @@ else
 ?>
 <a href="profile.php?id=<?php echo $people['id']; ?>">
 <li class="imesa">
-  <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png"/>
+  <img src="/img/default.png"/>
   <p> <?php
   $str2 = nl2br( $people['nome'] );
   $len2 = strlen( $str2 );
@@ -118,7 +118,7 @@ else
 
 <div class="postagens" id="fallenl">
 		<div class="ava-t-e" id="photo">
-		<img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
+		<img src="/img/default.png" class="avatar-post"/>
 		</div>
 		<svg class="fixada"  height="22" version="1.1" width="22" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><g transform="translate(0 -1028.4)"><path d="m9.5999 1.4564 1.5501 4.7699 5.015 0.0002-4.057 2.9482 1.55 4.7703-4.0581-2.948-4.0577 2.948 1.5497-4.7703-4.0575-2.9482 5.0154-0.0002z" fill="#f1c40f" stroke="#f39c12" stroke-width=".69755" transform="matrix(1.4336 0 0 1.4336 -1.7602 1028.9)"/></g></svg>
 
@@ -229,7 +229,7 @@ else
 
       <div class="coment">
       <div class="ava-t-sd" id="photo">
-     <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
+     <img src="/img/default.png" class="avatar-post"/>
     </div>
     <p class="name-post"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?>  <span class="commentpostiduq"><?php echo $coment['texto']; ?></span> </p>
     </div>
@@ -247,7 +247,7 @@ $postid = $coment['id'];
 
     <div class="eooqsa">
       <div class="ava-t-sde" id="photo">
-     <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
+     <img src="/img/default.png" class="avatar-post"/>
    </div>
    <form>
     <input type="text" placeholder="Digite seu comentario aqui!" id="comment<?php echo $postid ?>" class="helloe"/>
@@ -341,7 +341,7 @@ else
 
 <div class="postagens" id="fallen">
 		<div class="ava-t-e" id="photo">
-		<img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
+		<img src="/img/default.png" class="avatar-post"/>
 		</div>
 
 		<a href="profile.php?id=<?php echo $people['id']; ?>"><p class="name-poster"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?></p></a>
@@ -475,7 +475,7 @@ else
 
       <div class="coment">
       <div class="ava-t-sd" id="photo">
-     <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
+     <img src="/img/default.png" class="avatar-post"/>
     </div>
     <p class="name-post"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?>  <span class="commentpostiduq"><?php echo $coment['texto']; ?></span> </p>
     </div>
@@ -494,7 +494,7 @@ $postid = $coment['id'];
 
     <div class="eooqsa">
       <div class="ava-t-sde" id="photo">
-     <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
+     <img src="/img/default.png" class="avatar-post"/>
    </div>
    <form>
     <input type="text" placeholder="Digite seu comentario aqui!" id="comment<?php echo $postid ?>" class="helloe"/>

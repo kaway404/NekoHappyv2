@@ -53,8 +53,7 @@ header #logo{
  	font-size: 4.9em;
  	text-align: center;
  	z-index: 40;
- 	bottom: -20px;
- 	left: 70px;
+ 	top: 140px;
  	text-shadow: 1px 1px 1px rgba(0,0,0,.30);
  }
 
@@ -70,7 +69,7 @@ header #logo{
 	height: 430px;
 	position: relative;
 	background-size: cover;
-	background-image: url(http://wallpapersfan.com/wp-content/uploads/2017/12/229914-www.wallpapersfan.com-1024x768.jpg);
+	background-image: url(/img/back.jpg);
 	padding-bottom: 20px;
 }
 
@@ -114,7 +113,7 @@ header #logo{
     width: 162px;
     height: 61px;
     position: relative;
-    top: 120px;
+    top: 200px;
     display: inline-block;
     margin-left: 10px;
     cursor: pointer;
@@ -162,7 +161,7 @@ header #logo{
     font-size: 20px;
     height: 6.25em;
     width: 6em;
-    background: #009DF8;
+    background: transparent;
     display: inline-block;
     margin-left: 5px;
 }
@@ -945,7 +944,8 @@ header #logo{
 	top: 10px;
 	width: 100px;
 	float: left;
-	left: 10px;  }     #logot{
+	left: 10px;  }
+	#logot{
 	position: relative;
 	color: #0cdb8a;
 	font-size: 4.9em;
@@ -1616,7 +1616,7 @@ header #logo{
 	box-shadow: 0 4px 8px 1px rgba(0,0,0,.10);  }    .wow{
 	width: 100%;
 	height: 270px;
-	background-image: urL("http://eskipaper.com/images/anime-backgrounds-1.jpg");
+	background-image: urL("/img/back.jpg");
 	background-size: cover;  }    .profilephoto{
 	height: 130px !important;
 	width: 130px !important;
@@ -1868,7 +1868,7 @@ header #logo{
 .wow{
 	width: 100%;
 	height: 270px;
-	background-image: urL("http://eskipaper.com/images/anime-backgrounds-1.jpg");
+	background-image: urL("/img/back.jpg");
 	background-size: cover;
 }
 
@@ -2042,3 +2042,19 @@ header #logo{
 	padding: 14px;
 }
 
+#news{
+	float: right;
+	right: 120px;
+	position: absolute;
+}
+
+#news button{
+	position: relative;
+    top: -22px;
+    border: none;
+    width: auto;
+    height: 32px;
+    cursor: pointer;
+    background: #fff;
+    padding: 10px;
+}

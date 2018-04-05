@@ -28,7 +28,7 @@ mysql_query('SET character_set_results=utf8');
 
  <div class="coment">
       <div class="ava-t-sd" id="photo">
-     <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
+     <img src="/img/default.png" class="avatar-post"/>
     </div>
     <p class="name-post"><?php echo $user['nome'] ?> <?php echo $user['sobrenome'] ?>  <span class="commentpostiduq"><?php echo $content; ?></span> </p>
     </div>

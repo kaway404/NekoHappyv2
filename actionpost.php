@@ -34,7 +34,7 @@ mysql_query('SET character_set_results=utf8');
 		</script>
 	<div class="postagens" id="fallen">
         <div class="ava-t-e" id="photo">
-        <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
+        <img src="/img/default.png" class="avatar-post"/>
         </div>
 
         <a href="profile.php?id=<?php echo $user['id']; ?>"><p class="name-poster"><?php echo $user['nome'] ?> <?php echo $user['sobrenome'] ?></p></a>
@@ -156,7 +156,7 @@ $postid = $coment['id'];
 
     <div class="eooqsa">
       <div class="ava-t-sde" id="photo">
-     <img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
+     <img src="/img/default.png" class="avatar-post"/>
    </div>
     <input type="text" placeholder="Digite seu comentario aqui!" id="comment<?php echo $comentiduser ?>" class="helloe"/>
     <button class="btnt" id="nani<?php echo $comentiduser ?>">Comentar</button>

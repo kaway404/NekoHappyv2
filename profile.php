@@ -44,7 +44,7 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
 </div>
 <center>
 <div class="profilephoto" id="photo">
-<img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
+<img src="/img/default.png" class="avatar-post"/>
 </div>
 <h1 class="name-batito" ><?php echo $user['nome']; ?>  <?php echo $user['sobrenome']; ?></h1>
 </center>
@@ -105,15 +105,24 @@ if($user['configurado'] == 2){
 
 
 <div class="wow">
+<?php
+if($people['id'] <> $user['id']){
+?>
 <div class="about-t">
 <button>Adicionar como amigo</button>
 <button>Bloquear</button>
 </div>
+<?php } else{?>
+<div class="about-t">
+<button>Configurar perfil</button>
+<button>Minhas atividades</button>
+</div>
+<?php } ?>
 
 </div>
 <center>
 <div class="profilephoto" id="photo">
-<img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
+<img src="/img/default.png" class="avatar-post"/>
 </div>
 <h1 class="name-batito" ><?php echo $people['nome']; ?>  <?php echo $people['sobrenome']; ?></h1>
 </center>
@@ -136,7 +145,7 @@ if($user['configurado'] == 2){
 </div>
 <center>
 <div class="profilephoto" id="photo">
-<img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-post"/>
+<img src="/img/default.png" class="avatar-post"/>
 </div>
 <h1 class="name-batito" ><?php echo $people['nome']; ?>  <?php echo $people['sobrenome']; ?></h1>
 </center>

@@ -9,7 +9,7 @@
 	?>
 
 	<h1 class="login">Faça login novamante</h1>
-	<img src="https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png" class="avatar-i"/>
+	<img src="/img/default.png" class="avatar-i"/>
 	<h1 id="eto51"><?php echo $usercry['nome'] ?> <?php echo $usercry['sobrenome'] ?></h1>
 	<form>
 	<input type="password" name="senhar" id="senhaa" placeholder="Senha"/>

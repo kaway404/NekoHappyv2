@@ -1,0 +1,24 @@
+Options -Indexes
+
+ErrorDocument 400 /error404.php
+ErrorDocument 401 /error401.php
+ErrorDocument 403 /error403.php
+ErrorDocument 404 /error404.php
+ErrorDocument 500 /error500.php
+	
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+RewriteRule ^error400/?$ /error400.php [NC,L]
+RewriteRule ^error401/?$ /error401.php [NC,L]
+RewriteRule ^error403/?$ /error403.php [NC,L]
+RewriteRule ^error404/?$ /error404.php [NC,L]
+RewriteRule ^error408/?$ /error408.php [NC,L]
+RewriteRule ^error500/?$ /error500.php [NC,L]
+
+RewriteRule ^logout/?$ /logout.php [NC,L]
+
+RewriteRule ^comunitycreate/?$ /index.php?comunidadecreate [NC,L]
+RewriteRule ^sair/?$ /logout.php [NC,L]
+
+</IfModule>

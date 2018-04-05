@@ -18,7 +18,7 @@ else
 	foreach ($profile2 as $profile22):
  ?>
  
- <a class="eoq" href='/profile.php?id=<?php echo $profile22['id']; ?>'><li class='buscaright'><img src='https://orig00.deviantart.net/c9eb/f/2015/076/d/1/icon___avatar_anime_by_mrroccia1989-d8m4cmx.png' class='avatar6'/><div class='name'><p>
+ <a class="eoq" href='/profile.php?id=<?php echo $profile22['id']; ?>'><li class='buscaright'><img src='/img/default.png' class='avatar6'/><div class='name'><p>
  <?php
 	$str2 = nl2br( $profile22['nome'] );
 	$len2 = strlen( $str2 );
