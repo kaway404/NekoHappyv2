@@ -43,15 +43,12 @@
 	</div>
 	<?php
 		}else{
-	?>
-		<h1 class="login">Login</h1>
-	<input type="email" name="emaill" id="emaill" placeholder="E-mail"/>
-	<input type="password" name="senhal" id="senhal" placeholder="Senha"/>
-	<div class="btn-sa" id="logar"><div class="btna"><span>Login</span></div></div>
-	<p class="bat">Não tens uma conta, registre <a href="?registro">aqui</a></p>
-	<div id="resposta">
-	</div>
-	<?php }} ?>
+			setcookie("iduser" , "");
+			setcookie("inisession" , "");
+			header("location: /index.php?login");
+		}
+		?>
+	<?php } ?>
 
 	<?php
 	if(isset($_GET['registro'])){
@@ -69,6 +66,62 @@
 	<?php } ?>
 
 <?php } ?>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+    $("#registrar").click(function() {
+        var emailr = $("#emailr").val(); 
+        var senhar = $("#senhar").val();
+		var nomer = $("#nomer").val(); 
+        var sobrenomer = $("#sobrer").val();
+        var pincode = $("#pincode").val();
+        $.post("register.php", {emailr: emailr,senhar: senhar,nomer: nomer,sobrenomer: sobrenomer,pincode: pincode},
+        function(data){
+         $("#resposta").html(data);
+         }
+         , "html"); 
+         return false;
+    });
+});
+
+$(document).ready(function() {
+    $("#logar").click(function() {
+        var emaill = $("#emaill").val(); 
+        var senhal = $("#senhal").val();
+        $.post("login.php", {emaill: emaill,senhal: senhal},
+        function(data){
+         $("#resposta").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+
+$(document).ready(function() {
+    $("#verifique").click(function() {
+        var pincode = $("#pincode").val(); 
+        $.post("verificando.php", {pincode: pincode},
+        function(data){
+         $("#resposta").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+
+$(document).ready(function() {
+    $("#again").click(function() {
+        var senha = $("#senhaa").val(); 
+        $.post("again.php", {senha: senha},
+        function(data){
+         $("#resposta").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+
+</script>
 
 </div>
 </div>
