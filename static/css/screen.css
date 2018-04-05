@@ -46,6 +46,11 @@ body{
 	.ava-t-sde{
 		display: none;
 	}
+
+	#down{
+		display: none !important;
+	}
+
 }
 
 @media only screen and (max-width: 1024px) {
@@ -53,9 +58,7 @@ body{
 		display: none;
 	}
 
-	#down{
-		top: 40px;
-	}
+	c
 
 	#menu{
 		top: 50px;
@@ -131,7 +134,8 @@ body{
 		top: 50px;
 	}
 
-	#down{
+		#down{
 		top: 40px;
-	}
+		}
+
 	}
