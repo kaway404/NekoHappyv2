@@ -36,6 +36,30 @@ kawaii<?php echo $post; ?>.style = "background-position: 0 -193px !important;";
 if( DBCreate( 'like', $form2 ) ){	
 	echo '';
 ?>
+
+<?php
+$postid = $_POST['post'];
+$coments = DBRead( 'post', "WHERE id = $postid ORDER BY id DESC" );
+if (!$coments)
+echo '';
+else  
+  foreach ($coments as $coment):   
+?>
+
+<?php
+$post = $_POST['post'];
+$form3['iduser'] = $iduser;
+$form3['idquem'] = $coment['iduser'];
+$form3['tipo'] = 1;
+$form3['texto'] = "Curtiu sua postagem";
+
+if( DBCreate( 'news', $form3 ) ){	
+	echo '';
+}
+?>
+
+<?php endforeach;?>
+
 <script>
 var kawaii<?php echo $post; ?> = document.getElementById('kawaii<?php echo $post; ?>');
 

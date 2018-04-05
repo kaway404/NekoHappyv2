@@ -109,7 +109,7 @@ body{
 
 
 	.buscar{
-		width: 400px;
+		width: 310px;
 		float: left;
 		left: 300px;
 	}
@@ -122,6 +122,15 @@ body{
 
 	#alinhar-h{
 		width: 100% !important;
+	}
+
+	#box-s-h{
+		top: 36px;
+		left: 20px;
+	}
+
+	.buscaright{
+		width: 310px;
 	}
 	}
 

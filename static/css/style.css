@@ -63,6 +63,7 @@ header #logo{
 	margin: 0px auto;
 	position: relative;
 	background: transparent;
+	transition: 1s;
 }
 
 .apresentation{
@@ -2109,4 +2110,70 @@ header #logo{
 	fill: #E81C4F;
 	color: #E81C4F;
 	border-bottom: 2px solid #E81C4F;
+}
+
+.newsnot{
+	background: #E81C4F;
+	position: absolute;
+	z-index: 100;
+	width: auto;
+	height: auto;
+	color: #fff;
+	left: 10px;
+	padding: 2px;
+	bottom: 20px;
+	font-size: 15px;
+}
+
+#newsdiv{
+	width: 300px;
+	height: auto;
+	background: #fff;
+	float: left;
+	position: relative;
+	top: 20px;
+	display: none;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.50);
+	padding: 1px;
+	overflow-y: auto;
+	max-height: 250px;
+	overflow-x: hidden;
+}
+
+#newsdiv li img{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	top: 20px;
+	left: 5px;
+	position: relative;
+}
+
+#newsdiv li{
+	width: 100%;
+	transition: 1s;
+	cursor: pointer;
+}
+
+#newsdiv li:hover{
+	background: #e5e5e5;
+}
+
+#newsdiv li p{
+	position: relative;
+	top: -20px;
+	font-size: 19px;
+	left: 50px;
+}
+
+#newsdiv li span{
+	left: 50px;
+	position: relative;
+	bottom: 10px;
+}
+
+#nothing{
+	text-align: center;
+	position: relative;
+	font-size: 18px;
 }

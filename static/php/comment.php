@@ -25,6 +25,28 @@ mysql_query('SET character_set_results=utf8');
 	if( DBCreate( 'comment', $form2 ) ){
 		?>
 
+<?php
+$postid = $_GET['idpost'];
+$coments = DBRead( 'post', "WHERE id = $postid ORDER BY id DESC" );
+if (!$coments)
+echo '';
+else  
+  foreach ($coments as $coment):   
+?>
+
+<?php
+$post = $_POST['post'];
+$form3['iduser'] = $iduser;
+$form3['idquem'] = $coment['iduser'];
+$form3['tipo'] = 1;
+$form3['texto'] = "Comentou na sua postagem";
+
+if( DBCreate( 'news', $form3 ) ){   
+    echo '';
+}
+?>
+
+<?php endforeach;?>
 
  <div class="coment">
       <div class="ava-t-sd" id="photo">
