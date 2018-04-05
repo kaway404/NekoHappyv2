@@ -624,10 +624,17 @@ header #logo{
 
 .src{
 	height: auto;
-	float: left;
+	float: right;
 	width: 270px;
+	right: 300px;
+	top: 15px;
 	background: #E81C4F;
 	padding-bottom: 0px;
+	position: absolute;
+}
+
+#maiss{
+	color: #fff;
 }
 
 .avatar6{
