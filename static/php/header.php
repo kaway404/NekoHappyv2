@@ -70,10 +70,6 @@ var interval = setInterval(function(){
 				$('#newsnot2').html(html);
 		});
 
-  	$.post('/static/php/newt.php?amizades=1', function (html) {
-				$('#newsnot1').html(html);
-		});
-
   	$.post('/static/php/listnew.php?news=1', function (html) {
 				$('#newsdiv').html(html);
 		});
