@@ -533,6 +533,7 @@ header #logo{
 	position: relative;
 	box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
 	border-radius: 5px;
+	color: #fff;
 }
 
 .track2{
@@ -547,6 +548,7 @@ header #logo{
 	float: right;
 	display: none;
 	right: 0px;
+	color: #fff;
 }
 
 .track3{
@@ -561,6 +563,7 @@ header #logo{
 	display: none;
 	left: 200px;
 	float: left;
+	color: #fff;
 }
 
 .track4{
@@ -575,6 +578,7 @@ header #logo{
 	display: none;
 	right: 170px;
 	float: right;
+	color: #fff;
 }
 
 .track{
@@ -586,7 +590,7 @@ header #logo{
 }
 
 .btnb{
-	background: #E81C4F;
+	background: #da5173;
     border-radius: 5px;
    	width: 140px;
     padding: 5px 0px;
@@ -601,7 +605,7 @@ header #logo{
 }
 
 .btn-sb{
-	background: #1ead75;
+	background: #922641;
     box-shadow: 0 4px 8px 0 rgba(43,102,79,0.55);
     border-radius: 5px;
     width: 140px;
@@ -2017,6 +2021,7 @@ header #logo{
 	border-radius: 5px;
 	display: block;
 	margin: 0px auto;
+	color: #fff;
 }
 
 .eta{
