@@ -69,3 +69,23 @@ body{
 		width: 180px;
 	}
 }
+
+@media only screen and (max-width: 1200px) {
+		#header #logo{
+			display: none;
+		}
+
+		#down{
+		top: 40px;
+	}
+
+	#menu{
+		top: 50px;
+	}
+
+	
+	.buscar{
+		width: 180px;
+	}
+
+	}
