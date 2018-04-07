@@ -27,3 +27,34 @@ $("document").ready(function(){
   });
   
 });
+
+
+$("document").ready(function(){
+  $("#buscat").keyup(function(){
+	var $this = $(this);
+	var val   = $this.val();
+	console.log(val);
+	
+	if(val == ""){
+		$('.srcc').html("");
+	}else{
+		$.ajax({
+		  url: "busca.php",
+		  type: "POST",
+		  data: {nome: val},
+		  cache: false,
+		  
+		  success: function(res){
+			$('.srcc').html(res);
+		  }
+		  
+		});
+	}
+	
+  });
+  
+  $('html, body').click(function(){
+	$('.srcc').html("");
+  });
+  
+});

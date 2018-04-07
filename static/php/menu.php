@@ -28,6 +28,16 @@ if(isset($_GET['comunidadecreate'])){
 </div>
 </div>
 
+<div id="bottomphone">
+<input type="text" placeholder="Buscar pessoas e comunidades." class="buscarr" id="buscat"/>
+</div>
+
+<div id="box-s-ht">
+<ul class="srcc">
+</ul>
+</div>
+
+
 <?php } else{?>
 
 <div class="notice" id="fallen3">
@@ -641,6 +651,15 @@ body{
 </div>
 </div>
 </center>
+
+<div id="bottomphone">
+<input type="text" placeholder="Buscar pessoas e comunidades." class="buscarr" id="buscat"/>
+</div>
+
+<div id="box-s-ht">
+<ul class="srcc">
+</ul>
+</div>
 
 
 

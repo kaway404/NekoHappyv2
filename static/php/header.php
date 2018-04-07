@@ -62,7 +62,7 @@ function news1(){
 		});
 }
 
-var milissegundos = 1000;
+var milissegundos = 2000;
 
 // Executa a função a cada intervalo de tempo
 var interval = setInterval(function(){

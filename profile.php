@@ -133,8 +133,18 @@ if($people['id'] <> $user['id']){
 
 </div>
 
+<div id="box-s-ht">
+<ul class="srcc">
+</ul>
+</div>
+
 <?php } ?>
 
+</div>
+
+
+<div id="bottomphone">
+<input type="text" placeholder="Buscar pessoas e comunidades." class="buscarr" id="buscat"/>
 </div>
 
 <?php } else{ ?>

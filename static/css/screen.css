@@ -51,6 +51,10 @@ body{
 		display: none !important;
 	}
 
+	#bottomphone{
+		display: block;
+	}
+
 }
 
 @media only screen and (max-width: 1024px) {
@@ -132,6 +136,11 @@ body{
 	.buscaright{
 		width: 310px;
 	}
+
+	#newsdiv{
+		top: 49px;
+	}
+
 	}
 
 	@media only screen and (max-width: 1300px) {
