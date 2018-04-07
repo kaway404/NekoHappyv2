@@ -747,7 +747,7 @@ header #logo{
 .postagens{
 	width: 100%;
 	height: auto;
-	background: #f5f5f5;
+	background: #fff;
 	box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
 	float: left;
 	position: relative;
@@ -1779,16 +1779,17 @@ header #logo{
 }
 
 .helloe{
-	width: 81%;
+	width: 93%;
 	border: none;
 	height: 40px;
 	padding-left: 50px;
 	font-size: 1.1em;
 	float: left;
-	left: -28px;
+	left: 0px;
 	position: relative;
 	border-radius: 40px;
 	border: 1px solid rgba(0,0,0,.20);
+	bottom: 10px;
 }
 
 .coment{
@@ -1827,7 +1828,7 @@ header #logo{
 	height: 33px;
 	width: 33px;
 	position: relative;
-	top: 5px;
+	top: 28px;
 	left: 15px;
 	float: left;
 	border-radius: 50%;
@@ -1859,6 +1860,7 @@ header #logo{
 	font-size: 15px;
 	cursor: pointer;
 	z-index: 50;
+	display: none;
 }
 
 #fuck{
