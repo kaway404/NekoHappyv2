@@ -532,7 +532,7 @@ header #logo{
 	height: 100%;
 	position: fixed;
 	background: rgba(0,0,0,.50);
-	z-index: 6000;
+	z-index: 4000;
 	left: 0;
 	top: 0;
 }
@@ -549,22 +549,22 @@ header #logo{
 
 .track1{
 	width: 300px;
-	height: auto;
-	background: #E81C4F;
-	top: 140px;
-	left: 100px;
-	padding: 20px;
-	position: relative;
-	box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
-	border-radius: 5px;
-	color: #fff;
+    height: auto;
+    background: #E81C4F;
+    top: 383px;
+    left: 401px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
+    border-radius: 5px;
+    color: #fff;
 }
 
 .track2{
 	width: 300px;
 	height: auto;
 	background: #E81C4F;
-	top: 278px;
+	top: 234px;
 	padding: 20px;
 	position: relative;
 	box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
@@ -577,17 +577,21 @@ header #logo{
 
 .track3{
 	width: 270px;
-	height: auto;
-	background: #E81C4F;
-	top: 0px;
-	padding: 20px;
-	position: absolute;
-	box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
-	border-radius: 5px;
-	display: none;
-	left: 200px;
-	float: left;
-	color: #fff;
+    height: auto;
+    background: #E81C4F;
+    top: 0px;
+    padding: 20px;
+    position: absolute;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
+    border-radius: 5px;
+    display: none;
+    right: 50px;
+    float: right;
+    color: #fff;
+}
+
+#nanituto{
+	opacity: 62000000;
 }
 
 .track4{
