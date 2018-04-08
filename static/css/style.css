@@ -2170,13 +2170,13 @@ header #logo{
 }
 
 #news li:hover{
-	fill: #459bd9;
-	color: #459bd9;
+	fill: #3e5261;
+	color: #3e5261;
 	border-bottom: 2px solid #459bd9;
 }
 
 .newsnot{
-	background: #459bd9;
+	background: #3e5261;
 	position: absolute;
 	z-index: 100;
 	width: auto;
@@ -2454,5 +2454,5 @@ header #logo{
 }
 
 #open55:hover{
-	fill: #459bd9;
+	fill: #3e5261;
 }
