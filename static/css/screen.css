@@ -122,7 +122,7 @@ body{
 	}
 
 	#alinhar-h{
-		width: 100% !important;
+		width: 80% !important;
 	}
 
 	#box-s-h{
@@ -164,4 +164,5 @@ body{
 	.track4{
 		right: -165px;
 	}
+
 	}

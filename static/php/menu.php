@@ -1,3 +1,7 @@
+<?php
+require 'static/php/leftbar.php';
+?>
+
 <style>
 .background-cap{
 	background-image: url(/img/back.jpg);

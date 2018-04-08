@@ -24,11 +24,11 @@ a{
 
 
 body{
-	background: #e9ebee !important;
+	background: #fff !important;
 }
 
 header{
-	background: #fff;
+	background: #459bd9;
 	position: fixed;
 	width: 100%;
 	left: 0;
@@ -39,7 +39,7 @@ header{
 }
 
 header #logo{
-	color: #000;
+	color: #fff;
 	font-size: 1.6em;
 	position: relative;
 	top: 10px;
@@ -2136,6 +2136,8 @@ header #logo{
 	left: 0px;
 	position: absolute;
 	top: 32px;
+	color: #fff;
+	fill: #fff;
 }
 
 #news li{
@@ -2402,4 +2404,55 @@ header #logo{
 	height: 100%;
 	left: 15.2%;
 	z-index: 2000;
+}
+
+.leftbar{
+	float: left;
+	width: 84px;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	background: #fff;
+	z-index: 4000;
+	top: 0;
+	box-shadow: 0 0 8px rgba(0,0,0,.2);
+	transition: 0.2s;
+}
+
+.covers{
+	width: 100%;
+	height: 150px;
+	background-size: cover;
+}
+
+.leftbar .avatadr{
+	border-radius: 50%;
+	border: 2px solid #fff;
+	width: 65px;
+	height: 65px;
+	position: relative;
+	bottom: 30px;
+	left: 10px;
+}
+
+.leftbar span{
+	position: relative;
+	bottom: 65px;
+	left: 80px;
+	font-size: 18px;
+	display: none;
+	transition: 1s;
+}
+
+#open55{
+	fill: #fff;
+	left: 20px;
+	position: absolute;
+	top: 10px;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+#open55:hover{
+	fill: #E81C4F;
 }

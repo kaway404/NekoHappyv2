@@ -32,6 +32,11 @@ require 'static/php/veried.php';
 	<link rel="stylesheet" type="text/css" href="/static/css/screen.css"/>
 </head>
 <body id="momer">
+
+<?php
+require 'static/php/leftbar.php';
+?>s
+
 <?php
 require 'static/php/header.php';
 if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_COOKIE['thecry']))){
@@ -63,17 +68,6 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
 	<h1>Essa página não foi encontrada <a href="/" class="lgren">Clique aqui para voltar</a></h1>
 </div>
 <?php } else{?>
-
-
-<?php
-if($people['id'] <> $user['id']){
-if($people['priv'] == 1){
-?>
-<div class="postagens semlogin">
-	<h1>Perfil privado, volte clicando <a href="/" class="lgren">aqui</a></h1>
-</div>
-<?php } } else{?>
-
 
 <div class="wow">
 <?php
@@ -107,7 +101,7 @@ if($people['id'] <> $user['id']){
 </ul>
 </div>
 
-<?php } ?>
+
 
 <?php } ?>
 
