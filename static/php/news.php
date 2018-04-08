@@ -19,7 +19,7 @@ $db=mysql_select_db('nekohappy', $conn) or die (mysql_error);
 require 'database.php';
 require 'config.php';
 $iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
-$totaldenews = mysql_query("SELECT * FROM neko_news WHERE id and tipo = 1 and idquem = '".$iduser."' ");
+$totaldenews = mysql_query("SELECT * FROM neko_news WHERE id and tipo = 1 and idquem = '".$iduser."' and view = 0 ");
 $totaldenews = mysql_num_rows($totaldenews);
 echo $totaldenews;
 ?>

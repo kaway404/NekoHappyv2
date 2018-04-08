@@ -5,6 +5,7 @@ require 'config.php';
 ?>
 
 <?php
+if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_COOKIE['thecry']))){
 $iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
 $peoples = DBRead( 'news', "WHERE idquem = $iduser ORDER BY id ASC LIMIT 10" );
 if (!$peoples)
@@ -30,4 +31,4 @@ else
 	<span><?php echo $people['texto']; ?></span>
 </li>
 
-<?php endforeach; endforeach;?>
+<?php endforeach; endforeach; } ?>

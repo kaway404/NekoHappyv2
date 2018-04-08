@@ -1,4 +1,4 @@
-<?php
+s<?php
 $iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
     $user = DBRead('user', "WHERE id = '{$iduser}' LIMIT 1 ");
     $user = $user[0];
@@ -55,7 +55,15 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
 
 <script src="static/js/menu.js" type="text/javascript"></script>
 
+<div id="batata"></div>
+
 <script>
+
+$('#now').click(function(){
+		$.post('/static/php/viewnews.php', function (html) {
+				$('#batata').html(html);
+		});
+	});
 
 function news1(){
 	$.post('/static/php/news.php', function (html) {
@@ -63,7 +71,7 @@ function news1(){
 		});
 }
 
-var milissegundos = 2000;
+var milissegundos = 800;
 
 // Executa a função a cada intervalo de tempo
 var interval = setInterval(function(){
@@ -77,6 +85,8 @@ var interval = setInterval(function(){
 
 
   }, milissegundos);
+
+
 </script>
 
 <?Php } ?>
