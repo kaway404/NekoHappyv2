@@ -75,6 +75,8 @@ if(isset($_GET['comunidadecreate'])){
 <center>
 <img src="/img/default.png" class="avatar-cap"/>
 <a class="eto" href="profile.php?id=<?php echo $user['id']; ?>"><h1 class="bakero"><?php echo $user['nome'] ?></h1></a>
+<p>Dados:</p>
+<p>Pontuação : <?php echo $user['coins']; ?> </p>
 </center>
 </div>
 <div class="main" id="fallen2">
