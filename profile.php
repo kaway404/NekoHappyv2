@@ -62,13 +62,14 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
 
 
 <?php
+if($user['admin'] == 0){
 if($people['id'] <> $user['id']){
 if($people['priv'] == 1){
 ?>
 <div class="postagens semlogin">
 	<h1>Perfil privado, volte clicando <a href="/" class="lgren">aqui</a></h1>
 </div>
-<?php } } else{?>
+<?php } } }  else{?>
 
 
 <div class="wow">
