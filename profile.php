@@ -44,6 +44,10 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
 
 <div class="nani-h" id="batatao">
 <div class="wow">
+<div class="about-t" style="bottom: 0;">
+<button>Configurar perfil</button>
+<button>Minhas atividades</button>
+</div>
 </div>
 <center>
 <div class="profilephoto" id="photo">
@@ -85,9 +89,6 @@ if($people['id'] <> $user['id']){
 <button>Minhas atividades</button>
 </div>
 <?php } ?>
-
-
-
 </div>
 <center>
 <div class="profilephoto" id="photo">
@@ -131,6 +132,8 @@ if($people['id'] <> $user['id']){
 </div>
 <h1 class="name-batito" ><?php echo $people['nome']; ?>  <?php echo $people['sobrenome']; ?></h1>
 </center>
+
+
 
 </div>
 
