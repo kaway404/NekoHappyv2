@@ -22,6 +22,7 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
 
 <div class="menu" id="menu">
 <a href="profile.php?id=<?php echo $user['id']; ?>"><li>Perfil</li></a>
+<a href="/chat"><li>Chat</li></a>
 <li>Opções</li>
 <li>Comunidades</li>
 <a href="comunitycreate"><li>Criar comunidade</li></a>

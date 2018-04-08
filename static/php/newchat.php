@@ -1,3 +1,8 @@
-<div class="newchat">
+<?php
+require '/database.php';
+require '/config.php';
+?>
 
-</div>
+<script type="text/javascript">
+	$("#peoplettt").text("Alexandre Silva");
+</script>

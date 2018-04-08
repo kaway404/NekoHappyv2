@@ -3,32 +3,6 @@
 	background-image: url(/img/back.jpg);
 }
 </style>
-<!-- 
-<div class="chatsa"></div>
-
-<div class="chat">
-<span>Pessoas online</span>
-<?php
-$iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
-$peoples = DBRead( 'user', "WHERE id <> $iduser ORDER BY id ASC LIMIT 10" );
-if (!$peoples)
-echo '';
-else  
-  foreach ($peoples as $people):   
-?>
-
-<div class="chater">
-<li id="people<?php echo $people['id'] ?>">
-  <img src="/img/default.png">
-  <p><?php echo $people['nome'];?></p>
-</li>
-</div>
-
-
-<?php endforeach; ?>
-
-</div>
- -->
 
 
 <div id="alinhar-h" id="fallen4">
