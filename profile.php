@@ -38,7 +38,9 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
 ?>
 <div id="alinhar-h">
 
+
 <?php if(!isset($_GET['id']) || empty($_GET['id'])){ ?>
+
 
 <div class="nani-h" id="batatao">
 <div class="wow">
@@ -52,57 +54,21 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
 </div>
 
 
-<?php 
-if($user['configurado'] == 2){
-?>
-
-
-<div class="preto" id="preto"></div>
-
-<div class="track" id="track">
-
-<div id="pub" style="display: none;"></div>
-<div id="photo" style="display: none;"></div>
-<div id="caper" style="display: none;"></div>
-
-<div class="track1" id="track1" style="display: none;">
-<span>Isso aqui é onde você publica coisas no seu feed.</span>
-<div class="btn-sb" id="click1"><div class="btnb"><span>Continuar</span></div></div>
-</div>
-
-
-
-<div class="track2" id="track2" style="display: none;">
-<span>Isso aqui é o seu card, suas informações no NekoHappy.</span>
-<div class="btn-sb" id="click2"><div class="btnb"><span>Continuar</span></div></div>
-</div>
-
-<div class="track3" id="track3" style="display: none;">
-<span>Isso aqui é sua barra de pesquisa do NekoHappy.</span>
-<div class="btn-sb" id="click3"><div class="btnb"><span>Continuar</span></div></div>
-</div>
-
-<div class="track4" id="track4" style="display: none;">
-<span>Isso aqui é o menu do usuario.</span>
-<div class="btn-sb" id="click4"><div class="btnb"><span>Finalizar</span></div></div>
-</div>
-
-<div class="track5" id="track5">
-<span>Isso é o seu perfil. Você pode entrar em perfil de outras pessoas!</span>
-<div class="btn-sb eta" id="click5"><div class="btnb"><span>Finalizar</span></div></div>
-</div>
-
-<div id="resposta"></div>
-
-<script type="text/javascript" src="static/js/pratica.js"></script>
-
-<?Php } ?>
-
 <?php } else if (!$people){?>
 <div class="postagens semlogin">
 	<h1>Essa página não foi encontrada <a href="/" class="lgren">Clique aqui para voltar</a></h1>
 </div>
 <?php } else{?>
+
+
+<?php
+if($people['id'] <> $user['id']){
+if($people['priv'] == 1){
+?>
+<div class="postagens semlogin">
+	<h1>Perfil privado, volte clicando <a href="/" class="lgren">aqui</a></h1>
+</div>
+<?php } } else{?>
 
 
 <div class="wow">
@@ -119,6 +85,8 @@ if($people['id'] <> $user['id']){
 <button>Minhas atividades</button>
 </div>
 <?php } ?>
+
+
 
 </div>
 <center>
@@ -140,12 +108,15 @@ if($people['id'] <> $user['id']){
 
 <?php } ?>
 
+<?php } ?>
+
 </div>
 
 
 <div id="bottomphone">
 <input type="text" placeholder="Buscar pessoas e comunidades." class="buscarr" id="buscat"/>
 </div>
+
 
 <?php } else{ ?>
 
