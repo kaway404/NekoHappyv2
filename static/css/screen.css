@@ -50,6 +50,14 @@ body{
 		display: block;
 	}
 
+	#open55{
+		display: none;
+	}
+
+	#leftbar{
+		display: none;
+	}
+
 }
 
 @media only screen and (max-width: 1024px) {
@@ -62,7 +70,7 @@ body{
 	}
 
 	.postagens{
-		width: 94%;
+		width: 98%;
 	}
 
 	.buscar{
@@ -122,7 +130,7 @@ body{
 	}
 
 	#alinhar-h{
-		width: 80% !important;
+		width: 100% !important;
 	}
 
 	#box-s-h{
@@ -153,16 +161,16 @@ body{
 		top: 40px;
 		}
 
-	#newsdiv{
-		top: 50px;
-	}
+		#newsdiv{
+			top: 50px;
+		}
 
-	.track3{
-		right: -137px;
-	}
+		.track3{
+			right: -137px;
+		}
 
-	.track4{
-		right: -165px;
-	}
+		.track4{
+			right: -165px;
+		}
 
 	}
