@@ -3,6 +3,32 @@
 	background-image: url(/img/back.jpg);
 }
 </style>
+<!-- 
+<div class="chatsa"></div>
+
+<div class="chat">
+<span>Pessoas online</span>
+<?php
+$iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
+$peoples = DBRead( 'user', "WHERE id <> $iduser ORDER BY id ASC LIMIT 10" );
+if (!$peoples)
+echo '';
+else  
+  foreach ($peoples as $people):   
+?>
+
+<div class="chater">
+<li id="people<?php echo $people['id'] ?>">
+  <img src="/img/default.png">
+  <p><?php echo $people['nome'];?></p>
+</li>
+</div>
+
+
+<?php endforeach; ?>
+
+</div>
+ -->
 
 
 <div id="alinhar-h" id="fallen4">
@@ -39,6 +65,7 @@ if(isset($_GET['comunidadecreate'])){
 
 
 <?php } else{?>
+
 
 <div class="notice" id="fallen3">
 	<p>Crie sua primeira <a href="comunitycreate">comunidade</a>.</p>
@@ -224,7 +251,7 @@ if( $dbCheck ){
 $postid = $coment['id'];
 $coments = DBRead( 'comment', "WHERE id and idpost = $postid ORDER BY id DESC" );
 if (!$coments)
-echo '<p id="feelsba'.$postid.'">Não há nenhum comentario</p>';
+echo '<p id="feelsba'.$postid.'" style="font-size: 22px;">Não há nenhum comentario</p>';
 else  
   foreach ($coments as $coment):   
 ?>
@@ -470,7 +497,7 @@ var comentarios<?php echo $comentiduser; ?> = document.getElementById('comentari
 $postid = $coment['id'];
 $coments = DBRead( 'comment', "WHERE id and idpost = $postid ORDER BY id DESC" );
 if (!$coments)
-echo '<p id="feelsba'.$postid.'">Não há nenhum comentario</p>';
+echo '<p id="feelsba'.$postid.'" style="font-size: 18px; padding: 5px;">Não há nenhum comentario</p>';
 else  
   foreach ($coments as $coment):   
 ?>

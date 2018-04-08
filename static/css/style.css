@@ -2244,3 +2244,58 @@ header #logo{
 	z-index: 50000;
 	display: none;
 }
+
+.chat{
+	float: right;
+	position: fixed;
+	width: 200px;
+	background: #fff;
+	height: 100%;
+	right: 0;
+	z-index: 60000;
+	border-left: 1px solid rgba(0,0,0,0.25);
+}
+
+.chater{
+	width: 100%;
+}
+
+.chat span{
+	padding: 5px;
+}
+
+.chater img{
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	position: relative;
+	left: 10px;
+	top: 10px;
+}
+
+.chater p{
+	position: relative;
+	left: 55px;
+	bottom: 20px;
+}
+
+.chater li{
+	transition: .4s;
+	margin-top: 5px;
+	cursor: pointer;
+}
+
+.chater li:hover{
+	background: #e5e5e5;
+}
+
+.chatsa{
+	width: 500px;
+	height: 220px;
+	position: fixed;
+	bottom: 0;
+	background: red;
+	float: right;
+	right: 220px;
+	z-index: 4000;
+}
