@@ -48,6 +48,9 @@ if(isset($_GET['comunidadecreate'])){
 <div class="notice" id="fallen3">
 	<p>Crie sua primeira <a href="comunitycreate">comunidade</a>.</p>
 </div>
+
+<div id="what"></div>
+
 <div class="profile-cap" id="caper">
 <div class="background-cap"></div>
 <center>
@@ -107,6 +110,7 @@ else
 </div>
 </div>
 <?php } ?>
+
 
 <div class="postagens ajuda">
 <div class="help"></div>
@@ -334,8 +338,6 @@ var comentarios<?php echo $comentiduser; ?> = document.getElementById('comentari
 <div id="respostaba">
 
 </div>
-
-<h1 id="cont2">Publicaçãos normais.</h1>
 
 <div class="space"></div>
 <div id="flash"></div>

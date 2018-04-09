@@ -1,0 +1,54 @@
+.postagens{
+		width: 100% !important;
+	}
+
+	header #logo{
+		display: none;
+	}
+
+	.publicar{
+		width: 100% !important;
+	}
+
+	.buscar{
+		display: none;
+	}
+
+	#down{
+		display: none;
+	}
+
+	.main{
+		width: 100% !important;
+	}
+
+	#alinhar-h{
+		width: 100% !important;
+	}
+	.help{
+		display: none !important;
+	}
+
+	.ajuda{
+		display: none !important;
+	}
+
+	.ava-t-sde{
+		display: none;
+	}
+
+	#down{
+		display: none !important;
+	}
+
+	#bottomphone{
+		display: block;
+	}
+
+	#open55{
+		display: none;
+	}
+
+	#leftbar{
+		display: none;
+	}
