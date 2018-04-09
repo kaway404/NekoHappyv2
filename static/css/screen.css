@@ -146,6 +146,31 @@ body{
 		top: 49px;
 	}
 
+	#open55{
+		display: none;
+	}
+
+	#leftbar{
+		display: none;
+	}
+
+	.profile-cap{
+		display: block;
+		opacity: 0;
+	}
+
+	.ajuda{
+		display: none;
+	}
+
+	.publicar{
+		width: 100%;
+	}
+
+	.postagens{
+		width: 100%;
+	}
+
 	}
 
 	@media only screen and (max-width: 1300px) {
