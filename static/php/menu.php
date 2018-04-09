@@ -93,7 +93,7 @@ else
 ?>
 <a href="profile.php?id=<?php echo $people['id']; ?>">
 <li class="imesa">
-  <img src="/img/default.png"/>
+  <img src="/img/default.png" style="border-radius: 0%;"/>
   <p> <?php
   $str2 = nl2br( $people['nome'] );
   $len2 = strlen( $str2 );
