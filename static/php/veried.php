@@ -3,14 +3,13 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
 if($user['lastlogin'] <> $_COOKIE['inisession']){
         setcookie("iduser" , "");
         setcookie("inisession" , "");
-        setcookie("perfil" , "");
+        setcookie("thecry" , "");
         header("location: /?error");
     }
-    
     if($usercry['id'] <> $_COOKIE['iduser']){
         setcookie("iduser" , "");
         setcookie("inisession" , "");
-        setcookie("perfil" , "");
+        setcookie("thecry" , "");
         header("location: /");
     }
 }

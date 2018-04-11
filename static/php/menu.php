@@ -1,4 +1,4 @@
-C<?php
+<?php
 require 'static/php/leftbar.php';
 ?>
 

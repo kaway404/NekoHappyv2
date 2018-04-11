@@ -67,15 +67,6 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
 </div>
 <?php } else{?>
 
-<?php
-if($user['admin'] == 0){
-if($user['id'] <> $people['id']){
-if($people['priv'] == 1){?>
-<div class="postagenst semlogin">
-	<h1>Esse perfil é privado <a href="/" class="lgren">Clique aqui para voltar</a></h1>
-</div>
-<?php } } } else{ ?>
-
 <div class="wow">
 
 <?php
@@ -103,8 +94,6 @@ if($people['id'] <> $user['id']){
 <div class="about">
 
 </div>
-
-<?php } ?>
 
 
 <div id="box-s-ht">
