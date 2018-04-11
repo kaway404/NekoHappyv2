@@ -41,6 +41,12 @@ require 'static/php/leftbar.php';
 require 'static/php/header.php';
 if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_COOKIE['thecry']))){
 ?>
+
+
+<div id="background-p"></div>
+<div id="background-t"></div>
+
+
 <div id="alinhar-h">
 
 
@@ -108,12 +114,25 @@ $totaldecomunidades = mysql_num_rows($totaldecomunidades);
 <div class="posta">
 
 <div id="header-p">
-	<li>Feed</li>
+	<li class="ativo">Feed</li>
 	<li>Amigos</li>
 	<li><div id="newsnot1" class="feednot"><span>
 		<?php echo $totaldecomunidades;?>
 	</span></div>Comunidades</li>
 </div>
+
+<div class="comentariosp">
+
+<div id="comentarii">
+	<p>Comentários</p>
+</div>
+
+</div>
+
+<div class="comentartt">
+	
+</div>
+
 </div>
 </div>
 

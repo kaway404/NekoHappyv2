@@ -2590,9 +2590,8 @@ header #logo{
 .posta{
 	width: 100%;
 	height: 400px;
-	background: #eee;
 	position: relative;
-	box-shadow: 1px 1px 1px rgba(0,0,0,.20);
+	background: #0b2d46b5;
 }
 
 .about{
@@ -2610,7 +2609,7 @@ header #logo{
 
 #header-p li{
 	color: #fff;
-	padding: 9px;
+	padding: 10px;
 	font-size: 18px;
 	background: #296b9a;
 	cursor: pointer;
@@ -2618,10 +2617,15 @@ header #logo{
 	margin-left: 1px;
 	float: left;
 	transition: 1s;
+	z-index: 100;
 }
 
 #header-p li:hover{
-	padding: 10px;
+	padding: 11px;
+	background: #0b2d46;
+}
+
+#header-p .ativo{
 	background: #0b2d46;
 }
 
@@ -2637,4 +2641,54 @@ header #logo{
 	padding: 2px;
 	bottom: 16px;
 	font-size: 15px;
+}
+
+.comentariosp{
+	width: 50%;
+	float: left;
+	left: 0;
+	position: absolute;
+	height: 200px;
+	background: transparent;
+	bottom: 0;
+}
+
+#comentarii{
+	width: 100%;
+	height: 40px;
+	background: #0b2d46b5;
+	border-radius: 2px;
+}
+
+#comentarii p{
+	padding: 10px;
+	color: #fff;
+	font-size: 18px;
+}
+
+.comentartt{
+	width: 50%;
+	height: 40.2%;
+	position: absolute;
+	bottom: 0;
+	background: #0b2d46b5;
+}
+
+#background-p{
+	width: 100%;
+	position: fixed;
+	top: 0;
+	height: 100%;
+	left: 0;
+	background-image: url(https://1.bp.blogspot.com/-RKB1d4DQMb0/UbidBypAG7I/AAAAAAAABBg/o5pHQ_icCOs/s1600/Sky+Anime+Landscape+29.jpg);
+	background-size: cover;
+}
+
+#background-t{
+	width: 100%;
+	position: fixed;
+	top: 0;
+	height: 100%;
+	left: 0;
+	background: rgba(0,0,0,.70);
 }
