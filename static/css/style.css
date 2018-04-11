@@ -571,8 +571,8 @@ header #logo{
 	width: 300px;
     height: auto;
     background: #459bd9;
-    top: 383px;
-    left: 401px;
+    top: 53px;
+    left: 0px;
     padding: 20px;
     position: relative;
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
@@ -599,7 +599,7 @@ header #logo{
 	width: 270px;
     height: auto;
     background: #459bd9;
-    top: 0px;
+    top: -100px;
     padding: 20px;
     position: absolute;
     box-shadow: 1px 1px 1px 1px rgba(0,0,0,.30);
