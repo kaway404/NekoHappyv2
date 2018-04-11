@@ -2714,7 +2714,7 @@ header #logo{
 	float: right;
 	position: absolute;
 	right: 20px;
-	width: 70%;
+	width: 50%;
 	top: 10px;
 	overflow-y: auto;
 	height: 650px;
@@ -2725,6 +2725,7 @@ header #logo{
 	float: right !important;
 	position: relative;
 	top: 5px;
+	width: 90%;
 }
 
 #feed ::-webkit-scrollbar-track {
