@@ -1,9 +1,24 @@
 s<?php
 $iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
-    $user = DBRead('user', "WHERE id = '{$iduser}' LIMIT 1 ");
-    $user = $user[0];
+$user = DBRead('user', "WHERE id = '{$iduser}' LIMIT 1 ");
+$user = $user[0];
 ?>
 <header id="header">
+
+<?php
+if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_COOKIE['thecry']))){
+    if (!$user){
+      setcookie("iduser" , "");
+    setcookie("inisession" , "");
+    setcookie("thecry" , "");
+    header("location: /");
+    }
+    else{
+    	echo '';
+    }
+}
+?>
+
 
 <?php
 if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_COOKIE['thecry']))){
