@@ -171,7 +171,7 @@ $totaldecomunidades = mysql_num_rows($totaldecomunidades);
 
 </div>
 
-<div class="postagens semlogin">
+<div class="postagenst semlogin">
 	<h1>Faça o login para ver mais <a href="/?login" class="lgren">Clique aqui</a></h1>
 </div>
 
