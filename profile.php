@@ -89,12 +89,35 @@ if($people['id'] <> $user['id']){
 </div>
 <h1 class="name-batito" ><?php echo $people['nome']; ?>  <?php echo $people['sobrenome']; ?></h1>
 </center>
+
+
+
 </div>
+
+<?php
+$conn = mysql_connect('localhost','root','') or die (mysql_error);
+$db=mysql_select_db('nekohappy', $conn) or die (mysql_error);
+$iduser = DBEscape( strip_tags(trim($_GET['id']) ) );
+$totaldecomunidades = mysql_query("SELECT * FROM neko_comunidades WHERE id and iduser = '".$iduser."' ");
+$totaldecomunidades = mysql_num_rows($totaldecomunidades);
+?>
+
+<div id="alinhar-h">
 
 <div class="about">
+<div class="posta">
 
+<div id="header-p">
+	<li>Feed</li>
+	<li>Amigos</li>
+	<li><div id="newsnot1" class="feednot"><span>
+		<?php echo $totaldecomunidades;?>
+	</span></div>Comunidades</li>
+</div>
+</div>
 </div>
 
+</div>
 
 <div id="box-s-ht">
 <ul class="srcc">
@@ -126,8 +149,6 @@ if($people['id'] <> $user['id']){
 </div>
 <h1 class="name-batito" ><?php echo $people['nome']; ?>  <?php echo $people['sobrenome']; ?></h1>
 </center>
-
-
 
 </div>
 
