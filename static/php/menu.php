@@ -90,6 +90,15 @@ $(document).ready(function() {
 </center>
 </div>
 
+<?php
+$iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
+$peoples = DBRead( 'comunidades', "WHERE id ORDER BY id DESC LIMIT 1" );
+if (!$peoples)
+echo '';
+else  
+  foreach ($peoples as $people):
+?>
+
 <div class="profile-cap2" id="caper">
 <center>
 <h1>Comunidades</h1>
@@ -124,6 +133,7 @@ else
 </div>
 
 </div>
+<?php endforeach;?>
 
 <div class="main" id="fallen2">
 <div class="publicar" id="pub" id="fallen5">
