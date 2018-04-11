@@ -23,7 +23,7 @@ if(isset($_GET['comunidadecreate'])){
 <div id="criacao">
   <h1>Criando comunidade</h1>
   <p>Passo 1</p>
-  <span>Defina o nome da sua comunidade</span>
+  <span>Defina o nome de sua comunidade</span>
   <input type="text" id="comunidadename" placeholder="Nome da comunidade.">
 
   <div class="btn-sc" id="haha" style="position: absolute; top: 215px !important;"><div class="btnc"><span>Criar</span></div></div>
@@ -99,7 +99,7 @@ $(document).ready(function() {
 <div class="bakerooo">
 <?php
 $iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
-$peoples = DBRead( 'comunidades', "WHERE id ORDER BY id ASC LIMIT 10" );
+$peoples = DBRead( 'comunidades', "WHERE id ORDER BY id DESC LIMIT 10" );
 if (!$peoples)
 echo '';
 else  
