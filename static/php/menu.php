@@ -115,7 +115,7 @@ else
   foreach ($peoples as $people):
 ?>
 <a href="comunidade.php?id=<?php echo $people['id']; ?>">
-<li class="imesa" style="left: 2px; width: 110px; height: 110px;">
+<li class="imesa" style="left: 10px; width: 110px; height: 110px;">
   <img src="/img/default.png" style="border-radius: 0%;"/>
   <p> <?php
   $str2 = nl2br( $people['nome'] );
