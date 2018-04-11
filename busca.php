@@ -11,7 +11,7 @@ if(empty($nome)){
 	echo "";
 }else{?>
 <?php
-$profile2 = DBRead( 'user', "WHERE nome LIKE '%$nome%' ORDER BY id DESC LIMIT 9" );
+$profile2 = DBRead( 'user', "WHERE nome LIKE '%$nome%' ORDER BY id DESC LIMIT 4" );
  if (!$profile2)
 	echo "";
 else 
@@ -36,9 +36,44 @@ if (!$profile2){
 }
 else{
  ?>
-  <a href="search.php?result=<?php echo $nome; ?>" id="baka"><span id="maiss">Ver todos os resultados para <?Php echo $nome; ?></span></a>
+  <a href="search.php?result=<?php echo $nome; ?>" id="baka"><span id="maiss">Ver todos os resultados de pessoas para <?Php echo $nome; ?></span></a>
   <?php } ?>
 <?php }?>
+
+<?Php
+if(empty($nome)){
+  echo "";
+}else{?>
+<?php
+$profile2 = DBRead( 'comunidades', "WHERE nome LIKE '%$nome%' ORDER BY id DESC LIMIT 5" );
+ if (!$profile2)
+  echo "";
+else 
+  foreach ($profile2 as $profile22):
+ ?>
+ 
+ <a class="eoq" style="padding-top: 20px; padding-bottom: 40px;"  href='/comunidades.php?id=<?php echo $profile22['id']; ?>'><li class='buscaright'><img src='/img/default.png' class='avatar6'/><div class='name'><p>
+ <?php
+  $str2 = nl2br( $profile22['nome'] );
+  $len2 = strlen( $str2 );
+  $max2 = 25;
+   if( $len2 <= $max2 )
+   echo $str2;
+  else    
+   echo substr( $str2, 0, $max2 ) . '...'?>
+ </div></li></a></p>
+ 
+ <?php endforeach; ?>
+ <?php
+if (!$profile2){
+ echo '';
+}
+else{
+ ?>
+  <a style="padding-top: 20px; padding-bottom: 20px;" href="search.php?result=<?php echo $nome; ?>" id="baka"><span id="maiss">Ver todos os resultados de comunidades para <?Php echo $nome; ?></span></a>
+  <?php } ?>
+<?php }?>
+
 
 
 <?php
@@ -135,5 +170,65 @@ msg.style = "display: block";
  $('#close').click(function(){
         	msg.style = "display: none;";
    		 });
+</script>
+<?php } ?>
+
+<?php
+if($nome == "porn"){
+?>
+<script>
+var msg = document.getElementById('bakaetes');
+var closemsg = document.getElementById('close');
+$("#fuck").text("Punheteiro ;-;");
+msg.style = "display: block";
+
+ $('#close').click(function(){
+          msg.style = "display: none;";
+       });
+</script>
+<?php } ?>
+
+<?php
+if($nome == "facebook"){
+?>
+<script>
+var msg = document.getElementById('bakaetes');
+var closemsg = document.getElementById('close');
+$("#fuck").text("Traidor.. :c");
+msg.style = "display: block";
+
+ $('#close').click(function(){
+          msg.style = "display: none;";
+       });
+</script>
+<?php } ?>
+
+<?php
+if($nome == "loli"){
+?>
+<script>
+var msg = document.getElementById('bakaetes');
+var closemsg = document.getElementById('close');
+$("#fuck").text("190..");
+msg.style = "display: block";
+
+ $('#close').click(function(){
+          msg.style = "display: none;";
+       });
+</script>
+<?php } ?>
+
+<?php
+if($nome == "aky"){
+?>
+<script>
+var msg = document.getElementById('bakaetes');
+var closemsg = document.getElementById('close');
+$("#fuck").text("Bunda mole.. asduhas");
+msg.style = "display: block";
+
+ $('#close').click(function(){
+          msg.style = "display: none;";
+       });
 </script>
 <?php } ?>
