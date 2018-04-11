@@ -11,7 +11,6 @@ $usercry = $usercry[0];
 $idpeople = DBEscape( strip_tags(trim($_GET['id']) ) );
 $people = DBRead('user', "WHERE id = '{$idpeople}' LIMIT 1 ");
 $people = $people[0];
-require 'static/php/veried.php';
 ?>
 <!DOCTYPE html>
 <html>
