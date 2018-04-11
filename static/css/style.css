@@ -2692,3 +2692,18 @@ header #logo{
 	left: 0;
 	background: rgba(0,0,0,.70);
 }
+
+#proezas{
+	position: absolute;
+	top: 0;
+	width: 50%;
+	height: 150px;
+	background: #0b2d46b5;
+	top: 49px;
+	color: #fff;
+}
+
+#proezas p{
+	padding: 5px;
+	font-size: 19px;
+}

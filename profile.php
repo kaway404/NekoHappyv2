@@ -121,6 +121,12 @@ $totaldecomunidades = mysql_num_rows($totaldecomunidades);
 	</span></div>Comunidades</li>
 </div>
 
+
+<div id="proezas">
+	<p>Proezas</p>
+</div>
+
+
 <div class="comentariosp">
 
 <div id="comentarii">
