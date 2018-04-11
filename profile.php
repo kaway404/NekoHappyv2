@@ -33,15 +33,15 @@ require 'static/php/veried.php';
 </head>
 <body id="momer">
 
-<?php
-require 'static/php/leftbar.php';
-?>s
 
 <?php
 require 'static/php/header.php';
 if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_COOKIE['thecry']))){
 ?>
 
+<?php
+require 'static/php/leftbar.php';
+?>
 
 <div id="background-p"></div>
 <div id="background-t"></div>
