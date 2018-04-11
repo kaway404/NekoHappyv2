@@ -2714,7 +2714,7 @@ header #logo{
 	float: right;
 	position: absolute;
 	right: 20px;
-	width: 50%;
+	width: 100%;
 	top: 10px;
 	overflow-y: auto;
 	height: 650px;
