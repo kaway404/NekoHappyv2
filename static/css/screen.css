@@ -159,6 +159,11 @@ body{
 		opacity: 0;
 	}
 
+	.profile-cap2{
+		display: none;
+		opacity: 0;
+	}
+
 	.ajuda{
 		display: none;
 	}

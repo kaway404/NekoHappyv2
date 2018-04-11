@@ -1,4 +1,4 @@
-<?php
+C<?php
 require 'static/php/leftbar.php';
 ?>
 
@@ -16,21 +16,50 @@ if(isset($_GET['comunidadecreate'])){
 
 <div class="comunidade">
 <div class="body">
-<h2 class="criando">Criando comunidade.</h2>
-<p class="gostat">Crie uma comunidade do que mais gosta.<br> Pode ser uma comunidade de jogos, série, anime, banda etc... </p>
 
-<div class="botoes-select">
-  <div class="entre"></div>
-<p>Entretenimento</p>
+ <img src="/img/back.jpg" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;"> 
+
+<div id="nani">
+<div id="criacao">
+  <h1>Criando comunidade</h1>
+  <p>Passo 1</p>
+  <span>Defina o nome da sua comunidade</span>
+  <input type="text" id="comunidadename" placeholder="Nome da comunidade.">
+
+  <div class="btn-sc" id="haha" style="position: absolute; top: 215px !important;"><div class="btnc"><span>Criar</span></div></div>
+
+  <div id="resposta">
+  </div>
+
+</div>
 </div>
 
-<div class="botoes-select">
-  <div class="artista"></div>
-<p>Artista/Banda</p>
+</div>
 </div>
 
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#haha").click(function() {
+        var nomer = $("#comunidadename").val();
+        $.post("/static/php/comunidadecreate.php", {nome: nomer},
+        function(data){
+         $("#resposta").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+</script>
+
+
+<center>
+<div class="bakat" id="bakaetes">
+<div class="msg" id="boxmsg">
+  <span id="fuck"></span>
+  <div class="btn-sd" id="close"><div class="btnd"><span>Certo</span></div></div>
 </div>
 </div>
+</center>
 
 <div id="bottomphone">
 <input type="text" placeholder="Buscar pessoas e comunidades." class="buscarr" id="buscat"/>
@@ -60,6 +89,42 @@ if(isset($_GET['comunidadecreate'])){
 <p>Pontuação : <?php echo $user['coins']; ?> </p>
 </center>
 </div>
+
+<div class="profile-cap2" id="caper">
+<center>
+<h1>Comunidades</h1>
+</center>
+<div class="scrollamigo" style="height: 125px;">
+<ul>
+<div class="bakerooo">
+<?php
+$iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
+$peoples = DBRead( 'comunidades', "WHERE id ORDER BY id ASC LIMIT 10" );
+if (!$peoples)
+echo '';
+else  
+  foreach ($peoples as $people):
+?>
+<a href="comunidade.php?id=<?php echo $people['id']; ?>">
+<li class="imesa" style="left: 2px; width: 110px; height: 110px;">
+  <img src="/img/default.png" style="border-radius: 0%;"/>
+  <p> <?php
+  $str2 = nl2br( $people['nome'] );
+  $len2 = strlen( $str2 );
+  $max2 = 14;
+   if( $len2 <= $max2 )
+   echo $str2;
+  else    
+   echo substr( $str2, 0, $max2 ) . '...'?></p>
+</li>
+</a>
+<?php endforeach; ?>
+</div>
+</ul>
+</div>
+
+</div>
+
 <div class="main" id="fallen2">
 <div class="publicar" id="pub" id="fallen5">
 <form>
