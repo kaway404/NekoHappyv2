@@ -2685,7 +2685,7 @@ header #logo{
 	top: 0;
 	height: 100%;
 	left: 0;
-	background-image: url(/static/img/backgroundp.jpg);
+	background-image: url(/img/backgroundp.jpg);
 	background-size: cover;
 }
 
