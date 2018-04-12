@@ -384,7 +384,7 @@ var kawaii<?php echo $comentiduser; ?> = document.getElementById('kawaii<?php ec
 
 <?php
 $peopleidt = $_GET['id'];
-$coments = DBRead( 'post', "WHERE id and destaque = 0 and iduser = $peopleidt  ORDER BY id DESC" );
+$coments = DBRead( 'post', "WHERE id and destaque = 0 and iduser = $peopleidt and tipo = 1 ORDER BY id DESC" );
 if (!$coments)
 echo '<div class="postagens" id="blank"><p class="bakeero">Sem postagem :/</p></div>';
 else  
