@@ -73,6 +73,28 @@ $(document).ready(function() {
 </div>
 
 
+<div id="happyhour">
+
+<div class="hourstimea" id="wow">
+
+</div>
+
+</div>
+
+<script type="text/javascript">
+var milissegundos = 800;
+
+// Executa a função a cada intervalo de tempo
+var interval = setInterval(function(){
+    $.post('/static/php/newsound.php', function (html) {
+        $('#wow').html(html);
+    });
+  }, milissegundos);
+</script>
+
+
+
+
 <?php } else{?>
 
 
@@ -1021,7 +1043,7 @@ body{
 <script type="text/javascript" src="static/js/publicacao.js"></script>
 
 <script type="text/javascript">
-var milissegundos = 1200;
+var milissegundos = 800;
 
 // Executa a função a cada intervalo de tempo
 var interval = setInterval(function(){
