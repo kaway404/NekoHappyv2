@@ -216,6 +216,42 @@ else
 <h1>Estamos atualizando o NekoHappy.</h1>
 </div>
 
+<div id="wtf">
+
+</div>
+
+
+<script type="text/javascript">
+
+var milissegundoss = 500;
+
+// Executa a função a cada intervalo de tempo
+var interval = setInterval(function(){
+    $.ajax({
+type: "POST",
+url: "/static/php/now.php",
+cache: true,
+success: function(html){
+$("#wtf").after(html);
+}  
+});
+  }, milissegundoss);
+
+var milissegundos = 1000;
+
+// Executa a função a cada intervalo de tempo
+var interval = setInterval(function(){
+    $.ajax({
+type: "POST",
+url: "/static/php/newpost.php",
+cache: true,
+success: function(html){
+$("#wtf").after(html);
+}  
+});
+  }, milissegundos);
+</script>
+
 <?php
 if(isset($_COOKIE['batata']) ){
 ?>
@@ -931,8 +967,6 @@ var kawaii<?php echo $comentiduser; ?> = document.getElementById('kawaii<?php ec
 <div id="respostaba">
 
 </div>
-
-
 
 
 </div>

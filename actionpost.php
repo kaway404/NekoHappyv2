@@ -7,6 +7,7 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
 require 'static/php/system/database.php';
 require 'static/php/system/config.php';
 ?>
+
 <?php
 $conexao = mysql_pconnect($hostp,$userp,$passwrdp) or die (mysql_error());
 $banco = mysql_select_db($dbp);
