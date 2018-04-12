@@ -372,7 +372,7 @@ $postid = $coment['id'];
    </div>
    <form>
     <input type="text" placeholder="Digite seu comentario aqui!" id="comment<?php echo $postid ?>" class="helloe"/>
-    <button class="btnt" id="nani<?php echo $postid ?>">Comentar</button>
+    <button class="btnt" id="nanit<?php echo $postid ?>">Comentar</button>
   </form>
     </div>
   </div>
@@ -381,7 +381,7 @@ $postid = $coment['id'];
 var msg = document.getElementById('bakaetes');
 var closemsg = document.getElementById('close');
 $(function() {
-$("#nani<?php echo $postid ?>").click(function() {
+$("#nanit<?php echo $postid ?>").click(function() {
 var textcontent = $("#comment<?php echo $postid ?>").val();
 var dataString = 'content='+ textcontent;
 if(textcontent=='')
