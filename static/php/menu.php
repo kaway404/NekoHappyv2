@@ -860,7 +860,7 @@ else
   <?php endforeach; endforeach;?>
 
 <?php
-$postid = $coment['id'];
+$postids = $coment['id'];
 ?>
 
     <div class="space<?php echo $postid ?>"></div>
@@ -874,8 +874,8 @@ $postid = $coment['id'];
      <img src="/img/<?Php echo $user['photo'];?>" class="avatar-post"/>
    </div>
    <form>
-    <input type="text" placeholder="Digite seu comentario aqui!" id="comment<?php echo $postid ?>" class="helloe"/>
-    <button class="btnt" id="nani<?php echo $postid ?>">Comentar</button>
+    <input type="text" placeholder="Digite seu comentario aqui!" id="commenth<?php echo $postid ?>" class="helloe"/>
+    <button class="btnt" id="naniaaa<?php echo $postid ?>">Comentar</button>
   </form>
     </div>
   </div>
@@ -884,8 +884,8 @@ $postid = $coment['id'];
 var msg = document.getElementById('bakaetes');
 var closemsg = document.getElementById('close');
 $(function() {
-$("#nani<?php echo $postid ?>").click(function() {
-var textcontent = $("#comment<?php echo $postid ?>").val();
+$("#naniaaa<?php echo $postids ?>").click(function() {
+var textcontent = $("#commenth<?php echo $postids ?>").val();
 var dataString = 'content='+ textcontent;
 if(textcontent=='')
 {
@@ -900,10 +900,10 @@ url: "static/php/comment.php?idpost=<?php echo $coment['id']; ?>",
 data: dataString,
 cache: true,
 success: function(html){
-  document.getElementById('comment<?php echo $postid ?>').value='';
-$("#show<?php echo $postid ?>").after(html);
-$("#flash<?php echo $postid ?>").hide();
-$("#content<?php echo $postid ?>").focus();
+  document.getElementById('commenth<?php echo $postids ?>').value='';
+$("#show<?php echo $postids ?>").after(html);
+$("#flash<?php echo $postids ?>").hide();
+$("#content<?php echo $postids ?>").focus();
 }  
 });
 }
