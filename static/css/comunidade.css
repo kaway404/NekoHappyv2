@@ -1,0 +1,61 @@
+#comunidadet{
+	width: 100%;
+	position: relative;
+	height: 400px;
+	background-color: #1f4967;
+	background-size: cover;
+	border: 1px solid #1f4967;
+}
+
+#avatare{
+	width: 200px;
+	height: 200px;
+	border: 5px solid #1f4967;
+	position: absolute;
+	bottom: -30px;
+	left: 20px;
+	z-index: 500;
+}
+
+#avatare img{
+	width: 100%;
+	height: 100%;
+}
+
+#avatare h1{
+	font-size: 	32px;
+	width: 200px;
+	background-color: #1f4967;
+	color: #fff;
+	padding: 5px;
+	position: relative;
+	right: 5px;
+}
+
+#footer-c{
+	width: 100%;
+	background: #459bd9;
+	height: 50px;
+	position: relative;
+}
+
+#footer-c #buttons button{
+	height: 100%;
+	border: none;
+	cursor: pointer;
+	background: #1f4967;
+	color: #fff;
+	transition: 1s;
+	padding: 10px;
+	border-radius: 20px;
+	position: relative;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.50);
+	margin-left: 10px;
+	float: right;
+	right: 10px;
+	top: 7px;
+}
+
+#footer-c #buttons button:hover{
+	padding: 12px;
+}

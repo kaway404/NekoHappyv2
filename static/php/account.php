@@ -9,7 +9,7 @@
 	?>
 
 	<h1 class="login">Faça login novamante</h1>
-	<img src="/img/default.png" class="avatar-i"/>
+	<img src="/img/<?Php echo $usercry['photo'];?>" class="avatar-i"/>
 	<h1 id="eto51"><?php echo $usercry['nome'] ?> <?php echo $usercry['sobrenome'] ?></h1>
 	<input type="password" name="senhar" id="senhaa" placeholder="Senha"/>
 	<div class="btn-sa" id="again"><div class="btna"><span>Login</span></div></div>

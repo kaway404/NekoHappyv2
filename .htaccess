@@ -21,5 +21,6 @@ RewriteRule ^logout/?$ /logout.php [NC,L]
 RewriteRule ^comunitycreate/?$ /index.php?comunidadecreate [NC,L]
 RewriteRule ^sair/?$ /logout.php [NC,L]
 RewriteRule ^chat/?$ /chat.php [NC,L]
+RewriteRule ^editprofile/?$ /edit.php [NC,L]
 
 </IfModule>

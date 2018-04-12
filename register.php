@@ -49,6 +49,7 @@ $form2['thecry'] = $thecryed;
 $form2['coins'] = "0";
 $form2['priv'] = "0";
 $form2['admin'] = "0";
+$form2['photo'] = "default.png";
 $form2['ip']= mysql_real_escape_string($_SERVER['REMOTE_ADDR']);
 
 	if( DBCreate( 'user', $form2 ) ){	

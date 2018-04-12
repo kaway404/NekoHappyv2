@@ -34,7 +34,7 @@ mysql_query('SET character_set_results=utf8');
 		</script>
 	<div class="postagens" id="fallen">
         <div class="ava-t-e" id="photo">
-        <img src="/img/default.png" class="avatar-post"/>
+        <img src="/img/<?Php echo $user['photo'];?>" class="avatar-post"/>
         </div>
 
         <a href="profile.php?id=<?php echo $user['id']; ?>"><p class="name-poster"><?php echo $user['nome'] ?> <?php echo $user['sobrenome'] ?></p></a>

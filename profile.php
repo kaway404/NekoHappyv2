@@ -54,13 +54,13 @@ require 'static/php/leftbar.php';
 <div class="nani-h" id="batatao">
 <div class="wow">
 <div class="about-t" style="bottom: 0;">
-<button>Configurar perfil</button>
+<a href="/editprofile"><button>Configurar perfil</button></a>
 <button>Minhas atividades</button>
 </div>
 </div>
 <center>
 <div class="profilephoto" id="photo">
-<img src="/img/default.png" class="avatar-post"/>
+<img src="/img/<?Php echo $user['photo'];?>" class="avatar-post"/>
 </div>
 <h1 class="name-batito" ><?php echo $user['nome']; ?>  <?php echo $user['sobrenome']; ?></h1>
 </center>
@@ -83,14 +83,14 @@ if($people['id'] <> $user['id']){
 </div>
 <?php } else{?>
 <div class="about-t">
-<button>Configurar perfil</button>
+<a href="/editprofile"><button>Configurar perfil</button></a>
 <button>Minhas atividades</button>
 </div>
 <?php } ?>
 </div>
 <center>
 <div class="profilephoto" id="photo">
-<img src="/img/default.png" class="avatar-post"/>
+<img src="/img/<?Php echo $people['photo'];?>" class="avatar-post"/>
 </div>
 <h1 class="name-batito" ><?php echo $people['nome']; ?>  <?php echo $people['sobrenome']; ?></h1>
 </center>
@@ -121,6 +121,267 @@ $totaldecomunidades = mysql_num_rows($totaldecomunidades);
 </div>
 
 <div id="feed">
+
+
+
+
+
+
+
+<!-- Alterou foto de perfil -->
+
+<?php
+$peopleer = $people['id'];
+$coments = DBRead( 'post', "WHERE id and destaque = 0 and tipo = 3 and iduser = $peopleer ORDER BY id DESC" );
+if (!$coments)
+echo '<div class="postagens" id="blank"><p class="bakeero">Sem postagem :/</p></div>';
+else  
+  foreach ($coments as $coment):   
+?>
+<?php
+$comentiduser = $coment['iduser'];
+$peoples = DBRead( 'user', "WHERE id = $comentiduser ORDER BY id DESC LIMIT 1" );
+if (!$peoples)
+echo '';  
+else  
+  foreach ($peoples as $people):   
+?>
+
+<div class="postagens" id="fallen">
+    <div class="ava-t-e" id="photo" style="top: 17px !important; z-index: 60" >
+    <img src="/img/<?Php echo $people['photo'];?>" class="avatar-post" />
+    </div>
+
+    <a href="profile.php?id=<?php echo $people['id']; ?>"><p class="name-poster" style="z-index: 60"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?></p></a>
+          <center>
+            <div class="costa"></div>
+            <style type="text/css">
+              .costa{
+                background-image: url(/img/back.jpg);
+              }
+            </style>
+            <img src="/img/<?php echo $coment['photo']; ?>" class="fotografia"/>
+
+    <p class="cont-d"> 
+      <?php 
+                                                    $emotions = array(':)', ':@', '8)', ':D', ':3', ':(', ';)', ':O', ':o', ':P', ':p', '<3', '\n');
+                                                    $imgs = array(
+                                                        '<img id="emoticon" src="/static/img/emotions/nice.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/angry.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/cool.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/happy.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/ooh.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/sad.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/right.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/ooooh.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/ooooh.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/pi.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/pi.png"/>',
+                                                        '<img id="emoticon" src="/static/img/emotions/heart.png"/>',
+                                                        '<br>'
+                                                    );
+                                                    $msg = str_replace($emotions, $imgs, $coment['texto']);
+                                                    echo $msg;
+                                                    ?></p></center>
+                                                   <?php
+  $conexao = mysql_pconnect($hostp,$userp,$passwrdp) or die (mysql_error());
+  $banco = mysql_select_db($dbp);
+  $comentiduser = $coment['id'];
+  $totalcurtida = mysql_query("SELECT * FROM neko_like WHERE idpost = $comentiduser ");
+  $totalcurtida = mysql_num_rows($totalcurtida);
+  $totalcurtidamenos = $totalcurtida - 1;
+                                                     ?>
+<div class="post-bottom">
+  <div class="feed">
+    <p class="totallike" id="totallike<?php echo $comentiduser ?>">
+      <?php
+    $dbCheck = DBRead( 'like', "WHERE id and idpost = $comentiduser and iduser = $iduser" );
+    if( $dbCheck ){
+  ?>
+    Tu e outras <?php echo $totalcurtidamenos; ?>
+    <?php } else{?>
+    <?php echo $totalcurtida; ?> curtiram isso
+    <?php } ?>
+  </p>
+<?php
+$comentid = $coment['id'];
+$iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
+$comentiduser = $coment['id'];
+$likes = DBRead( 'like', "WHERE idpost = $comentiduser and iduser = $iduser ORDER BY id DESC" );
+if (!$likes)
+echo '<a class="like-btn" id="kawaii'.$comentiduser.'">';
+else  
+  foreach ($likes as $like):
+?>
+   <a class="like-btn ativolike" id="kawaii<?php echo $comentiduser; ?>">
+   <?php endforeach;?>
+    </a>
+     <a class="like-btn2" id="comentarr<?php echo $comentiduser; ?>"></a>
+
+
+<?php
+$dbCheck = DBRead( 'like', "WHERE id and idpost = $comentiduser and iduser = $iduser" );
+
+if( $dbCheck ){
+?>
+<script>
+   $(document).ready(function() {
+    $("#kawaii<?php echo $comentiduser; ?>").click(function() {
+        var post = <?php echo $coment['id'] ?>; 
+        $.post("/static/php/react.php", {post: post},
+        function(data){
+         $("#respostaba").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+</script>
+<?php } else{ ?>
+<script>
+   $(document).ready(function() {
+    $("#kawaii<?php echo $comentiduser; ?>").click(function() {
+        var post = <?php echo $coment['id'] ?>; 
+        $.post("/static/php/react.php", {post: post},
+        function(data){
+         $("#respostaba").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+</script>
+<?Php } ?>
+
+    </div>
+  </div>
+
+   <div class="comentarios" id="comentarios<?php echo $comentiduser; ?>">
+
+      <div class="taber">
+
+<script>
+var kawaii<?php echo $comentiduser; ?> = document.getElementById('kawaii<?php echo $comentiduser; ?>');
+var comentarios<?php echo $comentiduser; ?> = document.getElementById('comentarios<?php echo $comentiduser; ?>')
+
+ $('#comentarr<?php echo $comentiduser; ?>').click(function(){
+          if (comentarios<?php echo $comentiduser; ?>.style.display === "block") {
+             comentarios<?php echo $comentiduser; ?>.style = "display: none;";
+          } else {
+              comentarios<?php echo $comentiduser; ?>.style = "display: block;";
+           }
+       });
+
+</script>
+
+<?php
+$postid = $coment['id'];
+$coments = DBRead( 'comment', "WHERE id and idpost = $postid ORDER BY id DESC" );
+if (!$coments)
+echo '<p id="feelsba'.$postid.'" style="font-size: 18px; padding: 5px;">Não há nenhum comentario</p>';
+else  
+  foreach ($coments as $coment):   
+?>
+<?php
+$comentiduser = $coment['iduser'];
+$peoples = DBRead( 'user', "WHERE id = $comentiduser ORDER BY id DESC LIMIT 1" );
+if (!$peoples)
+echo '';  
+else  
+  foreach ($peoples as $people):   
+?>
+
+      <div class="coment">
+      <div class="ava-t-sd" id="photo">
+     <img src="/img/<?Php echo $people['photo'];?>" class="avatar-post"/>
+    </div>
+    <p class="name-post"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?>  <span class="commentpostiduq"><?php echo $coment['texto']; ?></span> </p>
+    </div>
+
+  <?php endforeach; endforeach;?>
+
+<?php
+$postid = $coment['id'];
+?>
+
+    <div class="space<?php echo $postid ?>"></div>
+<div id="flash<?php echo $postid ?>"></div>
+<div id="show<?php echo $postid ?>"></div>
+
+  </div>
+
+    <div class="eooqsa">
+      <div class="ava-t-sde" id="photo">
+     <img src="/img/<?Php echo $user['photo'];?>" class="avatar-post"/>
+   </div>
+   <form>
+    <input type="text" placeholder="Digite seu comentario aqui!" id="comment<?php echo $postid ?>" class="helloe"/>
+    <button class="btnt" id="nani<?php echo $postid ?>">Comentar</button>
+  </form>
+    </div>
+  </div>
+
+<script>
+var msg = document.getElementById('bakaetes');
+var closemsg = document.getElementById('close');
+$(function() {
+$("#nani<?php echo $postid ?>").click(function() {
+var textcontent = $("#comment<?php echo $postid ?>").val();
+var dataString = 'content='+ textcontent;
+if(textcontent=='')
+{
+$("#fuck").text("Você não pode deixar o comentario vazio.");
+msg.style = "display: block";
+}
+else
+{
+$.ajax({
+type: "POST",
+url: "static/php/comment.php?idpost=<?php echo $coment['id']; ?>",
+data: dataString,
+cache: true,
+success: function(html){
+  document.getElementById('comment<?php echo $postid ?>').value='';
+$("#show<?php echo $postid ?>").after(html);
+$("#flash<?php echo $postid ?>").hide();
+$("#content<?php echo $postid ?>").focus();
+}  
+});
+}
+return false;
+});
+});
+
+ $('#close').click(function(){
+          msg.style = "display: none;";
+       });
+
+</script>
+
+
+    </div>
+
+<script>
+var kawaii<?php echo $comentiduser; ?> = document.getElementById('kawaii<?php echo $comentiduser; ?>');
+</script>
+
+
+
+<?php endforeach; endforeach;?>
+
+<div id="respostaba">
+
+</div>
+
+
+
+
+
+
+
+
+
+
 <?php
 $peopleidt = $people['id'];
 $coments = DBRead( 'post', "WHERE id and destaque = 0 and iduser = $peopleidt  ORDER BY id DESC" );
@@ -140,7 +401,7 @@ else
 
 <div class="postagens" id="fallen">
 		<div class="ava-t-e" id="photo" style="top: 17px !important;">
-		<img src="/img/default.png" class="avatar-post"/>
+		<img src="/img/<?Php echo $people['photo'];?>" class="avatar-post"/>
 		</div>
 
 		<a href="profile.php?id=<?php echo $people['id']; ?>"><p class="name-poster"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?></p></a>
@@ -275,7 +536,7 @@ else
 
       <div class="coment">
       <div class="ava-t-sd" id="photo">
-     <img src="/img/default.png" class="avatar-post"/>
+     <img src="/img/<?Php echo $people['photo'];?>" class="avatar-post"/>
     </div>
     <p class="name-post"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?>  <span class="commentpostiduq"><?php echo $coment['texto']; ?></span> </p>
     </div>
@@ -294,7 +555,7 @@ $postid = $coment['id'];
 
     <div class="eooqsa">
       <div class="ava-t-sde" id="photo">
-     <img src="/img/default.png" class="avatar-post"/>
+     <img src="/img/<?Php echo $people['photo'];?>" class="avatar-post"/>
    </div>
    <form>
     <input type="text" placeholder="Digite seu comentario aqui!" id="comment<?php echo $postid ?>" class="helloe"/>
@@ -390,7 +651,7 @@ var kawaii<?php echo $comentiduser; ?> = document.getElementById('kawaii<?php ec
 </div>
 <center>
 <div class="profilephoto" id="photo">
-<img src="/img/default.png" class="avatar-post"/>
+<img src="/img/<?Php echo $people['photo'];?>" class="avatar-post"/>
 </div>
 <h1 class="name-batito" ><?php echo $people['nome']; ?>  <?php echo $people['sobrenome']; ?></h1>
 </center>

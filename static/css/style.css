@@ -213,6 +213,7 @@ header #logo{
     box-shadow: 0 4px 8px 0 rgba(43,102,79,0.55);
     bottom: 74px;
     border-radius: 15px;
+    background: #151515;
 }
 
 .inte{
@@ -396,6 +397,7 @@ header #logo{
 	position: relative;
 	bottom: 40px;
 	border: 2px solid #459bd9;
+	background: #151515;
 }
 
 .bakero{
@@ -535,6 +537,7 @@ header #logo{
 	width: 100%;
 	height: 100%;
 	border-radius: 50%;
+	background: #151515;
 }
 
 .ava-t-e{
@@ -2463,6 +2466,7 @@ header #logo{
 	height: 65px;
 	position: relative;
 	bottom: 30px;
+	background: #151515;
 	left: 10px;
 }
 
@@ -2681,7 +2685,7 @@ header #logo{
 	top: 0;
 	height: 100%;
 	left: 0;
-	background-image: url(https://1.bp.blogspot.com/-RKB1d4DQMb0/UbidBypAG7I/AAAAAAAABBg/o5pHQ_icCOs/s1600/Sky+Anime+Landscape+29.jpg);
+	background-image: url(/static/img/backgroundp.jpg);
 	background-size: cover;
 }
 
@@ -2721,10 +2725,13 @@ header #logo{
 }
 
 #feed .postagens{
-	float: right !important;
 	position: relative;
 	top: 5px;
-	width: 96.3%;
+	left: 0;
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+	left: 40px;
 }
 
 #feed ::-webkit-scrollbar-track {
@@ -2754,4 +2761,73 @@ header #logo{
     border-radius: 40px;
 }
 
+#editprofile{
+	width: 100%;
+	background: #eee;
+	height: 500px;
+	top: 40px;
+	padding-bottom: 80px;
+	position: relative;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.50);
+}
 
+#editprofile form{
+	position: relative;
+	margin: 0px auto;
+}
+
+#editprofile h1{
+	position: relative;
+	font-size: 27px;
+	text-align: center;
+}
+
+.avatarja{
+    position: relative;
+    right: 80px;
+    box-shadow: 0 4px 8px 0 rgba(43,102,79,0.55);
+    border-radius: 15px;
+    top: 40px;
+    left: 0px;
+   	width: 200px;
+	height: 200px;
+	background: #151515;
+}
+
+#fotop{
+	position: relative;
+	top: 40px;
+}
+
+#fotop #btn2{
+	height: 100%;
+	border: none;
+	cursor: pointer;
+	background: #1f4967;
+	color: #fff;
+	transition: 1s;
+	padding: 10px;
+	border-radius: 20px;
+	position: relative;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.50);
+	margin-left: 10px;
+}
+
+.fotografia{
+	width: 200px;
+	height: 200px;
+	z-index: 50;
+	position: relative;
+	border: 2px solid #459bd9;
+}
+
+.costa{
+	position: absolute;
+	width: 100%;
+	height: 200px;
+	background-size: cover;
+	top: 0;
+	z-index: 0;
+	left: 0;
+	border-bottom: 2px solid #459bd9;
+}
