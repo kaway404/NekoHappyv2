@@ -26,7 +26,7 @@ else
 
 <?php
 $soundFile = "/sound/sound.ogg";
-echo "<EMBED SRC='/sound/sound.wav' WIDTH='2' HEIGHT='2'>";
+echo "<EMBED SRC='/sound/sound.mp3' WIDTH='2' HEIGHT='2'>";
 ?>
 
 <li>
