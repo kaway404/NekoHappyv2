@@ -91,6 +91,25 @@ require 'static/php/leftbar.php';
 
 </div>
 
+<div id="happyhour">
+
+<div class="hourstimea" id="wow">
+
+</div>
+
+</div>
+
+<script type="text/javascript">
+var milissegundos = 800;
+
+// Executa a função a cada intervalo de tempo
+var interval = setInterval(function(){
+    $.post('/static/php/newsound.php', function (html) {
+        $('#wow').html(html);
+    });
+  }, milissegundos);
+</script>
+
 </body>
 
 </html>
