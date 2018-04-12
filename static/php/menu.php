@@ -1087,5 +1087,12 @@ var interval = setInterval(function(){
   }, milissegundos);
 </script>
 
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function(){
+  if(Notification.permission !== 'granted')
+    Notification.requestPermission();
+});
+</script>
+
 
 <?Php } ?> 

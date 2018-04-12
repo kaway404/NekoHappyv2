@@ -24,6 +24,16 @@ else
   foreach ($peoplesr as $peopler):   
 ?>
 
+<script type="text/javascript">
+	if(Notification.permission !== "granted"){
+		Notification.requestPermission();
+	}else{
+		var notification = new Notification(Curtiu uma coisa sua, {
+			icon: /img/<?Php echo $peopler['photo']; ?>,
+			body: Curtiu uma coisa sua
+		});
+</script>
+
 <?php
 $soundFile = "/sound/sound.ogg";
 echo "<EMBED SRC='/sound/sound.wav' WIDTH='2' HEIGHT='2'>";
@@ -48,3 +58,11 @@ DBUpDate( 'news', $upRate, "idquem = '{$iduser}' " );
 </script>
 
 <?php endforeach; endforeach; } ?>
+
+
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function(){
+  if(Notification.permission !== 'granted')
+    Notification.requestPermission();
+});
+</script>

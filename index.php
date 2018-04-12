@@ -39,4 +39,5 @@ require 'static/php/home.php';
 }
 ?>
 </body>
+
 </html>
