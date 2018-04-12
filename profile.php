@@ -134,7 +134,7 @@ $totaldecomunidades = mysql_num_rows($totaldecomunidades);
 $peopleer = $people['id'];
 $coments = DBRead( 'post', "WHERE id and destaque = 0 and tipo = 3 and iduser = $peopleer ORDER BY id DESC" );
 if (!$coments)
-echo '<div class="postagens" id="blank"><p class="bakeero">Sem postagem :/</p></div>';
+echo '';
 else  
   foreach ($coments as $coment):   
 ?>

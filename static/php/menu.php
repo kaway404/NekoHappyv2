@@ -672,7 +672,7 @@ var kawaii<?php echo $comentiduser; ?> = document.getElementById('kawaii<?php ec
 <?php
 $coments = DBRead( 'post', "WHERE id and destaque = 0 and tipo = 3 ORDER BY id DESC" );
 if (!$coments)
-echo '<div class="postagens" id="blank"><p class="bakeero">Sem postagem :/</p></div>';
+echo '';
 else  
   foreach ($coments as $coment):   
 ?>
