@@ -22,7 +22,7 @@ else
 ?>
 <?php
 $comentiduser = $comunidade['iduser'];
-$peoples = DBRead( 'user', "WHERE id = $comentiduser ORDER BY id DESC LIMIT 1" );
+$peoples = DBRead( 'user', "WHERE id = $comentiduser ORDER BY id" );
 if (!$peoples)
 echo '';	
 else  
