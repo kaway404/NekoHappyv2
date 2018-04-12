@@ -50,7 +50,7 @@ if( DBCreate( 'news', $form3 ) ){
 
  <div class="coment">
       <div class="ava-t-sd" id="photo">
-     <img src="/img/default.png" class="avatar-post"/>
+     <img src="/img/<?Php echo $user['photo'];?>" class="avatar-post"/>
     </div>
     <p class="name-post"><?php echo $user['nome'] ?> <?php echo $user['sobrenome'] ?>  <span class="commentpostiduq"><?php echo $content; ?></span> </p>
     </div>

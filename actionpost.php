@@ -156,7 +156,7 @@ $postid = $coment['id'];
 
     <div class="eooqsa">
       <div class="ava-t-sde" id="photo">
-     <img src="/img/default.png" class="avatar-post"/>
+     <img src="/img/<?Php echo $user['photo'];?>" class="avatar-post"/>
    </div>
     <input type="text" placeholder="Digite seu comentario aqui!" id="comment<?php echo $comentiduser ?>" class="helloe"/>
     <button class="btnt" id="nani<?php echo $comentiduser ?>">Comentar</button>
