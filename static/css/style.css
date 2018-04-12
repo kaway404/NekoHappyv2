@@ -2835,15 +2835,14 @@ header #logo{
 #happyhour{
 	z-index: 5000;
 	position: fixed;
+	bottom: 0;
 }
 
 .hourstimea{
-	position: fixed;
+	position: relative;
 	float: left;
 	z-index: 4500px;
-	height: 300px;
-	width: 400px;
-	bottom: 0;
+	bottom: 0px;
 	left: 40px;
 }
 
@@ -2860,9 +2859,10 @@ header #logo{
 	background: #eee;
 	width: 300px;
 	box-shadow: 1px 1px 1px rgba(0,0,0,.90);
-	position: fixed;
-	bottom: 15px;
+	position: relative;
 	left: 40px;
+	margin-top: 20px;
+	bottom: 40px;
 }
 
 .hourstimea li p{

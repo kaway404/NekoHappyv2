@@ -29,13 +29,11 @@ $soundFile = "/sound/sound.ogg";
 echo "<EMBED SRC='/sound/sound.wav' WIDTH='2' HEIGHT='2'>";
 ?>
 
-<div class="hourstimea">
 <li>
 	<img src="/img/default.png">
 	<p><?php echo $peopler['nome'];?></p>
 	<span><?php echo $people['texto']; ?></span>
 </li>
-</div>
 
 <script type="text/javascript">
 	setTimeout(function(){
@@ -46,7 +44,7 @@ $iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
 DBUpDate( 'news', $upRate, "idquem = '{$iduser}' " );
 }
 ?>
-}, 20000);
+}, 1000);
 </script>
 
 <?php endforeach; endforeach; } ?>

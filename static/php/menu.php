@@ -1008,7 +1008,12 @@ body{
 </ul>
 </div>
 
+
 <div id="happyhour">
+
+<div class="hourstimea" id="wow">
+
+</div>
 
 </div>
 
@@ -1016,12 +1021,12 @@ body{
 <script type="text/javascript" src="static/js/publicacao.js"></script>
 
 <script type="text/javascript">
-var milissegundos = 800;
+var milissegundos = 1200;
 
 // Executa a função a cada intervalo de tempo
 var interval = setInterval(function(){
     $.post('/static/php/newsound.php', function (html) {
-        $('#happyhour').html(html);
+        $('#wow').html(html);
     });
   }, milissegundos);
 </script>
