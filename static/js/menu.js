@@ -18,7 +18,7 @@ var newsdiv = document.getElementById('newsdiv');
            }
        });
 
-      	 	   $('#menu').on('mouseleave', function(){
+    $('#menu').on('mouseleave', function(){
         	menu.style = "display:none;";
 		});
 
