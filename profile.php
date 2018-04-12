@@ -164,12 +164,11 @@ else
 
     <p class="cont-d"> 
       <?php 
-                                                    $emotions = array(':)', ':@', '8)', ':D', ':3', ':(', ';)', ':O', ':o', ':P', ':p', '<3', '\n');
+                                                    $emotions = array(':)', ':@', '8)', ':3', ':(', ';)', ':O', ':o', ':P', ':p', '<3', '\n');
                                                     $imgs = array(
                                                         '<img id="emoticon" src="/static/img/emotions/nice.png"/>',
                                                         '<img id="emoticon" src="/static/img/emotions/angry.png"/>',
                                                         '<img id="emoticon" src="/static/img/emotions/cool.png"/>',
-                                                        '<img id="emoticon" src="/static/img/emotions/happy.png"/>',
                                                         '<img id="emoticon" src="/static/img/emotions/ooh.png"/>',
                                                         '<img id="emoticon" src="/static/img/emotions/sad.png"/>',
                                                         '<img id="emoticon" src="/static/img/emotions/right.png"/>',
@@ -407,12 +406,11 @@ else
 		<a href="profile.php?id=<?php echo $people['id']; ?>"><p class="name-poster"><?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?></p></a>
 
 		<p class="cont-d"> <?php 
-                                                    $emotions = array(':)', ':@', '8)', ':D', ':3', ':(', ';)', ':O', ':o', ':P', ':p', '<3', '\n');
+                                                    $emotions = array(':)', ':@', '8)', ':3', ':(', ';)', ':O', ':o', ':P', ':p', '<3', '\n');
                                                     $imgs = array(
                                                         '<img id="emoticon" src="/static/img/emotions/nice.png"/>',
                                                         '<img id="emoticon" src="/static/img/emotions/angry.png"/>',
                                                         '<img id="emoticon" src="/static/img/emotions/cool.png"/>',
-                                                        '<img id="emoticon" src="/static/img/emotions/happy.png"/>',
                                                         '<img id="emoticon" src="/static/img/emotions/ooh.png"/>',
                                                         '<img id="emoticon" src="/static/img/emotions/sad.png"/>',
                                                         '<img id="emoticon" src="/static/img/emotions/right.png"/>',
