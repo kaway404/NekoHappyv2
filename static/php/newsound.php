@@ -26,7 +26,7 @@ else
 
 <?php
 $soundFile = "/sound/sound.ogg";
-echo "<EMBED SRC='/sound/sound.ogg' WIDTH='2' HEIGHT='2'>";
+echo "<EMBED SRC='/sound/sound.wav' WIDTH='2' HEIGHT='2'>";
 ?>
 
 <div class="hourstimea">
@@ -46,7 +46,7 @@ $iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
 DBUpDate( 'news', $upRate, "idquem = '{$iduser}' " );
 }
 ?>
-}, 10000);
+}, 20000);
 </script>
 
 <?php endforeach; endforeach; } ?>
