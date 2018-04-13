@@ -11,12 +11,12 @@ a{
 }
 
 ::-webkit-scrollbar-track {
-    background-color: transparent;
+    background-color: #000;
 }
 ::-webkit-scrollbar {
     width: 5px;
     height: 9px;
-    background: transparent;
+    background: #000;
 }
 ::-webkit-scrollbar-thumb {
     background: #459bd9;
