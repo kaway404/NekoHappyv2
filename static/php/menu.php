@@ -221,7 +221,7 @@ else
 </div>
 
 
-<script type="text/javascript">
+ <script type="text/javascript">
 
 var milissegundoss = 500;
 
@@ -250,7 +250,7 @@ $("#wtf").after(html);
 }  
 });
   }, milissegundos);
-</script>
+</script> 
 
 <?php
 if(isset($_COOKIE['batata']) ){
@@ -720,7 +720,7 @@ var kawaii<?php echo $comentiduser; ?> = document.getElementById('kawaii<?php ec
 
 
 
-
+<div id="verfoto"></div>
 
 
 
@@ -755,7 +755,22 @@ else
                 background-image: url(/img/back.jpg);
               }
             </style>
-            <img src="/img/<?php echo $coment['photo']; ?>" class="fotografia"/>
+            <img id="verfotografia<?php echo $coment['id'];?>" src="/img/<?php echo $coment['photo']; ?>" class="fotografia"/>
+            <script type="text/javascript">
+              $(document).ready(function() {
+            $("#verfotografia<?php echo $coment['id'];?>").click(function() {
+                var fotografia = <?php echo $coment['id'];?>;
+                  var ver = document.getElementById('verfoto');
+                  ver.style = "display: block;"; 
+                $.post("/static/php/verfoto.php", {post: fotografia},
+                function(data){
+                 $("#verfoto").html(data);
+                 }
+                 , "html");
+                 return false;
+            });
+        });
+            </script>
 
     <p class="cont-d"> 
       <?php 
@@ -1074,9 +1089,10 @@ body{
 </div>
 
 
+
 <script type="text/javascript" src="static/js/publicacao.js"></script>
 
-<script type="text/javascript">
+ <script type="text/javascript">
 var milissegundos = 800;
 
 // Executa a função a cada intervalo de tempo
@@ -1092,7 +1108,9 @@ document.addEventListener('DOMContentLoaded', function(){
   if(Notification.permission !== 'granted')
     Notification.requestPermission();
 });
-</script>
+</script> 
+
+
 
 
 <?Php } ?> 

@@ -2820,6 +2820,7 @@ header #logo{
 	position: relative;
 	border: 2px solid #459bd9;
 	background: #000;
+	cursor: pointer;
 }
 
 .costa{
@@ -2907,4 +2908,24 @@ header #logo{
 #jogodavelha h1{
 	top: -20px;
 	position: relative;
+}
+
+#verfoto{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.50);
+	top: 0;
+	z-index: 99999999999999;
+	display: none;
+	left: 0;
+}
+
+.verfotografia{
+	width: 50%;
+	position: relative;
+	margin: 0px auto;
+	height: auto;
+	background: #fff;
+	top: 100px;
 }
