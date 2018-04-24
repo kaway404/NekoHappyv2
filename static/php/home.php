@@ -31,7 +31,14 @@ else
 <li class="imesa">
 	<div class="avatar"><img src="/img/<?php echo $people['photo'];?>" class="thumb"/></div>
 	<img src="/img/default.png"/>
-	<p><?php echo $comunidade['nome'];?></p>
+	<p><?php
+  $str2 = nl2br( $comunidade['nome'] );
+  $len2 = strlen( $str2 );
+  $max2 = 6;
+   if( $len2 <= $max2 )
+   echo $str2;
+  else    
+   echo substr( $str2, 0, $max2 ) . '...'?></p>
 </li>
 <?php endforeach; endforeach; ?>
 </ul>

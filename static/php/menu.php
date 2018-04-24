@@ -144,7 +144,7 @@ else
   <p> <?php
   $str2 = nl2br( $people['nome'] );
   $len2 = strlen( $str2 );
-  $max2 = 9;
+  $max2 = 6;
    if( $len2 <= $max2 )
    echo $str2;
   else    

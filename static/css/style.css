@@ -2929,3 +2929,25 @@ header #logo{
 	background: #fff;
 	top: 100px;
 }
+
+.mainp{
+	width: 100%;
+	height: auto;
+	top: 50px;
+	position: relative;
+}
+
+.mainp .peoples img{
+	width: 130px;
+	height: 130px;
+	float: left;
+	display: inline-block;
+	position: relative;
+	margin-top: 10px;
+	margin-left: 5px;
+	border-radius: 50%;
+}
+
+.mainp h1{
+	font-size: 25px;
+}
