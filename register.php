@@ -67,6 +67,7 @@ $form2['ip']= mysql_real_escape_string($_SERVER['REMOTE_ADDR']);
 	setcookie("iduser", $iduser);
 	setcookie("inisession", $inisession);
 	echo '<script>location.href="/";</script>';
+	exit();
 	}
 
 }
