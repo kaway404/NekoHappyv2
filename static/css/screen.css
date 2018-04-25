@@ -7,10 +7,6 @@ body{
 		width: 100% !important;
 	}
 
-	header #logo{
-		display: none;
-	}
-
 	.publicar{
 		width: 100% !important;
 	}
@@ -58,12 +54,10 @@ body{
 		display: none;
 	}
 
+
 }
 
 @media only screen and (max-width: 1024px) {
-	header #logo{
-		display: none;
-	}
 
 	#menu{
 		top: 50px;
@@ -83,9 +77,6 @@ body{
 }
 
 @media only screen and (max-width: 1200px) {
-		#header #logo{
-			display: none;
-		}
 
 		#down{
 		top: 40px;
@@ -103,10 +94,6 @@ body{
 	}
 
 	@media only screen and (max-width: 1100px) {
-
-	#header #logo{
-			display: none;
-		}
 
 	#down{
 		display: block;
@@ -179,9 +166,6 @@ body{
 	}
 
 	@media only screen and (max-width: 1300px) {
-		#header #logo{
-			display: none;
-		}
 
 		#menu{
 		top: 50px;
