@@ -60,7 +60,7 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
 </div>
 
 <div id="news">
-<li>
+<li id="now2">
 <div id="newsnot1" class="newsnot"><span>0</span></div>
 	<svg id="Layer_1" style="enable-background:new 0 0 16 16;" version="1.1" viewBox="0 0 16 16" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M7.516,11.094C7.688,10.609,9,8.938,9,6c0-1.657-1.343-3-3-3S3,4.343,3,6c0,2.938,1.313,4.609,1.484,5.094  C2.953,11.234,0,12.211,0,14c0,0.422,0.336,1,1,1h10c0.664,0,1-0.578,1-1C12,12.211,9.047,11.234,7.516,11.094z M12.648,8.039  C12.889,7.311,14,5.273,14,4c0-1.657-1.344-3-3-3c-0.84,0-1.599,0.346-2.143,0.902C10.15,2.808,11,4.306,11,6  c0,1.521-0.297,2.779-0.645,3.748c0.775,0.307,1.527,0.723,2.146,1.252H15c0.578,0,1-0.453,1-1C16,8.742,13.578,8.211,12.648,8.039z  "/></svg>
 	<p>Amizades</p>
@@ -73,6 +73,9 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
 </div>
 
 <div id="newsdiv">
+</div>
+
+<div id="newsdiv2">
 </div>
 
 
@@ -102,11 +105,12 @@ $('#now').click(function(){
 		});
 	});
 
-function news1(){
-	$.post('/static/php/news.php', function (html) {
-				$('#newsnot1').html(html);
-		});
-}
+$('#now2').click(function(){
+    $.post('/static/php/viewnews2.php', function (html) {
+        $('#batata').html(html);
+    });
+  });
+
 
 var milissegundos = 800;
 
@@ -116,9 +120,17 @@ var interval = setInterval(function(){
 				$('#newsnot2').html(html);
 		});
 
+    $.post('/static/php/add.php?news=1', function (html) {
+        $('#newsnot1').html(html);
+    });
+
   	$.post('/static/php/listnew.php?news=1', function (html) {
 				$('#newsdiv').html(html);
 		});
+
+    $.post('/static/php/listadd.php', function (html) {
+        $('#newsdiv2').html(html);
+    });
 
 
   }, milissegundos);

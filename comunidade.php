@@ -86,10 +86,51 @@ if($membros >= 1){
 <button id="entrar">Entrar</button>
 <?php } ?>
 
-<button>Convidar amigos</button>
+<button id="invite">Convidar amigos</button>
 <a href="/comunidade.php?id=<?php echo $idcomu;?>&viewmember=1"><button>Membros</button></a>
 <?php } ?>
 </div>
+
+<div class="preto" id="preto" style="display: none;">
+<div id="envitef">
+  <p id="closer">X</p>
+  <h1>Convidar amigos</h1>
+  <?php
+$comunidadeidd = $comunidade['id'];
+$membros = DBRead( 'amizades', "WHERE id and iduser = $iduser ORDER BY id DESC" );
+if (!$membros)
+echo '<h2>Nenhum amigo</h2>';
+else  
+  foreach ($membros as $membro):
+?>
+<?php
+$peoplems = $membro['idquem'];
+$peoples = DBRead( 'user', "WHERE id = $peoplems ORDER BY id DESC LIMIT 10" );
+if (!$peoples)
+echo '';
+else  
+  foreach ($peoples as $people):
+?>
+
+
+<a title="<?php echo $people['nome'] ?> <?php echo $user['sobrenome'] ?>" href="/profile.php?id=<?php echo $people['id'];?>" class="peoples">
+<img src="/img/<?php echo $people['photo']; ?>">
+</a>
+
+
+<?php endforeach; endforeach;?>
+</div>
+</div>
+
+<script type="text/javascript">
+   $("#invite").click(function() {
+      $("#preto").fadeIn(300);
+  })
+
+  $("#closer").click(function() {
+      $("#preto").fadeOut(300);
+  });
+</script>
 
 
 <style type="text/css">

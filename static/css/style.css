@@ -2269,6 +2269,53 @@ header #logo{
 	bottom: 10px;
 }
 
+#newsdiv2{
+	width: 300px;
+	height: auto;
+	background: #fff;
+	float: left;
+	position: relative;
+	top: 20px;
+	display: none;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.50);
+	padding: 1px;
+	overflow-y: auto;
+	max-height: 250px;
+	overflow-x: hidden;
+}
+
+#newsdiv2 li img{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	top: 20px;
+	left: 5px;
+	position: relative;
+}
+
+#newsdiv2 li{
+	width: 100%;
+	transition: 1s;
+	cursor: pointer;
+}
+
+#newsdiv2 li:hover{
+	background: #e5e5e5;
+}
+
+#newsdiv2 li p{
+	position: relative;
+	top: -20px;
+	font-size: 19px;
+	left: 50px;
+}
+
+#newsdiv2 li span{
+	left: 50px;
+	position: relative;
+	bottom: 10px;
+}
+
 #nothing{
 	text-align: center;
 	position: relative;
@@ -2950,4 +2997,61 @@ header #logo{
 
 .mainp h1{
 	font-size: 25px;
+}
+
+.addbutton{
+	border: none;
+	color: #fff;
+	padding: 5px;
+	background: #296b9a;
+	position: relative;
+	left: 50px;
+	bottom: 10px;
+	cursor: pointer;
+}
+
+#addbr{
+	background: red;
+}
+
+#envitef{
+	position: relative;
+	background: #fff;
+	margin: 0px auto;
+	width: 50%;
+	height: 200px;
+	top: 100px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#envitef h1{
+	padding: 10px;
+	font-size: 23px;
+}
+
+#envitef img{
+	width: 100px;
+	height: 100px;
+	float: left;
+	display: inline-block;
+	position: relative;
+	margin-top: 10px;
+	margin-left: 5px;
+	border-radius: 50%;
+	left: 10px;
+	top: 10px;
+}
+
+#envitef h2{
+	padding: 10px;
+}
+
+#closer{
+	float: right;
+	right: 10px;
+	position: relative;
+	font-size: 22px;
+	top: 10px;
+	cursor: pointer;
 }

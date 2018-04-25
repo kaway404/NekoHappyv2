@@ -25,7 +25,7 @@ if(!validaEmail($email1)){
 	print "<p>E-mail invalido</p>"; exit();
 }
 
-$dbCheck = DBRead( 'user', "WHERE email = '". $email1."'" );
+$dbCheck = DBRead( 'user', "WHERE id and email = '". $email1."'" );
 
 if( $dbCheck ){
 	print "<p>Já utilizaram esse email</p>"; exit();

@@ -78,7 +78,21 @@ require 'static/php/leftbar.php';
 if($people['id'] <> $user['id']){
 ?>
 <div class="about-t">
-<button>Adicionar como amigo</button>
+
+<?php
+require 'db.php';
+$iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
+$peoplef = DBEscape( strip_tags(trim($_GET['id']) ) );
+$peoplefrs = mysql_query("SELECT * FROM neko_amizades WHERE id and iduser = $iduser and idquem = $peoplef");
+$peoplefrs = mysql_num_rows($peoplefrs);
+if($peoplefrs <> 0){
+?>
+<button id="addf">Parar de seguir</button>
+<?php } else{ ?>
+<button id="addf">Seguir</button>
+<?php } ?>
+
+
 <button>Bloquear</button>
 </div>
 <?php } else{?>
@@ -95,7 +109,21 @@ if($people['id'] <> $user['id']){
 <h1 class="name-batito" ><?php echo $people['nome']; ?>  <?php echo $people['sobrenome']; ?></h1>
 </center>
 
+<div id="resposta"></div>
 
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#addf").click(function() {
+        var people = <?php echo $people['id'];?>;
+        $.post("/static/php/addfriend.php", {people: people},
+        function(data){
+         $("#resposta").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+</script>
 
 </div>
 

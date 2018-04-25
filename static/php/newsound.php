@@ -28,7 +28,7 @@ else
 	if(Notification.permission !== "granted"){
 		Notification.requestPermission();
 	}else{
-		var notification = new Notification(Curtiu uma coisa sua, {
+		var notification = new Notification(Você tem nova notificação, {
 			icon: /img/<?Php echo $peopler['photo']; ?>,
 			body: Curtiu uma coisa sua
 		});

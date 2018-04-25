@@ -1,6 +1,7 @@
 var down = document.getElementById('down');
 var menu = document.getElementById('menu');
 var newsdiv = document.getElementById('newsdiv');
+var newsdiv2 = document.getElementById('newsdiv2');
 
       	 	 $('#down').click(function(){
         	if (menu.style.display === "block") {
@@ -15,6 +16,16 @@ var newsdiv = document.getElementById('newsdiv');
              newsdiv.style = "display: none;";
           } else {
               newsdiv.style = "display: block;";
+              newsdiv2.style = "display: none;";
+           }
+       });
+
+         $('#now2').click(function(){
+          if (newsdiv2.style.display === "block") {
+             newsdiv2.style = "display: none;";
+          } else {
+              newsdiv2.style = "display: block;";
+              newsdiv.style = "display: none;";
            }
        });
 
