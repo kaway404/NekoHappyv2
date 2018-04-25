@@ -138,7 +138,7 @@ echo '';
 else  
   foreach ($peoples as $people):
 ?>
-<a href="comunidade.php?id=<?php echo $people['id']; ?>">
+<a href="comunidade.php?id=<?php echo $people['killua']; ?>">
 <li class="imesa" style="left: 10px; width: 110px; height: 110px;">
   <img src="/img/default.png" style="border-radius: 0%;"/>
   <p> <?php

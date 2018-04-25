@@ -10,8 +10,9 @@ $usercry = DBRead('user', "WHERE thecry = '{$idcry}' LIMIT 1 ");
 $usercry = $usercry[0];
 
 $idcomu = DBEscape( strip_tags(trim($_GET['id']) ) );
-$comunidade = DBRead('comunidades', "WHERE id = '{$idcomu}' LIMIT 1 ");
+$comunidade = DBRead('comunidades', "WHERE killua = '{$idcomu}' LIMIT 1 ");
 $comunidade = $comunidade[0];
+$killua = $comunidade['killua'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -71,7 +72,7 @@ if($comunidade['iduser'] == $iduser){
 ?>
 <button id="invite">Convidar amigos</button>
 <button>Editar</button>
-<a href="/comunidade.php?id=<?php echo $idcomu;?>&viewmember=1"><button>Membros</button></a>
+<a href="/comunidade.php?id=<?php echo $killua;?>&viewmember=1"><button>Membros</button></a>
 <?Php }else{?>
 <?php
 require 'db.php';
@@ -86,8 +87,9 @@ if($membros >= 1){
 <button id="entrar">Entrar</button>
 <?php } ?>
 
+
 <button id="invite">Convidar amigos</button>
-<a href="/comunidade.php?id=<?php echo $idcomu;?>&viewmember=1"><button>Membros</button></a>
+<a href="/comunidade.php?id=<?php echo $killua;?>&viewmember=1"><button>Membros</button></a>
 <?php } ?>
 </div>
 
