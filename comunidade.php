@@ -113,7 +113,7 @@ else
 ?>
 
 
-<a title="<?php echo $people['nome'] ?> <?php echo $user['sobrenome'] ?>" href="/profile.php?id=<?php echo $people['id'];?>" class="peoples">
+<a title="<?php echo $people['nome'] ?> <?php echo $user['sobrenome'] ?>" class="peoples">
 <img src="/img/<?php echo $people['photo']; ?>">
 </a>
 
