@@ -194,8 +194,19 @@ else
 
 <?php endforeach; endforeach; } endforeach;?>
 
+<?php }else{ ?>
 
-<?php } } ?>
+<div class="publicar" id="pub" id="fallen5" style="top: 0;width: 100%;">
+<form>
+<textarea class="public" placeholder="Publique algo no grupo!" id="content"></textarea>
+<div class="btn-sc" id="publish"><div class="btnc"><span>Publicar</span></div></div>
+</form>
+</div>
+<div class="ava-t-e" id="photo" style="top: 20px;">
+<img src="/img/<?Php echo $user['photo'];?>" class="avatar-post"/>
+</div>
+<?php } ?>
+<?php } ?>
 
 </div>
 
