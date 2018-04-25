@@ -69,7 +69,7 @@ require 'static/php/leftbar.php';
 <?php
 if($comunidade['iduser'] == $iduser){
 ?>
-<button>Convidar amigos</button>
+<button id="invite">Convidar amigos</button>
 <button>Editar</button>
 <a href="/comunidade.php?id=<?php echo $idcomu;?>&viewmember=1"><button>Membros</button></a>
 <?Php }else{?>
@@ -95,7 +95,7 @@ if($membros >= 1){
 <div id="envitef">
   <p id="closer">X</p>
   <h1>Convidar amigos</h1>
-  <?php
+<?php
 $comunidadeidd = $comunidade['id'];
 $membros = DBRead( 'amizades', "WHERE id and iduser = $iduser ORDER BY id DESC" );
 if (!$membros)
