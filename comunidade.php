@@ -171,7 +171,7 @@ if($_GET['viewmember'] == 1){
 <br>
 
 <?php
-$comunidades = DBRead( 'comunidades', "WHERE id = $idcomu ORDER BY id DESC" );
+$comunidades = DBRead( 'comunidades', "WHERE id = $idgroups ORDER BY id DESC" );
 if (!$comunidades)
 echo '';
 else  
