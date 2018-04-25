@@ -24,11 +24,12 @@ else
   foreach ($peoplesr as $peopler):   
 ?>
 
-
+<a href="<?php echo $people['href']?>">
 <li>
 	<img src="/img/<?php echo $peopler['photo']; ?>">
 	<p><?php echo $peopler['nome'];?></p>
 	<span><?php echo $people['texto']; ?></span>
 </li>
+</a>
 
 <?php endforeach; endforeach; } ?>

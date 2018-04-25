@@ -113,10 +113,24 @@ else
 ?>
 
 
-<a title="<?php echo $people['nome'] ?> <?php echo $user['sobrenome'] ?>" class="peoples">
+<a id="convidarpeople<?php echo $people['id'];?>" title="<?php echo $people['nome'] ?> <?php echo $user['sobrenome'] ?>" class="peoples" style="cursor: pointer;">
 <img src="/img/<?php echo $people['photo']; ?>">
 </a>
 
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#convidarpeople<?php echo $people['id'];?>").click(function() {
+        var group = <?php echo $idgroup;?>;
+        var people = <?php echo $people['id'];?>;
+        $.post("/static/php/convitepeopleg.php", {group: group, people: people},
+        function(data){
+         $("#resposta").html(data);
+         }
+         , "html");
+         return false;
+    });
+});
+</script>
 
 <?php endforeach; endforeach;?>
 </div>

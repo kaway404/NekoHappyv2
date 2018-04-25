@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 25-Abr-2018 às 17:23
+-- Generation Time: 25-Abr-2018 às 20:41
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 5.6.35
 
@@ -41,7 +41,10 @@ CREATE TABLE `neko_amizades` (
 --
 
 INSERT INTO `neko_amizades` (`id`, `iduser`, `idquem`, `aceite`, `view`) VALUES
-(32, '75', '99', 0, 0);
+(34, '75', '104', 0, 0),
+(35, '75', '106', 0, 0),
+(36, '75', '99', 0, 0),
+(37, '99', '75', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -95,9 +98,9 @@ CREATE TABLE `neko_like` (
 --
 
 INSERT INTO `neko_like` (`id`, `idpost`, `iduser`) VALUES
-(1, '3', '75'),
 (5, '3', '111'),
-(6, '2', '111');
+(6, '2', '111'),
+(8, '3', '75');
 
 -- --------------------------------------------------------
 
@@ -111,14 +114,6 @@ CREATE TABLE `neko_membros` (
   `idgroup` int(11) NOT NULL,
   `datec` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `neko_membros`
---
-
-INSERT INTO `neko_membros` (`id`, `iduser`, `idgroup`, `datec`) VALUES
-(15, 99, 3, '2018-04-23'),
-(18, 75, 3, '2018-04-23');
 
 -- --------------------------------------------------------
 
@@ -134,51 +129,18 @@ CREATE TABLE `neko_news` (
   `texto` text NOT NULL,
   `date` datetime NOT NULL,
   `view` int(11) NOT NULL,
-  `status` int(11) NOT NULL
+  `status` int(11) NOT NULL,
+  `href` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `neko_news`
 --
 
-INSERT INTO `neko_news` (`id`, `iduser`, `idquem`, `tipo`, `texto`, `date`, `view`, `status`) VALUES
-(1, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(2, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(3, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(4, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(5, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(6, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(7, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(8, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(9, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(10, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(11, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(12, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(13, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(14, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(15, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(16, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(17, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(18, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(19, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(20, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(21, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(22, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(23, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(24, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(25, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(26, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(27, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(28, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(29, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(30, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(31, 75, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(32, 75, 111, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(33, 111, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(34, 111, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(35, 111, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1),
-(36, 111, 111, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 0),
-(37, 111, 75, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 1, 1);
+INSERT INTO `neko_news` (`id`, `iduser`, `idquem`, `tipo`, `texto`, `date`, `view`, `status`, `href`) VALUES
+(39, 75, 111, 1, 'Curtiu sua postagem', '0000-00-00 00:00:00', 0, 0, ''),
+(43, 75, 99, 1, 'Convidou para entrar no grupo', '0000-00-00 00:00:00', 1, 1, '/comunidade.php?id=3'),
+(44, 99, 75, 1, 'Convidou para entrar no grupo', '0000-00-00 00:00:00', 1, 1, '/comunidade.php?id=3');
 
 -- --------------------------------------------------------
 
@@ -236,8 +198,8 @@ CREATE TABLE `neko_user` (
 --
 
 INSERT INTO `neko_user` (`id`, `thecry`, `email`, `senha`, `nome`, `sobrenome`, `photo`, `coins`, `inisession`, `datec`, `priv`, `lastlogin`, `configurado`, `pin`, `ip`, `admin`) VALUES
-(75, '85d9235d10cf197950d843e56b47021ff02b0cee', 'kaway@hotmail.com', 'a0b48bf6735b085374fa984535372a8025210e45', 'Alexandre', 'Silva', '1878.png', '1650', '2018-01-22 14:12:00', '2018-01-22 14:12:00', 1, '2018-04-23 19:39:52', '2', '5151', '::1', 0),
-(99, '70909c345cd056c3d4dcd0f5a056fb33e88aaa23', 'anelise@hotmail.com', 'a873d476f684dd7a02e0ff310c060f547e3b1459', 'Anelise', 'Silva', '5314ef83a515891ec0c38a1ba9013acc.jpg', '10', '2018-04-11 20:19:37', '2018-04-11 20:19:37', 0, '2018-04-25 12:08:24', '2', '1234', '::1', 0),
+(75, '85d9235d10cf197950d843e56b47021ff02b0cee', 'kaway@hotmail.com', 'a0b48bf6735b085374fa984535372a8025210e45', 'Alexandre', 'Silva', '1878.png', '1650', '2018-01-22 14:12:00', '2018-01-22 14:12:00', 1, '2018-04-25 15:36:30', '2', '5151', '::1', 0),
+(99, '70909c345cd056c3d4dcd0f5a056fb33e88aaa23', 'anelise@hotmail.com', 'a873d476f684dd7a02e0ff310c060f547e3b1459', 'Anelise', 'Silva', '5314ef83a515891ec0c38a1ba9013acc.jpg', '10', '2018-04-11 20:19:37', '2018-04-11 20:19:37', 0, '2018-04-25 15:37:38', '2', '1234', '::1', 0),
 (101, '4878185a84171c3fd37677f1c1028f49da20621a', 'adson.tanajura@gmail.com', 'e1a4442d17f7bc360400b7d7f839f2dfc9900dbe', 'Adson', 'nunes', 'images1.jpg', '440', '2018-04-11 21:01:49', '2018-04-11 21:01:49', 0, '2018-04-11 21:38:13', '2', '3232', '187.87.192.34', 0),
 (103, 'a7dbe334fc696e3f2d91cf4821a0a4d66cc2968a', 'danielzinhooficial@gmail.com', 'f8ad67e974bfe0bfd1f0217ee4744d5096dcac79', 'Daniel', 'Fontenelle', 'sisi.png', '10', '2018-04-11 21:07:44', '2018-04-11 21:07:44', 0, '2018-04-11 21:07:44', '2', '24091', '187.17.157.0', 0),
 (104, 'd599c0066675cddcd2dc9a4eec2a783ea9751380', 'paunocudavalve@gmail.com', '7d5d4f54fa5e9684a6187d397ed612b8bde1ad28', 'aipaiparaa', 'aipai', 'download.jpg', '10', '2018-04-21 19:21:38', '2018-04-21 19:21:38', 0, '2018-04-21 19:21:38', '2', '22222', '107.167.113.34', 0),
@@ -310,7 +272,7 @@ ALTER TABLE `neko_user`
 -- AUTO_INCREMENT for table `neko_amizades`
 --
 ALTER TABLE `neko_amizades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `neko_comment`
@@ -328,7 +290,7 @@ ALTER TABLE `neko_comunidades`
 -- AUTO_INCREMENT for table `neko_like`
 --
 ALTER TABLE `neko_like`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `neko_membros`
@@ -340,7 +302,7 @@ ALTER TABLE `neko_membros`
 -- AUTO_INCREMENT for table `neko_news`
 --
 ALTER TABLE `neko_news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `neko_post`
