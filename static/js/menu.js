@@ -36,3 +36,7 @@ var newsdiv2 = document.getElementById('newsdiv2');
     $('#newsdiv').on('mouseleave', function(){
           newsdiv.style = "display:none;";
     });
+
+     $('#newsdiv2').on('mouseleave', function(){
+          newsdiv2.style = "display:none;";
+    });

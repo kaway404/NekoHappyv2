@@ -45,7 +45,7 @@ header #logo{
 	position: relative;
 	top: 10px;
 	width: 100px;
-	text-align: center;
+	float: left;
 	width: 200px;
 }
 
@@ -905,7 +905,7 @@ header #logo{
 .down-e{
 	float: right;
 	position: relative;
-	top: 15px;
+	top: 45px;
 	cursor: pointer;
 }
 
@@ -924,7 +924,7 @@ header #logo{
 	height: auto;
 	padding-bottom: 10px;
 	background: #fff;
-	top: 20px;
+	top: 50px;
 	box-shadow: 0 4px 8px 1px #7f7b7b;
 	left: 75px;
 	text-align: center;
@@ -2167,7 +2167,7 @@ header #logo{
 
 #news{
 	float: left;
-	left: 0px;
+	left: 150px;
 	position: absolute;
 	top: 32px;
 	color: #fff;
@@ -2228,12 +2228,13 @@ header #logo{
 	background: #fff;
 	float: left;
 	position: relative;
-	top: 20px;
+	top: 50px;
 	display: none;
 	box-shadow: 1px 1px 1px rgba(0,0,0,.50);
 	padding: 1px;
 	overflow-y: auto;
 	max-height: 250px;
+	right: 40px;
 	overflow-x: hidden;
 }
 
@@ -2275,8 +2276,9 @@ header #logo{
 	background: #fff;
 	float: left;
 	position: relative;
-	top: 20px;
+	top: 50px;
 	display: none;
+	right: 40px;
 	box-shadow: 1px 1px 1px rgba(0,0,0,.50);
 	padding: 1px;
 	overflow-y: auto;
