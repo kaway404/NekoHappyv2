@@ -52,7 +52,7 @@ else
   foreach ($profile2 as $profile22):
  ?>
  
- <a class="eoq" style="padding-top: 20px; padding-bottom: 40px;"  href='/comunidade.php?id=<?php echo $profile22['id']; ?>'><li class='buscaright'><img src='/img/default.png' class='avatar6'/><div class='name'><p>
+ <a class="eoq" style="padding-top: 20px; padding-bottom: 40px;"  href='/comunidade.php?id=<?php echo $profile22['killua']; ?>'><li class='buscaright'><img src='/img/default.png' class='avatar6'/><div class='name'><p>
  <?php
   $str2 = nl2br( $profile22['nome'] );
   $len2 = strlen( $str2 );

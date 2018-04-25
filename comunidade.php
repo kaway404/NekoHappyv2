@@ -13,6 +13,7 @@ $idcomu = DBEscape( strip_tags(trim($_GET['id']) ) );
 $comunidade = DBRead('comunidades', "WHERE killua = '{$idcomu}' LIMIT 1 ");
 $comunidade = $comunidade[0];
 $killua = $comunidade['killua'];
+$idgroups = $comunidade['id'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -78,7 +79,7 @@ if($comunidade['iduser'] == $iduser){
 require 'db.php';
 $iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
 $idgroup = DBEscape( strip_tags(trim($_GET['id']) ) );
-$membro = mysql_query("SELECT * FROM neko_membros WHERE id and iduser = $iduser and idgroup = $idgroup");
+$membro = mysql_query("SELECT * FROM neko_membros WHERE id and iduser = $iduser and idgroup = $idgroups");
 $membros = mysql_num_rows($membro);
 if($membros >= 1){
 ?>
@@ -122,7 +123,7 @@ else
 <script type="text/javascript">
   $(document).ready(function() {
     $("#convidarpeople<?php echo $people['id'];?>").click(function() {
-        var group = <?php echo $idgroup;?>;
+        var group = <?php echo $idgroups;?>;
         var people = <?php echo $people['id'];?>;
         $.post("/static/php/convitepeopleg.php", {group: group, people: people},
         function(data){
@@ -240,7 +241,7 @@ else
 <script type="text/javascript">
 $(document).ready(function() {
     $("#entrar").click(function() {
-        var group = <?php echo $idgroup;?>;
+        var group = <?php echo $idgroups;?>;
         $.post("/static/php/entrargrupo.php", {group: group},
         function(data){
          $("#resposta").html(data);
