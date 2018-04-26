@@ -17,8 +17,9 @@ $people = $people[0];
 <head>
 	<?php if(!isset($_GET['id']) || empty($_GET['id'])){ ?>
 <title>NekoHappy |  <?php echo $user['nome']; ?></title>
-	<?php } ?>
+	<?php }else{ ?>
 	<title>NekoHappy |  <?php echo $people['nome']; ?></title>
+  <?php }?>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
@@ -104,7 +105,7 @@ if($peoplefrs <> 0){
 </div>
 <center>
 <div class="profilephoto" id="photo">
-<img src="/img/<?Php echo $people['photo'];?>" class="avatar-post"/>
+<img src="/img/<?php echo $people['photo'];?>" class="avatar-post"/>
 </div>
 <h1 class="name-batito" ><?php echo $people['nome']; ?>  <?php echo $people['sobrenome']; ?></h1>
 </center>
@@ -126,7 +127,6 @@ if($peoplefrs <> 0){
 </script>
 
 </div>
-
 <?php
 $conn = mysql_connect('localhost','root','') or die (mysql_error);
 $db=mysql_select_db('nekohappy', $conn) or die (mysql_error);
@@ -135,24 +135,116 @@ $totaldecomunidades = mysql_query("SELECT * FROM neko_comunidades WHERE id and i
 $totaldecomunidades = mysql_num_rows($totaldecomunidades);
 ?>
 
+<?php
+$conn = mysql_connect('localhost','root','') or die (mysql_error);
+$db=mysql_select_db('nekohappy', $conn) or die (mysql_error);
+$iduser = DBEscape( strip_tags(trim($_GET['id']) ) );
+$totalseguidores = mysql_query("SELECT * FROM neko_amizades WHERE id and iduser = '".$iduser."' ");
+$totalseguidores = mysql_num_rows($totalseguidores);
+?>
+
 <div id="alinhar-h">
 
 <div class="about">
 <div class="posta">
 
 <div id="header-p">
-	<li class="ativo">Feed</li>
-	<li>Amigos</li>
-	<li><div id="newsnot1" class="feednot"><span>
-		<?php echo $totaldecomunidades;?>
-	</span></div>Comunidades</li>
+  <a href="/profile.php?id=<?php echo $people['id']?>"><li id="wowa">Feed</li></a>
+  <a href="/profile.php?id=<?php echo $people['id']?>&viewseguidores=1"><li id="seguir"><div id="newsnot1" class="feednot"><span>
+    <?php echo $totalseguidores;?>
+  </span></div>Seguidores</li></a>
+  <a href="/profile.php?id=<?php echo $people['id']?>&viewcomunidades=1"><li id="comu"><div id="newsnot1" class="feednot"><span>
+    <?php echo $totaldecomunidades;?>
+  </span></div>Comunidades</li></a>
 </div>
+
+<?php
+if($_GET['viewcomunidades'] == 1){
+?>
+<script type="text/javascript">
+  document.getElementById("comu").style = "background: #0b2d46;";
+</script>
+<div class="comunidades-view">
+<h2>Comunidades</h2>
+<?php
+$iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
+$peopleid = $people['id'];
+$peoples = DBRead( 'comunidades', "WHERE id and iduser = $peopleid  ORDER BY id DESC" );
+if (!$peoples)
+echo '';
+else  
+  foreach ($peoples as $people):
+?>
+<a href="comunidade.php?id=<?php echo $people['killua']; ?>">
+<li class="imesa" style="left: 10px; width: 110px; height: 110px;">
+  <img src="/img/default.png" style="border-radius: 0%;"/>
+  <p> <?php
+  $str2 = nl2br( $people['nome'] );
+  $len2 = strlen( $str2 );
+  $max2 = 6;
+   if( $len2 <= $max2 )
+   echo $str2;
+  else    
+   echo substr( $str2, 0, $max2 ) . '...'?></p>
+</li>
+</a>
+<?php endforeach;?>
+
+</div>
+
+
+<?php } else if($_GET['viewseguidores'] == 1){ ?>
+
+<script type="text/javascript">
+  document.getElementById("seguir").style = "background: #0b2d46;";
+</script>
+
+<div class="comunidades-view">
+<h2>Seguidores</h2>
+<?php
+$iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
+$peopleid = $people['id'];
+$peoples = DBRead( 'amizades', "WHERE id and idquem = $peopleid  ORDER BY id DESC" );
+if (!$peoples)
+echo '';
+else  
+  foreach ($peoples as $people):
+?>
+<?php
+$iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
+$quem = $people['iduser'];
+$peoplesr = DBRead( 'user', "WHERE id = $quem ORDER BY id DESC LIMIT 1" );
+if (!$peoplesr)
+echo '';
+else  
+  foreach ($peoplesr as $peopler):
+?>
+<a href="/profile.php?id=<?php echo $peopler['id']; ?>" title="<?php echo $peopler['nome'];?> <?php echo $peopler['sobrenome'];?>">
+<li class="imesa" style="left: 10px; width: 110px; height: 110px;">
+  <img src="/img/default.png" style="border-radius: 0%;"/>
+  <p> <?php
+  $str2 = nl2br( $peopler['nome'] );
+  $len2 = strlen( $str2 );
+  $max2 = 9;
+   if( $len2 <= $max2 )
+   echo $str2;
+  else    
+   echo substr( $str2, 0, $max2 ) . '...'?></p>
+</li>
+</a>
+<?php endforeach; endforeach;?>
+
+</div>
+
+<?php } else{?>
 
 <div id="feed">
 
 
 
-
+<script type="text/javascript">
+  document.getElementById("wowa").style = "background: #0b2d46;";
+</script>
 
 
 
@@ -637,7 +729,7 @@ var kawaii<?php echo $comentiduser; ?> = document.getElementById('kawaii<?php ec
 
 
 <?php endforeach; endforeach;?>
-
+<?php } ?>
 <div id="respostaba">
 
 </div>

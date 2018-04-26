@@ -182,7 +182,7 @@ if($comunidade['iduser'] == $iduser){
 ?>
 
 <a href="/profile.php?id=<?php echo $user['id'];?>" class="peoples" title="<?php echo $user['nome'] ?> <?php echo $user['sobrenome'] ?>">
-<img src="/img/<?php echo $user['photo']; ?>">
+<img src="/img/<?php echo $user['photo']; ?>" style="border: 3px solid #459bd9;">
 </a>
 
 <?php }else{ ?>
@@ -205,7 +205,7 @@ else
 
 
 <a title="<?php echo $people['nome'] ?> <?php echo $user['sobrenome'] ?>" href="/profile.php?id=<?php echo $people['id'];?>" class="peoples">
-<img src="/img/<?php echo $people['photo']; ?>">
+<img src="/img/<?php echo $people['photo']; ?>" style="border: 3px solid #459bd9;">
 </a>
 
 
