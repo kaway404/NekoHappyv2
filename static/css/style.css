@@ -2431,6 +2431,8 @@ header #logo{
 	height: 50px;
 	background: #eee;
 	border-bottom: 1px solid rgba(0,0,0,0.25);
+	z-index: 1000;
+	position: relative;
 }
 
 #left-messenger{
@@ -3098,4 +3100,58 @@ header #logo{
 	bottom: 30px;
 	background: #151515;
 	left: 10px;
+}
+
+.bottomg{
+	position: fixed;
+	bottom: 10px;
+	width: 35.5%;
+	background: #eee;
+	height: 40px;
+}
+
+.bottomg input{
+	width: 69%;
+	height: 100%;
+	border: none;
+	background: #ccc;
+	padding: 5px;
+}
+
+.mensagemg{
+	width: 35.5%;
+	position: fixed;
+	height: 100%;
+	background: #fff;
+	top: 100px;
+	left: 15%;
+	z-index: 0;
+	border: 1px solid #ccc;
+}
+
+.mensagemg .nanisc{
+	width: 30px;
+	border-radius: 50%;
+	border: 1px solid #459bd9;
+	position: relative;
+	margin: 0px auto;
+	top: 10px;
+}
+
+.mensagemg li{
+	padding-right: 50px;
+	margin-top: 20px;
+	float: left;
+	left: 20px;
+	position: relative;
+	background: #eee;
+	width: 85%;
+	border-radius: 0 0 0 5%;
+}
+
+.mensagemg li p{
+	position: relative;
+	bottom: 15px;
+	left: 40px;
+	word-wrap: break-word;
 }

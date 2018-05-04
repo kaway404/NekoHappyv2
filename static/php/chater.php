@@ -5,9 +5,18 @@
 	</div>
 	<div id="left-messenger">
 <span>Pessoas para conversar</span>		
-		<?php
+<?php
 $iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
-$peoples = DBRead( 'user', "WHERE id <> $iduser ORDER BY id ASC LIMIT 10" );
+$quems = DBRead( 'amizades', "WHERE id and iduser = $iduser ORDER BY id ASC LIMIT 10" );
+if (!$quems)
+echo '';
+else  
+  foreach ($quems as $quem):   
+?>
+<?php
+$quemr = $quem['idquem'];
+$iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
+$peoples = DBRead( 'user', "WHERE id = $quemr ORDER BY id ASC LIMIT 10" );
 if (!$peoples)
 echo '';
 else  
@@ -15,14 +24,15 @@ else
 ?>
 
 <li id="peopler<?php echo $people['id'];?>">
-	<img src="/img/default.png">
+	<img src="/img/<?php echo $people['photo'];?>">
 	<p><?php echo $people['nome'];?></p>
 </li>
 
-<?php endforeach;?>
+<?php endforeach;endforeach;?>
 	</div>
 
-<div class="msgter">
+<div id="respostaba">
+  
 
 </div>
 
@@ -57,6 +67,6 @@ else
 </script>
 
 <script type="text/javascript">
-	document.getElementById("alinhar-h").style = "width: 100%;";
+	document.getElementById("alinhar-h").style = "width: 80%;";
 	document.getElementById("eoq").style = "width: 100%;";
 </script>

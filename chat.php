@@ -11,9 +11,6 @@ require 'static/php/system/config.php';
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 	<link rel="stylesheet" href="/static/css/react.css">
 	<script src="static/js/jquery.js" type="text/javascript"></script>
-	<script type="text/javascript" src="static/js/functions.js"></script>
-	<script src="static/js/js-all.js" type="text/javascript"></script>
-	<script  src="static/js/index.js"></script>
 	<link rel="stylesheet" type="text/css" href="/static/css/screen.css"/>
 </head>
 <body id="momer">
@@ -39,4 +36,7 @@ require 'static/php/home.php';
 }
 ?>
 </body>
+
+
+
 </html>
