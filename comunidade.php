@@ -185,7 +185,35 @@ if($comunidade['iduser'] == $iduser){
 <img src="/img/<?php echo $user['photo']; ?>" style="border: 3px solid #459bd9;">
 </a>
 
-<?php }else{ ?>
+<?php
+$comunidadeidd = $comunidade['id'];
+$membros = DBRead( 'membros', "WHERE id and idgroup = $comunidadeidd ORDER BY id DESC" );
+if (!$membros)
+echo '<h2>Nenhum membro</h2>';
+else  
+  foreach ($membros as $membro):
+?>
+<?php
+$peoplems = $membro['iduser'];
+$peoples = DBRead( 'user', "WHERE id = $peoplems ORDER BY id DESC LIMIT 10" );
+if (!$peoples)
+echo '';
+else  
+  foreach ($peoples as $people):
+?>
+
+<?php if($people['id'] <> $user['id']){?>
+<a title="<?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?>" href="/profile.php?id=<?php echo $people['id'];?>" class="peoples">
+<img src="/img/<?php echo $people['photo']; ?>" style="border: 3px solid #459bd9;">
+</a>
+<?php } ?>
+
+
+<?php endforeach; endforeach; ?>
+
+<?php }
+
+else{ ?>
 <?php
 $comunidadeidd = $comunidade['id'];
 $membros = DBRead( 'membros', "WHERE id and idgroup = $comunidadeidd ORDER BY id DESC" );
