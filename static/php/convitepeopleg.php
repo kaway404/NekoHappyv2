@@ -6,6 +6,7 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
 $peoplef = $_POST['people'];
 $iduser = $_COOKIE['iduser'];
 $grupo = $_POST['group'];
+$groupid = $_POST['wtf'];
 
 $dbCheck = DBRead( 'membros', "WHERE iduser = $peoplef and idgroup = $grupo" );
 if( $dbCheck ){
@@ -17,7 +18,7 @@ if( $dbCheck ){
 	<?php } else{?>
 
 <?php
-$href = '/comunidade.php?id='.$grupo.'';
+$href = '/comunidade.php?id='.$groupid.'';
 $form3['iduser'] = $iduser;
 $form3['idquem'] = $peoplef;
 $form3['tipo'] = 1;

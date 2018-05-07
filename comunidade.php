@@ -124,8 +124,9 @@ else
   $(document).ready(function() {
     $("#convidarpeople<?php echo $people['id'];?>").click(function() {
         var group = <?php echo $idgroups;?>;
+        var wtf = "<?php echo $killua;?>";
         var people = <?php echo $people['id'];?>;
-        $.post("/static/php/convitepeopleg.php", {group: group, people: people},
+        $.post("/static/php/convitepeopleg.php", {group: group, people: people, wtf: wtf},
         function(data){
          $("#resposta").html(data);
          }
