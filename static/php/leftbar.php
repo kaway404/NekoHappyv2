@@ -13,7 +13,7 @@ echo '';
 else  
   foreach ($comunidadest as $comunidadet):
 ?>
-<a href="/comunidade.php?id=<?php echo $comunidadet['killua']; ?>"><img src="/img/default.png" class="baka" style="top: 10px; cursor: pointer;"/></a>
+<a title="<?php echo $comunidadet['nome'] ?>" href="/comunidade.php?id=<?php echo $comunidadet['killua']; ?>"><img src="/img/default.png" class="baka" style="top: 10px; cursor: pointer;"/></a>
 <?php endforeach;?>
 </div>
 
