@@ -7,7 +7,6 @@ require '/config.php';
 $usuario = $_POST['people'];
 ?>
 
-
 <?php
 $iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
 $peoples = DBRead( 'user', "WHERE id = $usuario ORDER BY id ASC LIMIT 10" );
@@ -24,18 +23,18 @@ else
 <div class="msgter">
 
 
-<div class="mensagemg">
-<li class="eu">
-<img src="/img/<?php echo $people['photo'];?>" class="nanisc">
-<p>Olá tudo bem?</p>
-</li>
-<li class="vc">
-<img src="/img/<?php echo $people['photo'];?>" class="nanisc">
-<p>Olá tudo bem?</p>
-</li>
-
+<div id="vermsg51">
 
 </div>
+
+<script type="text/javascript">
+	var milissegundos = 800;
+	var interval = setInterval(function(){
+  	$.post('/static/php/viewmsg.php?people=<?php echo $usuario;?>', function (html) {
+				$('#vermsg51').html(html);
+		});
+  	  }, milissegundos);
+</script>
 
 <div class="bottomg">
 <form>

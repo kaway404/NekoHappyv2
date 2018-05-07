@@ -3111,11 +3111,11 @@ header #logo{
 }
 
 .bottomg input{
-	width: 69%;
-	height: 100%;
+	width: 98%;
 	border: none;
 	background: #ccc;
 	padding: 5px;
+	height: 40px;
 }
 
 .mensagemg{

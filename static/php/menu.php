@@ -479,7 +479,7 @@ var comentarios<?php echo $comentiduser; ?> = document.getElementById('comentari
 <div id="show"></div>
 
 <?php
-$coments = DBRead( 'post', "WHERE id and destaque = 0 and tipo = 1 ORDER BY id DESC" );
+$coments = DBRead( 'post', "WHERE id and destaque = 0 ORDER BY id ASC" );
 if (!$coments)
 echo '<div class="postagens" id="blank"><p class="bakeero">Sem postagem :/</p></div>';
 else  
@@ -493,7 +493,7 @@ echo '';
 else  
 	foreach ($peoples as $people):	 
 ?>
-
+<?php if($coment['tipo'] == 1){?>
 <div class="postagens" id="fallen">
 		<div class="ava-t-e" id="photo" style="top: 17px !important;">
 		<img src="/img/<?Php echo $people['photo'];?>" class="avatar-post"/>
@@ -702,45 +702,12 @@ return false;
 var kawaii<?php echo $comentiduser; ?> = document.getElementById('kawaii<?php echo $comentiduser; ?>');
 </script>
 
+<?Php } ?>
 
 
-<?php endforeach; endforeach;?>
-
-<div id="respostaba">
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-<div id="verfoto"></div>
-
-
+<?php if($coment['tipo'] == 3){?>
 
 <!-- Alterou foto de perfil -->
-
-<?php
-$coments = DBRead( 'post', "WHERE id and destaque = 0 and tipo = 3 ORDER BY id DESC" );
-if (!$coments)
-echo '';
-else  
-  foreach ($coments as $coment):   
-?>
-<?php
-$comentiduser = $coment['iduser'];
-$peoples = DBRead( 'user', "WHERE id = $comentiduser ORDER BY id DESC LIMIT 1" );
-if (!$peoples)
-echo '';  
-else  
-  foreach ($peoples as $people):   
-?>
 
 <div class="postagens" id="fallen">
     <div class="ava-t-e" id="photo" style="top: 17px !important; z-index: 200" >
@@ -977,11 +944,34 @@ var kawaii<?php echo $comentiduser; ?> = document.getElementById('kawaii<?php ec
 
 
 
+
+<div id="respostaba">
+
+</div>
+
+<?php } ?>
+
+
 <?php endforeach; endforeach;?>
 
 <div id="respostaba">
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+<div id="verfoto"></div>
+
+
+
 
 
 </div>
