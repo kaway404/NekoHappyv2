@@ -115,7 +115,6 @@ else
   foreach ($peoples as $people):
 ?>
 
-
 <a id="convidarpeople<?php echo $people['id'];?>" title="<?php echo $people['nome'] ?> <?php echo $user['sobrenome'] ?>" class="peoples" style="cursor: pointer;">
 <img src="/img/<?php echo $people['photo']; ?>">
 </a>
@@ -205,7 +204,7 @@ else
 ?>
 
 
-<a title="<?php echo $people['nome'] ?> <?php echo $user['sobrenome'] ?>" href="/profile.php?id=<?php echo $people['id'];?>" class="peoples">
+<a title="<?php echo $people['nome'] ?> <?php echo $people['sobrenome'] ?>" href="/profile.php?id=<?php echo $people['id'];?>" class="peoples">
 <img src="/img/<?php echo $people['photo']; ?>" style="border: 3px solid #459bd9;">
 </a>
 
